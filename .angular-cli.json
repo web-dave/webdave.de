@@ -7,10 +7,7 @@
     {
       "root": "src",
       "outDir": "dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
+      "assets": ["assets", "favicon.ico"],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
@@ -19,9 +16,15 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "blog",
       "styles": [
-        "styles.scss"
+        "styles.scss",
+        "../node_modules/prismjs/themes/prism-tomorrow.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/marked/lib/marked.js",
+        "../node_modules/prismjs/prism.js",
+        "../node_modules/prismjs/components/prism-javascript.js",
+        "../node_modules/prismjs/components/prism-css.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
