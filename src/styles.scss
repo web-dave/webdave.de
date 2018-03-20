@@ -1,7 +1,6 @@
-$color-jet-stream: #f4f8fd;
-$color-dawn: #283157;
-$color-dark-matter: #171923;
-$color-nebula: #a6b8d2;
+$color-white-ish: #f4f8fd;
+$color-gray-ish: #a6b8d2;
+$color-black-ish: #171923;
 
 @mixin shadow($size) {
   @if ($size == s) {
@@ -21,14 +20,14 @@ html {
   font-family: Helvetica, Arial, Sans-Serif;
   height: 100%;
   font-weight: 200;
-  background: $color-jet-stream;
+  background: $color-white-ish;
 }
 
-#sidebar {
+blog-nav {
   position: fixed;
   z-index: 1000;
   width: 60px;
-  background: linear-gradient(to bottom, $color-dawn, $color-dark-matter);
+  background: linear-gradient(to bottom, $color-white-ish, white);
   @include shadow(m);
   top: 0;
   bottom: 0;
@@ -36,6 +35,28 @@ html {
   transition: width 0.3s ease-out;
   &:hover {
     width: 250px;
+    a {
+      .name {
+        display: inline;
+      }
+    }
+  }
+  a {
+    background-color: $color-white-ish;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    .name {
+      display: none;
+    }
+    &:hover {
+      background-color: $color-gray-ish;
+    }
+    &.active {
+      background-color: $color-black-ish;
+      color: white;
+    }
   }
 }
 
@@ -70,7 +91,7 @@ p {
     "menu menu main main main main"
     "footer footer footer footer footer footer";
   grid-gap: 10px;
-  background-color: $color-jet-stream;
+  background-color: $color-white-ish;
   padding: 10px;
 }
 .grid-container > div {
