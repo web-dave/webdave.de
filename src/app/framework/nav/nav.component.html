@@ -1,11 +1,15 @@
 <div class="vertical-menu">
-  <a href="#" class="active">
+  <a [routerLink]="['/start']" class="active">
     <span class="icon">🏡</span>
     <span class="name">Home</span>
   </a>
-  <a href="#">
+  <a [routerLink]="['/blog']">
     <span class="icon">📰</span>
     <span class="name">Blog</span>
+  </a>
+  <a [routerLink]="['/impressum']">
+    <span class="icon">🔮</span>
+    <span class="name">Impressum</span>
   </a>
 
 </div>
