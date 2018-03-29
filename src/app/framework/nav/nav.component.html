@@ -3,13 +3,13 @@
     <span class="icon">🏡</span>
     <span class="name">Home</span>
   </a>
-  <a [routerLink]="['/blog']">
-    <span class="icon">📰</span>
-    <span class="name">Blog</span>
-  </a>
   <a [routerLink]="['/impressum']">
     <span class="icon">🔮</span>
     <span class="name">Impressum</span>
+  </a>
+  <a [routerLink]="['/blog']" *ngFor="post of posts">
+    <span class="icon">📰</span>
+    <span class="name">post</span>
   </a>
 
 </div>

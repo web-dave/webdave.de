@@ -7,11 +7,16 @@ import { Component, OnInit, Input, OnChanges } from "@angular/core";
 })
 export class ContentComponent implements OnInit, OnChanges {
   @Input() name: string;
+  @Input() post: boolean;
   url: string;
   constructor() {}
 
   ngOnInit() {}
   ngOnChanges() {
-    this.url = `assets/posts/${this.name}.md`;
+    if (this.post) {
+      this.url = `assets/posts/${this.name}.md`;
+    } else {
+      this.url = `assets/content/${this.name}.md`;
+    }
   }
 }
