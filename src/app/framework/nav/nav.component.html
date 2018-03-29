@@ -7,9 +7,9 @@
     <span class="icon">🔮</span>
     <span class="name">Impressum</span>
   </a>
-  <a [routerLink]="['/blog']" *ngFor="post of posts">
+  <a [routerLink]="['/blog',post]" *ngFor="let post of posts">
     <span class="icon">📰</span>
-    <span class="name">post</span>
+    <span class="name">{{post}}</span>
   </a>
 
 </div>

@@ -6,14 +6,8 @@ import { BlogComponent } from "./blog/blog.component";
 
 const routes: Routes = [
   {
-    path: "",
-    component: BlogComponent,
-    children: [
-      {
-        path: ":name",
-        component: PostComponent
-      }
-    ]
+    path: ":name",
+    component: PostComponent
   }
 ];
 
