@@ -9,7 +9,11 @@ posts.sort((a, b) => {
   );
 });
 
-const arr = JSON.stringify(posts.filter(name => name.indexOf(".md") !== -1));
+const arr = JSON.stringify(
+  posts
+    .filter(name => name.indexOf(".md") !== -1)
+    .map(post => post.replace(".md", ""))
+);
 const jsonContent = `
 {
   "posts": ${arr}
