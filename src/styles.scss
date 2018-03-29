@@ -20,7 +20,7 @@ html {
   font-family: Helvetica, Arial, Sans-Serif;
   height: 100%;
   font-weight: 200;
-  background: $color-white-ish;
+  background: rgb(113, 229, 223);
 }
 
 blog-nav {
@@ -91,12 +91,11 @@ p {
     "menu menu main main main main"
     "footer footer footer footer footer footer";
   grid-gap: 10px;
-  background-color: $color-white-ish;
+  background-color: rgba(113, 229, 223, 0.2);
   padding: 10px;
 }
 .grid-container > div {
-  background-color: white;
-  text-align: center;
+  background-color: rgba(113, 229, 223, 0.4);
   padding: 20px 0;
   font-size: 30px;
 }
