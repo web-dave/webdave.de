@@ -6,6 +6,7 @@ import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from "./app.component";
 import { FrameworkModule } from "./framework/framework.module";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,6 +14,7 @@ import { FrameworkModule } from "./framework/framework.module";
     BrowserModule,
     AppRoutingModule,
     FrameworkModule,
+    HttpClientModule,
     MarkdownModule.forRoot()
   ],
   providers: [],
