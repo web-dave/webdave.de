@@ -10,10 +10,6 @@ const routes: Routes = [
     component: BlogComponent,
     children: [
       {
-        path: "",
-        component: PostListComponent
-      },
-      {
         path: ":name",
         component: PostComponent
       }
