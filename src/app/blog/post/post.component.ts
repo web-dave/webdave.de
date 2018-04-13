@@ -1,13 +1,14 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "blog-post",
   templateUrl: "./post.component.html",
-  styleUrls: ["./post.component.scss"]
+  styleUrls: ["./post.component.scss"],
+  encapsulation: ViewEncapsulation.None
 })
 export class PostComponent implements OnInit {
-  private url: string;
+  public url: string;
 
   constructor(private route: ActivatedRoute) {}
 

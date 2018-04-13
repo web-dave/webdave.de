@@ -15,40 +15,36 @@ $color-black-ish: #171923;
 
 body,
 html {
+  width: 100%;
   padding: 0;
   margin: 0;
   font-family: Helvetica, Arial, Sans-Serif;
   height: 100%;
   font-weight: 200;
-  // background: rgb(113, 229, 223);
 }
-
-.grid-container {
-  display: grid;
-  grid-template-areas:
-    "header header header header header header"
-    "main main main main main main"
-    "footer footer footer footer footer footer";
-  grid-gap: 10px;
-  background-color: rgba(113, 229, 223, 0.2);
-  padding: 10px;
-
+.container {
+  padding: 0 2.8%;
   > div {
-    background-color: rgba(113, 229, 223, 0.4);
-    padding: 20px 0;
-    font-size: 30px;
-
+    margin: 0;
+    font-size: 21px;
     &.header {
       background-color: #333;
-      grid-area: header;
+      padding: 0.6%;
       @include shadow(m);
     }
     &.content {
-      grid-area: main;
-      @include shadow(m);
+      .preview {
+        padding: 2.6% 2.8%;
+        @include shadow(m);
+        @include shadow(m);
+        margin: 2.6% 0;
+        background-color: rgba(113, 229, 223, 0.4);
+      }
     }
     &.footer {
-      grid-area: footer;
+      background-color: #333;
+      color: $color-white-ish;
+      padding: 1%;
       @include shadow(m);
     }
   }
