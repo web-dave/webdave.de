@@ -1,3 +1,5 @@
+<strong>Don't get lost in structure</strong>
+
 Most of us started developing Angular apps with one of these many tutorials out in the internet.
 
 All the authors - which I belong to as well - have done a great job showing the basics and these "how-to-get-started"-articles. But these are very small example projects that are far away from a real world app. The real challenge comes mostly if the code grows starting with a certain size of the codebase.
