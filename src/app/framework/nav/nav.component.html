@@ -1,15 +1,21 @@
-<div class="vertical-menu">
-  <a [routerLink]="['/start']" class="active">
-    <span class="icon">🏡</span>
-    <span class="name">Home</span>
-  </a>
-  <a [routerLink]="['/impressum']">
-    <span class="icon">🔮</span>
-    <span class="name">Impressum</span>
-  </a>
-  <a [routerLink]="['/blog',post]" *ngFor="let post of posts">
-    <span class="icon">📰</span>
-    <span class="name">{{post}}</span>
-  </a>
-
-</div>
+<ul>
+  <li>
+    <a [routerLink]="['/start']" class="active">
+      <span class="icon">🏡</span>
+      <span class="name">Home</span>
+    </a>
+  </li>
+  <li>
+    <a [routerLink]="['/blog']">
+      <span class="icon">✍🏻</span>
+      <span class="name">Blog</span>
+    </a>
+  </li>
+  <li style="float:right">
+    <a [routerLink]="['/impressum']">
+      <span class="icon">🔮</span>
+      <span class="name">Impressum</span>
+    </a>
+  </li>
+</ul>
+<!-- <li><a href="#contact">Contact</a></li> -->
