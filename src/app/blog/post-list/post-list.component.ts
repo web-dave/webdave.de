@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { BlogsService, post } from "../../framework/shared/blogs.service";
-import { Subscription } from "rxjs/Subscription";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "blog-post-list",
