@@ -16,7 +16,7 @@ npm install @ngx-translate/core –save
 
 Then we have to import the TranslateModule into our application as you would any other module.
 
-```typescript
+```javascript
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { TranslateModule } from "@ngx-translate/core";
@@ -32,7 +32,7 @@ export class AppModule {}
 
 Now we have to initialize the TranslateModule
 
-```typescript
+```javascript
 ...
 export class AppModule {
   constructor(private translate: TranslateService) {
@@ -46,6 +46,7 @@ export class AppModule {
 ```
 
 #### Define the translations
+
 Put your translation files in a json file which will be imported by the TranslateHttpLoader
 The following translations should be stored in en.json
 
@@ -58,7 +59,7 @@ The following translations should be stored in en.json
 4.  Use the Service, Pipe or the Directive
     TranslateService
 
-```typescript
+```javascript
 // app.component.ts
 translate.get("HELLO", { value: "world" }).subscribe((res: string) => {
   console.log(res); //=> 'hello world'
@@ -67,9 +68,12 @@ translate.get("HELLO", { value: "world" }).subscribe((res: string) => {
 
 TranslatePipe
 
-```typescript
+```javascript
 // app.component.ts
-param = {value: 'world'}
+param = { value: "world" };
+```
+
+```html
 // app.component.html
 {{ 'HELLO' | translate:param }}
 ```
@@ -82,9 +86,12 @@ TranslateDirective
 ```
 
 #### pluralization and gernderization with ngx-translate-messageformat-compiler
+
 Compiler for ngx-translate that uses messageformat.js to compile translations.
 It uses ICU syntax for handling pluralization and gender
+
 #### Installation
+
 This assumes that you've already installed <a href="https://github.com/ngx-translate/core" rel="noopener" target="_blank">ngx-translate</a>
 
 ```bash
@@ -94,7 +101,7 @@ npm install ngx-translate-messageformat-compiler messageformat --save
 Setup
 You need to configure `TranslateModule` so it uses `TranslateMessageFormatCompiler` as the compiler:
 
-```typescript
+```javascript
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { TranslateCompiler, TranslateModule } from '@ngx-translate/core';
@@ -121,6 +128,7 @@ export class AppModule {
 Please note that while you can still use nesting in your translations (`{ login: { welcome: 'Welcome!' }}`) with respective keys (`login.welcome`), you lose the ability to access object properties in your placeholders: `'Hello {name.first} {name.last}'` won't work. Also note that this format uses single braces instead of double braces for placeholders.
 
 #### Load translation files
+
 To load the files we have to define a loader.
 By default, there is no loader available. You can add translations manually using setTranslation but it is better to use a loader. You can write your own loader, or import an existing one. For example you can use the TranslateHttpLoader that will load translations from files using HttpClient.
 To use it, you need to install the http-loader package from @ngx-translate:
@@ -132,7 +140,7 @@ npm install @ngx-translate/http-loader --save
 There are two types of translation files out there. .json and .po
 There is a loader for po files aswell but it uses the deprecated Http service so we have to go with our own (because of HttpClient):
 
-```typescript
+```javascript
 import { HttpClient } from "@angular/common/http";
 
 import { Observable } from "rxjs/Observable";
@@ -180,7 +188,7 @@ export class TranslatePoHttpLoader implements TranslateLoader {
 
 Config the translateService to load the translation from files and use the TranslateMessageFormatCompiler
 
-```typescript
+```javascript
 import {
   TranslateCompiler,
   TranslateLoader,
@@ -272,7 +280,7 @@ How to use it in templates:
 <h4>{{ 'words' | translate:{count:7} }}</h4>
 ```
 
-```typescript
+```javascript
 // Use the service
 Controller: this.translate.get("harish").subscribe(h => console.log(h)); //=> Coder!!!!!!
 ```
