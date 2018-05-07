@@ -23,14 +23,15 @@
     "@angular/http": "6.0.0",
     "@angular/platform-browser": "6.0.0",
     "@angular/platform-browser-dynamic": "6.0.0",
+    "@angular/pwa": "^0.6.0",
     "@angular/router": "6.0.0",
     "core-js": "^2.5.5",
     "marked": "^0.3.17",
     "ngx-markdown": "^1.6.0",
     "prismjs": "~1.12.2",
     "rxjs": "6.1.0",
-    "zone.js": "0.8.26",
-    "rxjs-compat": "^6.0.0-rc.0"
+    "rxjs-compat": "^6.0.0-rc.0",
+    "zone.js": "0.8.26"
   },
   "devDependencies": {
     "@angular/cli": "^6.0.0",
