@@ -1,0 +1,40 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)"
+  >
+    <mat-toolbar></mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/start']" class="active">
+        <span class="icon">🏡</span>
+        <span class="name">Home</span></a
+      >
+      <a mat-list-item [routerLink]="['/blog']">
+        <span class="icon">✍🏻</span>
+        <span class="name">Blog</span></a
+      >
+      <a mat-list-item [routerLink]="['/impressum']">
+        <span class="icon">🔮</span>
+        <span class="name">Impressum</span></a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>@webdave_de</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+      "url": "assets/posts/code_extentions.md",
+      "name": "code_extentions",
+      "title": "Useful @code extentions for Angular developers",
+      "preview":
+        "<strong>Useful @code extentions for Angular developers</strong>\r\n\r\nMy IDE of choice is visual studio code.\r\nI love it because of it lightweight and fast boot up.\r\n\r\nBut its real power comes with the p"
+    },
+    {
       "url": "assets/posts/translate.md",
       "name": "translate",
       "title": "Translate (i18n) your Angular Apps with @ngx-translate/core",

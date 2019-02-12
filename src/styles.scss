@@ -1,54 +1,8 @@
-$color-white-ish: #f4f8fd;
-$color-gray-ish: #a6b8d2;
-$color-black-ish: #171923;
+@import "../node_modules/@angular/material/prebuilt-themes/purple-green.css";
 
-@mixin shadow($size) {
-  @if ($size == s) {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  } @else if($size == m) {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  } @else if($size == l) {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  }
-}
+@import "../node_modules/prismjs/themes/prism-tomorrow.css";
 
-body,
-html {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  font-family: Helvetica, Arial, Sans-Serif;
-  height: 100%;
-  font-weight: 200;
+body {
+  background-color: #303030;
+  color: #fff;
 }
-.container {
-  padding: 0 2.8%;
-  > div {
-    margin: 0;
-    font-size: 21px;
-    &.header {
-      background-color: #333;
-      padding: 0.6%;
-      @include shadow(m);
-    }
-    &.content {
-      .preview {
-        padding: 2.6% 2.8%;
-        @include shadow(m);
-        @include shadow(m);
-        margin: 2.6% 0;
-        background-color: rgba(113, 229, 223, 0.4);
-      }
-    }
-    &.footer {
-      background-color: #333;
-      color: $color-white-ish;
-      padding: 1%;
-      @include shadow(m);
-    }
-  }
-}
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
