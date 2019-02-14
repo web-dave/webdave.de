@@ -9,17 +9,17 @@
   >
     <mat-toolbar></mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item [routerLink]="['/start']" class="active">
-        <span class="icon">🏡</span>
-        <span class="name">Home</span></a
+      <a mat-list-item [routerLink]="['/start']" class="active"
+        ><i class="fas fa-home"></i> <span>Home</span></a
       >
-      <a mat-list-item [routerLink]="['/blog']">
-        <span class="icon">✍🏻</span>
-        <span class="name">Blog</span></a
+      <a mat-list-item [routerLink]="['/blog']"
+        ><i class="fas fa-blog"></i> <span>Blog</span></a
       >
       <a mat-list-item [routerLink]="['/impressum']">
-        <span class="icon">🔮</span>
-        <span class="name">Impressum</span></a
+        <i class="fas fa-info"></i> <span>Impressum</span></a
+      >
+      <a mat-list-item (click)="opendsvgoinfo()">
+        <i class="fas fa-shield-alt"></i> <span>DSVGO</span></a
       >
     </mat-nav-list>
   </mat-sidenav>

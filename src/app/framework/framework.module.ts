@@ -17,8 +17,10 @@ import {
   MatGridListModule,
   MatCardModule,
   MatMenuModule,
-  MatChipsModule
+  MatChipsModule,
+  MatSnackBarModule
 } from "@angular/material";
+import { DSVGOComponent } from "./dsvgo/dsvgo.component";
 
 @NgModule({
   imports: [
@@ -34,13 +36,15 @@ import {
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-    MatChipsModule
+    MatChipsModule,
+    MatSnackBarModule
   ],
   declarations: [
     StartComponent,
     ImpressumComponent,
     ContentComponent,
-    ShellComponent
+    ShellComponent,
+    DSVGOComponent
   ],
   exports: [
     ShellComponent,
@@ -48,6 +52,7 @@ import {
     ImpressumComponent,
     ContentComponent
   ],
+  entryComponents: [DSVGOComponent],
   providers: [BlogsService]
 })
 export class FrameworkModule {}
