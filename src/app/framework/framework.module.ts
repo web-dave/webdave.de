@@ -52,7 +52,6 @@ import { DSVGOComponent } from "./dsvgo/dsvgo.component";
     ImpressumComponent,
     ContentComponent
   ],
-  entryComponents: [DSVGOComponent],
-  providers: [BlogsService]
+  entryComponents: [DSVGOComponent]
 })
 export class FrameworkModule {}

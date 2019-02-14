@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs";
 
-@Injectable()
+@Injectable({ providedIn: "root" })
 export class BlogsService {
   constructor(private http: HttpClient) {}
 
