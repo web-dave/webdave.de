@@ -7,18 +7,18 @@ import { Observable } from "rxjs";
 export class BlogsService {
   constructor(private http: HttpClient) {}
 
-  getPostList(): Observable<post[]> {
+  getPostList(): Observable<Post[]> {
     return this.http
-      .get<postsObj>("assets/posts/posts.json")
+      .get<PostsObj>("assets/posts/posts.json")
       .pipe(map(popj => popj.posts));
   }
 }
 
-interface postsObj {
-  posts: post[];
+interface PostsObj {
+  posts: Post[];
 }
 
-export interface post {
+export interface Post {
   url: string;
   name: string;
   title: string;

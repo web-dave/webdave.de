@@ -1,6 +1,6 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
-    #drawer
+    #sidenav
     class="sidenav"
     fixedInViewport="true"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
@@ -9,16 +9,16 @@
   >
     <mat-toolbar></mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item [routerLink]="['/start']" class="active"
+      <a mat-list-item [routerLink]="['/start']" (click)="sidenav.close()"
         ><i class="fas fa-home"></i> <span>Home</span></a
       >
-      <a mat-list-item [routerLink]="['/blog']"
+      <a mat-list-item [routerLink]="['/blog']" (click)="sidenav.close()"
         ><i class="fas fa-blog"></i> <span>Blog</span></a
       >
-      <a mat-list-item [routerLink]="['/impressum']">
+      <a mat-list-item [routerLink]="['/impressum']" (click)="sidenav.close()">
         <i class="fas fa-info"></i> <span>Impressum</span></a
       >
-      <a mat-list-item (click)="opendsvgoinfo()">
+      <a mat-list-item (click)="opendsvgoinfo()" (click)="sidenav.close()">
         <i class="fas fa-shield-alt"></i> <span>DSVGO</span></a
       >
     </mat-nav-list>
@@ -29,7 +29,7 @@
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
-        (click)="drawer.toggle()"
+        (click)="sidenav.toggle()"
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
