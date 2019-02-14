@@ -18,3 +18,11 @@
 .spacer {
   flex: 1 1 auto;
 }
+.socialIcons_link {
+  mat-chip {
+    background-color: #616161c5;
+    a {
+      color: #ffffff;
+    }
+  }
+}
