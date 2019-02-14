@@ -1,0 +1,35 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.socialIcons_link {
+  mat-chip {
+    background-color: #616161c5;
+    a {
+      color: #ffffff;
+    }
+  }
+}
+mat-nav-list {
+  a {
+    span {
+      margin-left: 20px;
+    }
+  }
+}

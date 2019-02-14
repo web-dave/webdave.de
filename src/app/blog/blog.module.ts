@@ -2,14 +2,34 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
 import { BlogRoutingModule } from "./blog-routing.module";
-import { PostListComponent } from "./post-list/post-list.component";
 import { PostComponent } from "./post/post.component";
-import { BlogComponent } from "./blog/blog.component";
 import { MarkdownModule } from "ngx-markdown";
-import { PreviewComponent } from './preview/preview.component';
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule,
+  MatGridListModule,
+  MatCardModule,
+  MatMenuModule
+} from "@angular/material";
 
 @NgModule({
-  imports: [CommonModule, BlogRoutingModule, MarkdownModule.forChild()],
-  declarations: [PostListComponent, PostComponent, BlogComponent, PreviewComponent]
+  imports: [
+    CommonModule,
+    BlogRoutingModule,
+    MarkdownModule.forChild(),
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule
+  ],
+  declarations: [PostComponent, DashboardComponent]
 })
 export class BlogModule {}

@@ -1,0 +1,64 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)"
+  >
+    <mat-toolbar></mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/start']" class="active"
+        ><i class="fas fa-home"></i> <span>Home</span></a
+      >
+      <a mat-list-item [routerLink]="['/blog']"
+        ><i class="fas fa-blog"></i> <span>Blog</span></a
+      >
+      <a mat-list-item [routerLink]="['/impressum']">
+        <i class="fas fa-info"></i> <span>Impressum</span></a
+      >
+      <a mat-list-item (click)="opendsvgoinfo()">
+        <i class="fas fa-shield-alt"></i> <span>DSVGO</span></a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>@webdave_de</span>
+      <span class="spacer"></span>
+      <mat-chip-list class="socialIcons_link">
+        <mat-chip
+          ><a
+            href="https://twitter.com/webdave_de"
+            target="_blank"
+            class="fab fa-twitter"
+          ></a
+        ></mat-chip>
+        <mat-chip
+          ><a
+            href="https://www.linkedin.com/in/david-muellerchen"
+            target="_blank"
+            class="fab fa-linkedin"
+          ></a
+        ></mat-chip>
+        <mat-chip
+          ><a
+            href="https://www.instagram.com/webdave_de"
+            target="_blank"
+            class="fab fa-instagram"
+          ></a
+        ></mat-chip>
+      </mat-chip-list>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

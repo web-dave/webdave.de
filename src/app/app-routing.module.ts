@@ -13,6 +13,10 @@ const routes: Routes = [
     path: "start",
     component: StartComponent
   },
+  // {
+  //   path: "start/clients",
+  //   component: StartComponent
+  // },
   {
     path: "impressum",
     component: ImpressumComponent
@@ -20,6 +24,11 @@ const routes: Routes = [
   {
     path: "blog",
     loadChildren: "./blog/blog.module#BlogModule"
+  },
+  {
+    path: "**",
+    redirectTo: "/start",
+    pathMatch: "full"
   }
 ];
 

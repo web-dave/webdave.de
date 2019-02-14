@@ -7,6 +7,15 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { FrameworkModule } from "./framework/framework.module";
 import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {
+  MatGridListModule,
+  MatCardModule,
+  MatMenuModule,
+  MatIconModule,
+  MatButtonModule
+} from "@angular/material";
+import { LayoutModule } from "@angular/cdk/layout";
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +24,14 @@ import { HttpClientModule } from "@angular/common/http";
     AppRoutingModule,
     FrameworkModule,
     HttpClientModule,
-    MarkdownModule.forRoot()
+    MarkdownModule.forRoot(),
+    BrowserAnimationsModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
