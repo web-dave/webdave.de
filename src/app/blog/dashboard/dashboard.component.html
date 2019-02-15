@@ -3,7 +3,7 @@
   <mat-grid-list cols="2" rowHeight="350px">
     <mat-grid-tile
       *ngFor="let post of (posts$ | async); let i = index"
-      [colspan]="i === 0 ? 2 : 1"
+      [colspan]="2"
       [rowspan]="1"
     >
       <mat-card class="dashboard-card">
