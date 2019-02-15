@@ -1,0 +1,17 @@
+<div class="grid-container">
+  <h1 class="mat-h1">references</h1>
+  <!-- <mat-grid-list cols="3" rowHeight="300px" colWidth="300px">
+    <mat-grid-tile
+      *ngFor="let client of (clients$ | async)"
+      colspan="1"
+      rowspan="1"
+    >
+      <mat-card class="client-card">
+        <img mat-card-image [src]="getImgUrl(client)" [alt]="client | title" />
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list> -->
+  <span class="img-span" *ngFor="let client of (clients$ | async)">
+    <img mat-card-image [src]="getImgUrl(client)" [alt]="client | title" />
+  </span>
+</div>

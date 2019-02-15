@@ -12,6 +12,10 @@ export class BlogsService {
       .get<PostsObj>("assets/posts/posts.json")
       .pipe(map(popj => popj.posts));
   }
+
+  getClients(): Observable<string[]> {
+    return this.http.get<string[]>("assets/content/clients.json");
+  }
 }
 
 interface PostsObj {

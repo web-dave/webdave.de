@@ -21,6 +21,8 @@ import {
   MatSnackBarModule
 } from "@angular/material";
 import { DSVGOComponent } from "./dsvgo/dsvgo.component";
+import { TitlePipe } from './title.pipe';
+import { ClientsComponent } from './clients/clients.component';
 
 @NgModule({
   imports: [
@@ -44,7 +46,9 @@ import { DSVGOComponent } from "./dsvgo/dsvgo.component";
     ImpressumComponent,
     ContentComponent,
     ShellComponent,
-    DSVGOComponent
+    DSVGOComponent,
+    TitlePipe,
+    ClientsComponent
   ],
   exports: [
     ShellComponent,
