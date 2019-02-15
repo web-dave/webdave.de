@@ -1,0 +1,67 @@
+{
+  "angularBeginner": {
+    "duration": "~2 Days",
+    "title": "Angular beginner Workshop",
+    "targetgroup": "This workshop is aimed at Angular rookies, no prior knowledge except Javascript and HTML required.",
+    "topics": [
+      "TypeScript ",
+      "Angular CLI",
+      "@NgModule ",
+      "Debug ",
+      "@Components ",
+      "Routing ",
+      "Services ",
+      "*ngIf ",
+      "*ngFor ",
+      "@Input ",
+      "@Output ",
+      "Custom Types ",
+      "Route Params ",
+      "@Pipe ",
+      "@Directives ",
+      "Forms ",
+      "Guards"
+    ]
+  },
+  "angularAdvanced": {
+    "duration": "calculated from the Modules",
+    "title": "Angular advanced Workshop",
+    "targetgroup": "This workshop is for developers who already have experience with Angular. Here you can find common topics from the Enterprise world",
+    "topics": [
+      "Unittesting (~1 Days)",
+      "Angular Elements (~1/2 Days)",
+      "ngx-translate (~1/2 Days)",
+      "ChangeDetection (~1/2 Days)",
+      "@ngrx/store (~1 Days)",
+      "Library (~1 Days)",
+      "Architectur (~1/2 Days)"
+    ]
+  },
+
+  "JavaScriptEssential": {
+    "duration": "~1 Day",
+    "title": "JavaScript Essential Workshop",
+    "targetgroup": "This workshop is aimed at JavaScript rookies, no prior knowledge required.",
+    "topics": [
+      "Integrated Development Environment",
+      "History ",
+      "Introduction to HTML",
+      "Introduction to CSS",
+      "Embedding JavaScript in HTML",
+      "Synchronous and asynchronous JavaScript",
+      "Debugging in Google",
+      "Cross-Browser compatibility",
+      "JavaScript features",
+      "JavaScript syntax and rules",
+      "Strict mode",
+      "Reserved words",
+      "Variables",
+      "Data Types",
+      "Operators",
+      "Control Structures",
+      "Functions",
+      "Objects",
+      "Document Object Model"
+    ]
+  }
+}

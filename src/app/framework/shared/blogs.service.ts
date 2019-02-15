@@ -16,6 +16,10 @@ export class BlogsService {
   getClients(): Observable<string[]> {
     return this.http.get<string[]>("assets/content/clients.json");
   }
+
+  getWorkshops(): Observable<any> {
+    return this.http.get<any>("assets/content/workshops.json");
+  }
 }
 
 interface PostsObj {

@@ -1,0 +1,77 @@
+<mat-card class="intro">
+  <mat-card-content>
+    <p>
+      I offer workshops in different areas. Feel free to contact me for more
+      information. Here are my favorite workshops. If you can not find a
+      suitable workshop, let us talk about it and make it possible
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<mat-accordion class="headers-align" *ngIf="workshops">
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ workshops.angularBeginner.title }}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{ workshops.angularBeginner.targetgroup }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-list>
+      <h3 mat-subheader>Topics</h3>
+      <mat-list-item *ngFor="let topic of workshops.angularBeginner.topics">
+        <i class="fas fa-circle"></i>
+        <h4 mat-line>{{ topic }}</h4>
+      </mat-list-item>
+    </mat-list>
+    <mat-action-row>
+      <button mat-button color="primary" (click)="nextStep()">Next</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ workshops.angularAdvanced.title }}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{ workshops.angularAdvanced.targetgroup }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-list>
+      <h3 mat-subheader>Topics</h3>
+      <mat-list-item *ngFor="let topic of workshops.angularAdvanced.topics">
+        <i class="far fa-circle"></i>
+        <h4 mat-line>{{ topic }}</h4>
+      </mat-list-item>
+    </mat-list>
+    <mat-action-row>
+      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+      <button mat-button color="primary" (click)="nextStep()">Next</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+  <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ workshops.JavaScriptEssential.title }}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{ workshops.JavaScriptEssential.targetgroup }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-list>
+      <h3 mat-subheader>Topics</h3>
+      <mat-list-item *ngFor="let topic of workshops.JavaScriptEssential.topics">
+        <i class="fas fa-circle"></i>
+        <h4 mat-line>{{ topic }}</h4>
+      </mat-list-item>
+    </mat-list>
+    <mat-action-row>
+      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+      <button mat-button color="primary" (click)="nextStep()">End</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>

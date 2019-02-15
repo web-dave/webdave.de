@@ -27,6 +27,10 @@ const routes: Routes = [
     loadChildren: "./blog/blog.module#BlogModule"
   },
   {
+    path: "workshops",
+    loadChildren: "./workshops/workshops.module#WorkshopsModule"
+  },
+  {
     path: "**",
     redirectTo: "/start",
     pathMatch: "full"

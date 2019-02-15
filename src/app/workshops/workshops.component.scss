@@ -1,0 +1,18 @@
+.headers-align {
+  .mat-expansion-panel-header-title,
+  .mat-expansion-panel-header-description {
+    flex-basis: 0;
+  }
+  .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.intro {
+  height: 500px;
+  width: 96%;
+  color: #000;
+  font-weight: bold;
+  background-image: url("assets/images/webdave_gde_badge.jpg");
+  background-size: cover;
+}
