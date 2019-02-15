@@ -5,7 +5,6 @@ import { ImpressumComponent } from "./impressum/impressum.component";
 import { StartComponent } from "./start/start.component";
 import { MarkdownModule } from "ngx-markdown";
 import { ContentComponent } from "./content/content.component";
-import { BlogsService } from "./shared/blogs.service";
 import { ShellComponent } from "./shell/shell.component";
 import { LayoutModule } from "@angular/cdk/layout";
 import {
@@ -21,8 +20,8 @@ import {
   MatSnackBarModule
 } from "@angular/material";
 import { DSVGOComponent } from "./dsvgo/dsvgo.component";
-import { TitlePipe } from './title.pipe';
-import { ClientsComponent } from './clients/clients.component';
+import { TitlePipe } from "./title.pipe";
+import { ClientsComponent } from "./clients/clients.component";
 
 @NgModule({
   imports: [
