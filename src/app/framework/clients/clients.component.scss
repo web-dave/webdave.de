@@ -1,36 +1,75 @@
-.grid-container {
-  margin: 20px;
+div {
+  &.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    float: left;
+    width: 180px;
+    height: 275px;
+    position: relative;
+    border: 2px solid #fff;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    border-radius: 4px;
+    &:hover {
+      border: 2px solid #777;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      margin-top: 5px;
+      vertical-align: middle;
+    }
+    .desc {
+      // padding-bottom: 15px;
+      // padding-top: 15px;
+      color: #fff;
+      bottom: 0;
+      position: absolute;
+      width: 180px;
+      height: 50px;
+      background-color: #303030;
+      line-height: 50px;
+      overflow: hidden;
+      text-align: center;
+    }
+  }
 }
 
-.dashboard-card {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
-}
+// .grid-container {
+//   margin: 20px;
+// }
 
-.more-button {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-}
+// .dashboard-card {
+//   position: absolute;
+//   top: 15px;
+//   left: 15px;
+//   right: 15px;
+//   bottom: 15px;
+// }
 
-.dashboard-card-content {
-  text-align: center;
-}
+// .more-button {
+//   position: absolute;
+//   top: 5px;
+//   right: 10px;
+// }
+
+// .dashboard-card-content {
+//   text-align: center;
+// }
+
 // .client-card {
 //   padding: 5px;
 //   max-width: 400px;
 // }
 
-.img-span {
-  height: 250px;
-  width: 250px;
-  .mat-card-image {
-    margin: 30px;
-    background-color: #fff;
-    background-size: cover;
-    max-width: 250px;
-  }
-}
+// .img-span {
+//   height: 250px;
+//   width: 250px;
+//   .mat-card-image {
+//     margin: 30px;
+//     background-color: #fff;
+//     background-size: cover;
+//     max-width: 250px;
+//   }
+// }

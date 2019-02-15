@@ -4,7 +4,7 @@
     class="sidenav"
     fixedInViewport="true"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [mode]="'over'"
     [opened]="!(isHandset$ | async)"
   >
     <mat-toolbar></mat-toolbar>
@@ -33,7 +33,7 @@
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>@webdave_de</span>
+      <span class="spacer">@webdave_de</span>
       <span class="spacer"></span>
       <mat-chip-list class="socialIcons_link">
         <mat-chip

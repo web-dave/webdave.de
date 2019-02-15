@@ -6,8 +6,10 @@ import { Pipe, PipeTransform } from "@angular/core";
 export class TitlePipe implements PipeTransform {
   transform(value: string): string {
     return value
-      .replace("_", " ")
+      .split("_")
+      .join(" ")
       .replace(".jpg", "")
+      .replace(".svg", "")
       .replace(".png", "");
   }
 }
