@@ -10,9 +10,10 @@ import {
   MatButtonModule,
   MatCardModule
 } from "@angular/material";
+import { WorkshopDetailsComponent } from "./workshop-details/workshop-details.component";
 
 @NgModule({
-  declarations: [WorkshopsComponent],
+  declarations: [WorkshopsComponent, WorkshopDetailsComponent],
   imports: [
     CommonModule,
     WorkshopsRoutingModule,

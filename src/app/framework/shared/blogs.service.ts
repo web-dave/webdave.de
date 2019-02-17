@@ -32,3 +32,10 @@ export interface Post {
   title: string;
   preview: string;
 }
+
+export interface IWorkshop {
+  duration: string;
+  targetgroup: string;
+  title: string;
+  topics: string[];
+}
