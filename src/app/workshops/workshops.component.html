@@ -14,11 +14,9 @@
       <mat-panel-title>
         {{ workshops.angularBeginner.title }}
       </mat-panel-title>
-      <mat-panel-description>
-        {{ workshops.angularBeginner.targetgroup }}
-      </mat-panel-description>
     </mat-expansion-panel-header>
     <mat-list>
+      <h3 mat-header>{{ workshops.angularBeginner.targetgroup }}</h3>
       <h3 mat-subheader>Topics</h3>
       <mat-list-item *ngFor="let topic of workshops.angularBeginner.topics">
         <i class="fas fa-circle"></i>
@@ -35,12 +33,10 @@
       <mat-panel-title>
         {{ workshops.angularAdvanced.title }}
       </mat-panel-title>
-      <mat-panel-description>
-        {{ workshops.angularAdvanced.targetgroup }}
-      </mat-panel-description>
     </mat-expansion-panel-header>
 
     <mat-list>
+      <h3 mat-header>{{ workshops.angularAdvanced.targetgroup }}</h3>
       <h3 mat-subheader>Topics</h3>
       <mat-list-item *ngFor="let topic of workshops.angularAdvanced.topics">
         <i class="far fa-circle"></i>
@@ -57,12 +53,10 @@
       <mat-panel-title>
         {{ workshops.JavaScriptEssential.title }}
       </mat-panel-title>
-      <mat-panel-description>
-        {{ workshops.JavaScriptEssential.targetgroup }}
-      </mat-panel-description>
     </mat-expansion-panel-header>
 
     <mat-list>
+      <h3 mat-header>{{ workshops.JavaScriptEssential.targetgroup }}</h3>
       <h3 mat-subheader>Topics</h3>
       <mat-list-item *ngFor="let topic of workshops.JavaScriptEssential.topics">
         <i class="fas fa-circle"></i>
