@@ -10,9 +10,6 @@ import { Observable } from "rxjs";
 })
 export class ClientsComponent implements OnInit {
   clients$: Observable<string[]>;
-  getImgUrl(client: string) {
-    return `assets/images/clients/${client}`;
-  }
   constructor(private service: BlogsService) {}
   ngOnInit() {
     this.clients$ = this.service.getClients();

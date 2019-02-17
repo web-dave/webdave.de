@@ -22,6 +22,8 @@ import {
 import { DSVGOComponent } from "./dsvgo/dsvgo.component";
 import { TitlePipe } from "./title.pipe";
 import { ClientsComponent } from "./clients/clients.component";
+import { ClientCarouselComponent } from "./client-carousel/client-carousel.component";
+import { ClientComponent } from "./client/client.component";
 
 @NgModule({
   imports: [
@@ -47,7 +49,9 @@ import { ClientsComponent } from "./clients/clients.component";
     ShellComponent,
     DSVGOComponent,
     TitlePipe,
-    ClientsComponent
+    ClientsComponent,
+    ClientCarouselComponent,
+    ClientComponent
   ],
   exports: [
     ShellComponent,

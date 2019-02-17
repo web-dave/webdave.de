@@ -1,9 +1,4 @@
-<div class="gallery" *ngFor="let client of (clients$ | async)">
-  <img
-    [src]="getImgUrl(client)"
-    [alt]="client | title"
-    width="600"
-    height="400"
-  />
-  <div class="desc">{{ client | title }}</div>
-</div>
+<blog-client
+  *ngFor="let client of (clients$ | async)"
+  [clientname]="client"
+></blog-client>
