@@ -5,7 +5,6 @@
     fixedInViewport="true"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="'over'"
-    [opened]="!(isHandset$ | async)"
   >
     <mat-toolbar></mat-toolbar>
     <mat-nav-list>
