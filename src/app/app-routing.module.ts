@@ -1,39 +1,43 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
-import { StartComponent } from "./framework/start/start.component";
-import { ImpressumComponent } from "./framework/impressum/impressum.component";
-import { ClientsComponent } from "./framework/clients/clients.component";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { StartComponent } from './framework/start/start.component';
+import { ImpressumComponent } from './framework/impressum/impressum.component';
+import { ClientsComponent } from './framework/clients/clients.component';
 
 const routes: Routes = [
   {
-    path: "",
-    redirectTo: "/start",
-    pathMatch: "full"
+    path: '',
+    redirectTo: '/start',
+    pathMatch: 'full'
   },
   {
-    path: "start",
+    path: 'start',
     component: StartComponent
   },
   {
-    path: "clients",
+    path: 'clients',
     component: ClientsComponent
   },
   {
-    path: "impressum",
+    path: 'impressum',
     component: ImpressumComponent
   },
   {
-    path: "blog",
-    loadChildren: "./blog/blog.module#BlogModule"
+    path: 'blog',
+    loadChildren: './blog/blog.module#BlogModule'
   },
   {
-    path: "workshops",
-    loadChildren: "./workshops/workshops.module#WorkshopsModule"
+    path: 'workshops',
+    loadChildren: './workshops/workshops.module#WorkshopsModule'
   },
   {
-    path: "**",
-    redirectTo: "/start",
-    pathMatch: "full"
+    path: 'ngx-img-cropper',
+    loadChildren: './cropper/cropper.module#CropperModule'
+  },
+  {
+    path: '**',
+    redirectTo: '/start',
+    pathMatch: 'full'
   }
 ];
 
