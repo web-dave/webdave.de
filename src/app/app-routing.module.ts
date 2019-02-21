@@ -14,10 +14,10 @@ const routes: Routes = [
     path: 'start',
     component: StartComponent
   },
-  {
-    path: 'clients',
-    component: ClientsComponent
-  },
+  // {
+  //   path: 'clients',
+  //   component: ClientsComponent
+  // },
   {
     path: 'impressum',
     component: ImpressumComponent
