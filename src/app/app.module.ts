@@ -16,6 +16,8 @@ import {
   MatButtonModule
 } from "@angular/material";
 import { LayoutModule } from "@angular/cdk/layout";
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,7 +33,8 @@ import { LayoutModule } from "@angular/cdk/layout";
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    LayoutModule
+    LayoutModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
