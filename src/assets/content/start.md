@@ -14,3 +14,17 @@ For larger teams, we highly recommend in-house training.
 
 Here I blog tutorials on current frontend topics and everything that helps me with my work.
 My blogs are written in english or german, depends on mood
+
+<img src="assets/images/2019-GDE-Angular-Badge_1.svg" alt="gde logo" width="167" height="134" style="align-self: center" />
+<img src="assets/images/2019-GDE-Web-Technologies-Badge_1.svg" alt="gde logo" width="167" height="134" style="align-self: center" />
+
+# Google Developer Expert
+
+I'm a <a href="https://developers.google.com/experts/people/david-muellerchen">Google Developer Expert</a> in web technologies and Angular.
+I feel so honored to be part of this awesome comnunity.
+
+## What is a GDE?
+
+I am not a Google employee.
+GDEs are a kind of connection between the Google product team and the community (that's you).
+You can reach us (we are about 250 GDEs) for help or assistance.
