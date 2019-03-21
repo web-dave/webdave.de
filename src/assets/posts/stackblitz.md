@@ -29,7 +29,7 @@ With StackBlitz, this is a no-brainer.
 Just visit
 
 ```bash
-https://StackBlitz.com/github/userName/repoName
+https://stackblitz.com/github/userName/repoName
 ```
 
 to open your master Branch in the Browser
@@ -37,7 +37,7 @@ to open your master Branch in the Browser
 or
 
 ```bash
-https://StackBlitz.com/github/userName/repoName/tree/branch
+https://stackblitz.com/github/userName/repoName/tree/branch
 ```
 
 to open a specific Branch
