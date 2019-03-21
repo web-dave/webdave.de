@@ -41,7 +41,7 @@ https://stackblitz.com/github/userName/repoName/tree/branch
 
 ...to open a specific Branch.
 
-StackBlitz can run your Javascript Project, no matter if the framework.
+StackBlitz can run your Javascript Project, no matter which framework framework you take.
 
 #### Set up for Karma and Jasmine
 
