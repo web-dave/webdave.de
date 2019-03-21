@@ -1,15 +1,15 @@
-<strong>I love Stackblitz</strong>
+<strong>I love StackBlitz</strong>
 
-Stackblitz is an awesome tool for sharing live examples and prototypes. But you can do even more. With Stackblitz, you can kick off a GitHub Repository with no effort.
+StackBlitz is an awesome tool for sharing live examples and prototypes. But you can do even more. With StackBlitz, you can kick off a GitHub Repository with no effort.
 And you can run unit tests, too.
 
-Here I wanna show how you can run your Karma/Jasmine tests in Stackblitz.
+Here I wanna show how you can run your Karma/Jasmine tests in StackBlitz.
 
 But first things first.
 
-### What is Stackblitz?
+### What is StackBlitz?
 
-Stackblitz is an online editor based on Visual Studio Code. You can use the same keyboard shortcuts which are available in your local installation.
+StackBlitz is an online editor based on Visual Studio Code. You can use the same keyboard shortcuts which are available in your local installation.
 
 #### my favourite key bindings
 
@@ -22,14 +22,14 @@ Stackblitz is an online editor based on Visual Studio Code. You can use the same
 | ctrl+d             | Set Multi Cursor. On the selected word and the next occurrence of that word |
 | ctrl+#             | comment the line where the cursor is located                                |
 
-#### Stackblitz and Github
+#### StackBlitz and Github
 
 Very often you wanna show your projects to someone, or wanna test something in a project.
 With StackBlitz, this is a no-brainer.
 Just visit
 
 ```bash
-https://stackblitz.com/github/userName/repoName
+https://StackBlitz.com/github/userName/repoName
 ```
 
 to open your master Branch in the Browser
@@ -37,16 +37,16 @@ to open your master Branch in the Browser
 or
 
 ```bash
-https://stackblitz.com/github/userName/repoName/tree/branch
+https://StackBlitz.com/github/userName/repoName/tree/branch
 ```
 
 to open a specific Branch
 
-Stackblitz can run your Javascript Project, no matter if the framework.
+StackBlitz can run your Javascript Project, no matter if the framework.
 
 #### set up for Karma and Jasmine
 
-To run your Unit Tests in Stackblitz you have to do some config in the `main.ts`.
+To run your Unit Tests in StackBlitz you have to do some config in the `main.ts`.
 
 ```ts
 // Import Jasmine from node_modules
@@ -70,7 +70,7 @@ window['jasmineRequire'] = jasmineRequire;
 // setup jasmine as a global var
 declare var jasmine;
 
-// Spec files to include in the Stackblitz tests
+// Spec files to include in the StackBlitz tests
 import './tests.sb.ts';
 
 //
@@ -107,7 +107,7 @@ We have to add it in the `styles.scss`
 Maybe you already noticed this line in the `main.ts`
 
 ```ts
-// Spec files to include in the Stackblitz tests
+// Spec files to include in the StackBlitz tests
 import './tests.sb.ts';
 ```
 
