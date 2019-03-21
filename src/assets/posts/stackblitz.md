@@ -13,14 +13,14 @@ StackBlitz is an online editor based on Visual Studio Code. You can use the same
 
 #### My favourite key bindings
 
-| keys               | Function                                                                    |
-| ------------------ | --------------------------------------------------------------------------- |
-| alt+key-up         | Move the line where the Cursor is located one line up                       |
-| alt+key-down       | Move the line where the Cursor is located one line down                     |
-| alt+shift+key-up   | Copy the line where the Cursor is located one line up                       |
-| alt+shift+key-down | Copy the line where the Cursor is located one line down                     |
-| ctrl+d             | Set Multi Cursor. On the selected word and the next occurrence of that word |
-| ctrl+#             | comment the line where the cursor is located                                |
+| Keys                 | Function                                                                    |
+| -------------------- | --------------------------------------------------------------------------- |
+| `alt+key-up`         | Move the line where the Cursor is located one line up                       |
+| `alt+key-down`       | Move the line where the Cursor is located one line down                     |
+| `alt+shift+key-up`   | Copy the line where the Cursor is located one line up                       |
+| `alt+shift+key-down` | Copy the line where the Cursor is located one line down                     |
+| `ctrl+d`             | Set Multi Cursor. On the selected word and the next occurrence of that word |
+| `ctrl+#`             | comment the line where the cursor is located                                |
 
 #### StackBlitz and Github
 
