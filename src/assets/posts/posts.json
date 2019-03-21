@@ -1,1 +1,32 @@
-{"posts": [{"url":"assets/posts/code_extentions.md","name":"code_extentions","title":"Useful @code extentions for Angular developers","preview":"<strong>Useful @code extentions for Angular developers</strong>\r\n\r\nMy IDE of choice is visual studio code.\r\nI love it because of it lightweight and fast boot up.\r\n\r\nBut its real power comes with the p"},{"url":"assets/posts/Dont_get_lost_in_structure.md","name":"Dont_get_lost_in_structure","title":"Don't get lost in structure","preview":"<strong>Don't get lost in structure</strong>\r\n\r\nMost of us started developing Angular apps with one of these many tutorials out in the internet.\r\n\r\nAll the authors - which I belong to as well - have d"},{"url":"assets/posts/translate.md","name":"translate","title":"Translate (i18n) your Angular Apps with @ngx-translate/core","preview":"<strong>Translate (i18n) your Angular Apps with @ngx-translate/core</strong>\r\n\r\nOur apps are used by different people, with differnet languages and different gender. So, to provide them the best exper"}]}
+{
+  "posts": [
+    {
+      "url": "assets/posts/stackblitz.md",
+      "name": "stackblitz",
+      "title": "I love Stackblitz",
+      "preview": "<strong>I love Stackblitz</strong>\r\n\r\nStackblitz is a awesome tool for sharing live examples and prototyping. But you can do even more. With stackblitz you can kickoff a githup repo with no efford.\r\nA",
+      "timestamp": 1553179142977
+    },
+    {
+      "url": "assets/posts/code_extentions.md",
+      "name": "code_extentions",
+      "title": "Useful @code extentions for Angular developers",
+      "preview": "<strong>Useful @code extentions for Angular developers</strong>\r\n\r\nMy IDE of choice is visual studio code.\r\nI love it because of it lightweight and fast boot up.\r\n\r\nBut its real power comes with the p",
+      "timestamp": 1527199785000
+    },
+    {
+      "url": "assets/posts/translate.md",
+      "name": "translate",
+      "title": "Translate (i18n) your Angular Apps with @ngx-translate/core",
+      "preview": "<strong>Translate (i18n) your Angular Apps with @ngx-translate/core</strong>\r\n\r\nOur apps are used by different people, with differnet languages and different gender. So, to provide them the best exper",
+      "timestamp": 1527199785000
+    },
+    {
+      "url": "assets/posts/Dont_get_lost_in_structure.md",
+      "name": "Dont_get_lost_in_structure",
+      "title": "Don't get lost in structure",
+      "preview": "<strong>Don't get lost in structure</strong>\r\n\r\nMost of us started developing Angular apps with one of these many tutorials out in the internet.\r\n\r\nAll the authors - which I belong to as well - have d",
+      "timestamp": 1527199785000
+    }
+  ]
+}

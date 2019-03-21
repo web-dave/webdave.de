@@ -1,6 +1,6 @@
 <strong>I love Stackblitz</strong>
 
-Stackblitz is a awesome tool for sharing sharing live examples and prototyping. But you can do even more. With stackblitz you can kickoff a githup repo with no efford.
+Stackblitz is a awesome tool for sharing live examples and prototyping. But you can do even more. With stackblitz you can kickoff a githup repo with no efford.
 And you can run unit tests too.
 
 Here I wanna show how you can run your Karma/Jasmine tests in Stackblitz.

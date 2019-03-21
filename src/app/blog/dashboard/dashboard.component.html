@@ -15,6 +15,9 @@
         <mat-card-content class="dashboard-card-content">
           <div><markdown [data]="post.preview"></markdown></div>
         </mat-card-content>
+        <mat-card-footer>
+          <small>{{ post.timestamp | date }}</small>
+        </mat-card-footer>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
