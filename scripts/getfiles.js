@@ -12,9 +12,9 @@ posts.sort((a, b) => {
   );
 });
 
-posts.forEach(p => {
-  console.log(fs.statSync(directory + p).mtime.getTime());
-});
+// posts.forEach(p => {
+//   console.log(fs.statSync(directory + p).mtime.getTime());
+// });
 
 posts
   .filter(name => name.indexOf('.md') !== -1)
@@ -23,11 +23,13 @@ posts
       url: '',
       name: '',
       title: '',
-      preview: ''
+      preview: '',
+      timestamp: ''
     };
     postObj.url = `assets/posts/${post}`;
     postObj.name = post.replace('.md', '');
-
+    postObj.timestamp = fs.statSync(directory + post).mtime.getTime();
+    // console.log(fs.statSync(directory + post).mtime.getTime());
     fs.readFile(`${directory}${post}`, 'utf8', function(err, postcontent) {
       processed++;
       if (err) {
