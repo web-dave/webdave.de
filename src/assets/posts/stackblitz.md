@@ -1,6 +1,6 @@
 <strong>I love Stackblitz</strong>
 
-Stackblitz is a awesome tool for sharing sharing live examples and prototyping. But you can do even more. With stackblitz you can kickoff a GitHub Repository with no effort.
+Stackblitz is an awesome tool for sharing live examples and prototyping. But you can do even more. With Stackblitz, you can kick off a GitHub Repository with no effort.
 And you can run unit tests too.
 
 Here I wanna show how you can run your Karma/Jasmine tests in Stackblitz.
@@ -9,7 +9,7 @@ But first things first.
 
 ### What is Stackblitz?
 
-Stackblitz is a onlive edotor based on Visual Studio Code. You can use the same keyboard shortcuts wich are availabe in your local installation..
+Stackblitz is an online editor based on Visual Studio Code. You can use the same keyboard shortcuts which are available in your local installation.
 
 #### my favourite key bindings
 
@@ -22,10 +22,10 @@ Stackblitz is a onlive edotor based on Visual Studio Code. You can use the same 
 | ctrl+d             | Set Multi Cursor. On the selected word and the next occurrence of that word |
 | ctrl+#             | comment the line where the cursor is located                                |
 
-#### Stackblitz and github
+#### Stackblitz and Github
 
 Very often you wanna show your projects to someone, or wanna test something in a project.
-With stackblitz, this is a no-brainer.
+With StackBlitz, this is a no-brainer.
 Just visit
 
 ```bash
@@ -97,7 +97,7 @@ function bootstrap() {
 }
 ```
 
-But for now we have no Jasmine Styling
+But for now, we have no Jasmine Styling
 We have to add it in the `styles.scss`
 
 ```scss
@@ -111,7 +111,7 @@ Maybe you already noticed this line in the `main.ts`
 import './tests.sb.ts';
 ```
 
-In this file we have to import all the testing files `(*.spec.ts)`.
+In this file, we have to import all the testing files `(*.spec.ts)`.
 
 Here is an example.
 
