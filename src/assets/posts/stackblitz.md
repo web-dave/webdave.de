@@ -1,4 +1,4 @@
-<strong>I love Stackblitz</strong>
+<strong>I love StackBlitz</strong>
 
 Stackblitz is an awesome tool for prototyping and for sharing live examples. But it can do even more: With StackBlitz you can kick off a GitHub repo with little to no effort.
 
@@ -14,14 +14,14 @@ StackBlitz is an online live editor based on Visual Studio Code. You can use the
 
 #### My favourite key bindings
 
-| keys               | Function                                                                   |
-| ------------------ | -------------------------------------------------------------------------- |
-| alt+key-up         | Move the line where the cursor is located one line up                      |
-| alt+key-down       | Move the line where the cursor is located one line down                    |
-| alt+shift+key-up   | Copy the line where the cursor is located one line up                      |
-| alt+shift+key-down | Copy the line where the cursor is located one line down                    |
-| ctrl+d             | Set multi-cursor on the selected word and the next occurrence of that word |
-| ctrl+#             | Comment the line where the cursor is located                               |
+| Keys                 | Function                                                                    |
+| -------------------- | --------------------------------------------------------------------------- |
+| `alt+key-up`         | Move the line where the Cursor is located one line up                       |
+| `alt+key-down`       | Move the line where the Cursor is located one line down                     |
+| `alt+shift+key-up`   | Copy the line where the Cursor is located one line up                       |
+| `alt+shift+key-down` | Copy the line where the Cursor is located one line down                     |
+| `ctrl+d`             | Set Multi Cursor. On the selected word and the next occurrence of that word |
+| `ctrl+#`             | comment the line where the cursor is located                                |
 
 #### StackBlitz and GitHub
 
@@ -29,21 +29,19 @@ Often you want to show your projects to someone or you want to test something in
 
 With StackBlitz this is a no-brainer.
 
-Just visit
+Just visit...
 
 ```bash
 https://stackblitz.com/github/userName/repoName
 ```
 
-to open your master branch in the browser
-
-or
+...to open your master Branch in the Browser or...
 
 ```bash
 https://stackblitz.com/github/userName/repoName/tree/branch
 ```
 
-to open a specific branch.
+...to open a specific Branch.
 
 Stackblitz can run your JavaScript project no matter the framework.
 
@@ -73,7 +71,7 @@ window['jasmineRequire'] = jasmineRequire;
 // setup jasmine as a global var
 declare var jasmine;
 
-// Spec files to include in the Stackblitz tests
+// Spec files to include in the StackBlitz tests
 import './tests.sb.ts';
 
 //
@@ -100,9 +98,8 @@ function bootstrap() {
 }
 ```
 
-For now we have no Jasmine styling.
-
-We have to add it in the `styles.scss`:
+But for now, we have no Jasmine Styling
+We have to add it in the `styles.scss`
 
 ```scss
 @import '~jasmine-core/lib/jasmine-core/jasmine.css';
@@ -111,11 +108,11 @@ We have to add it in the `styles.scss`:
 Maybe, you already noticed this line in the `main.ts`
 
 ```ts
-// Spec files to include in the Stackblitz tests
+// Spec files to include in the StackBlitz tests
 import './tests.sb.ts';
 ```
 
-In this file we have to import all the testing files `(*.spec.ts)`.
+In this file, we have to import all the testing files `(*.spec.ts)`.
 
 Here is an example:
 
