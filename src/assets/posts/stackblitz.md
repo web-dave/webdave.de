@@ -1,7 +1,7 @@
 <strong>I love Stackblitz</strong>
 
 Stackblitz is an awesome tool for sharing live examples and prototypes. But you can do even more. With Stackblitz, you can kick off a GitHub Repository with no effort.
-And you can run unit tests too.
+And you can run unit tests, too.
 
 Here I wanna show how you can run your Karma/Jasmine tests in Stackblitz.
 
