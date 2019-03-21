@@ -121,3 +121,10 @@ import './app/my-nav/my-nav.component.spec.ts';
 ```
 
 That's it.
+
+## Yes, it's that easy!
+
+#### credits
+
+Thx to
+<a href="https://twitter.com/gnomeontherun" rel="noopener" target="_blank">Jeremy Wilken</a> for the inspiration.
