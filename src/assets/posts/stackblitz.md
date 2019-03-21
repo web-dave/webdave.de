@@ -10,6 +10,8 @@ First things first, though.
 
 ### What is StackBlitz?
 
+<img src="assets/images/stackblitz.png" class="alignnone size-thumbnail wp-image-446" width="200" />
+
 StackBlitz is an online live editor based on Visual Studio Code. You can use the same keyboard shortcuts which are availabe in your local installation.
 
 #### My favourite key bindings (on Windows)
@@ -127,10 +129,12 @@ That's it.
 
 ## Yes, it's that easy!
 
+<img src="assets/images/stackblitz-s.png" class="alignnone size-thumbnail wp-image-446" width="200" />
+
 #### credits
 
 Thx to
 
-- <a href="https://twitter.com/gnomeontherun" rel="noopener" target="_blank">Jeremy Wilken</a> for the inspiration.
-- <a href="https://twitter.com/bwilmsmann" rel="noopener" target="_blank">Björn Wilmsmann</a> for Spelling, style and grammar checks.
-- <a href="https://twitter.com/GregOnNet" rel="noopener" target="_blank">Gregor Woiwode</a> for Spelling, style and grammar checks.
+- <a href="https://twitter.com/gnomeontherun"  target="_blank">Jeremy Wilken</a> for the inspiration.
+- <a href="https://twitter.com/bwilmsmann"  target="_blank">Björn Wilmsmann</a> for Spelling, style and grammar checks.
+- <a href="https://twitter.com/GregOnNet"  target="_blank">Gregor Woiwode</a> for Spelling, style and grammar checks.
