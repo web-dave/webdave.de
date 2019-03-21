@@ -12,7 +12,7 @@ First things first, though.
 
 StackBlitz is an online live editor based on Visual Studio Code. You can use the same keyboard shortcuts which are availabe in your local installation.
 
-#### My favourite key bindings
+#### My favourite key bindings (on Windows)
 
 | Keys                 | Function                                                                    |
 | -------------------- | --------------------------------------------------------------------------- |
@@ -29,19 +29,21 @@ Often you want to show your projects to someone or you want to test something in
 
 With StackBlitz this is a no-brainer.
 
-Just visit...
+Just visit
 
 ```bash
 https://stackblitz.com/github/userName/repoName
 ```
 
-...to open your master Branch in the Browser or...
+to open your master Branch in the Browser
+
+or
 
 ```bash
 https://stackblitz.com/github/userName/repoName/tree/branch
 ```
 
-...to open a specific Branch.
+to open a specific Branch.
 
 Stackblitz can run your JavaScript project no matter the framework.
 
