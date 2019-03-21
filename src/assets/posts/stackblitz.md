@@ -51,7 +51,7 @@ Stackblitz can run your JavaScript project no matter the framework.
 
 To run your unit tests in StackBlitz you have to add some config in the `main.ts`.
 
-```ts
+```javascript
 // Import Jasmine from node_modules
 import jasmineRequire from 'jasmine-core/lib/jasmine-core/jasmine.js';
 import 'jasmine-core/lib/jasmine-core/jasmine-html.js';
@@ -109,7 +109,7 @@ We have to add it in the `styles.scss`
 
 Maybe, you already noticed this line in the `main.ts`
 
-```ts
+```javascript
 // Spec files to include in the StackBlitz tests
 import './tests.sb.ts';
 ```
@@ -118,7 +118,7 @@ In this file, we have to import all the testing files `(*.spec.ts)`.
 
 Here is an example:
 
-```ts
+```javascript
 import './app/app.component.spec.ts';
 import './app/my-nav/my-nav.component.spec.ts';
 ```
