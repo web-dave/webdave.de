@@ -2,10 +2,9 @@
 
 Stackblitz is an awesome tool for prototyping and for sharing live examples. But it can do even more: With StackBlitz you can kick off a GitHub repo with little to no effort.
 
-
 And you can run unit tests, too.
 
-Here I want to show you how to run your Karma  /Jasmine tests within StackBlitz.
+Here I want to show you how to run your Karma / Jasmine tests within StackBlitz.
 
 First things first, though.
 
@@ -15,14 +14,14 @@ StackBlitz is an online live editor based on Visual Studio Code. You can use the
 
 #### My favourite key bindings
 
-| keys               | Function                                                                    |
-| ------------------ | --------------------------------------------------------------------------- |
-| alt+key-up         | Move the line where the cursor is located one line up                       |
-| alt+key-down       | Move the line where the cursor is located one line down                     |
-| alt+shift+key-up   | Copy the line where the cursor is located one line up                       |
-| alt+shift+key-down | Copy the line where the cursor is located one line down                     |
-| ctrl+d             | Set multi-cursor on the selected word and the next occurrence of that word  |
-| ctrl+#             | Comment the line where the cursor is located                                |
+| keys               | Function                                                                   |
+| ------------------ | -------------------------------------------------------------------------- |
+| alt+key-up         | Move the line where the cursor is located one line up                      |
+| alt+key-down       | Move the line where the cursor is located one line down                    |
+| alt+shift+key-up   | Copy the line where the cursor is located one line up                      |
+| alt+shift+key-down | Copy the line where the cursor is located one line down                    |
+| ctrl+d             | Set multi-cursor on the selected word and the next occurrence of that word |
+| ctrl+#             | Comment the line where the cursor is located                               |
 
 #### StackBlitz and GitHub
 
@@ -132,6 +131,7 @@ That's it.
 #### credits
 
 Thx to
-* <a href="https://twitter.com/gnomeontherun" rel="noopener" target="_blank">Jeremy Wilken</a> for the inspiration.
-* <a href="https://twitter.com/bwilmsmann" rel="noopener" target="_blank">Björn Wilmsmann</a> for Spelling, style and grammar checks.
-* <a href="https://twitter.com/GregOnNet" rel="noopener" target="_blank">Gregor Woiwode</a> for Spelling, style and grammar checks.
+
+- <a href="https://twitter.com/gnomeontherun" rel="noopener" target="_blank">Jeremy Wilken</a> for the inspiration.
+- <a href="https://twitter.com/bwilmsmann" rel="noopener" target="_blank">Björn Wilmsmann</a> for Spelling, style and grammar checks.
+- <a href="https://twitter.com/GregOnNet" rel="noopener" target="_blank">Gregor Woiwode</a> for Spelling, style and grammar checks.
