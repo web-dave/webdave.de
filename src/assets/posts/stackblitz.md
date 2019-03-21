@@ -1,38 +1,42 @@
 <strong>I love Stackblitz</strong>
 
-Stackblitz is a awesome tool for sharing live examples and prototyping. But you can do even more. With stackblitz you can kickoff a githup repo with no efford.
-And you can run unit tests too.
+Stackblitz is an awesome tool for prototyping and for sharing live examples. But it can do even more: With StackBlitz you can kick off a GitHub repo with little to no effort.
 
-Here I wanna show how you can run your Karma/Jasmine tests in Stackblitz.
 
-But first things first.
+And you can run unit tests, too.
 
-### What is Stackblitz?
+Here I want to show you how to run your Karma  /Jasmine tests within StackBlitz.
 
-Stackblitz is a onlive edotor based on Visual Studio Code. You can use the same keyboard shortcuts wich are availabe in your local installation..
+First things first, though.
 
-#### my favourite key bindings
+### What is StackBlitz?
+
+StackBlitz is an online live editor based on Visual Studio Code. You can use the same keyboard shortcuts which are availabe in your local installation.
+
+#### My favourite key bindings
 
 | keys               | Function                                                                    |
 | ------------------ | --------------------------------------------------------------------------- |
-| alt+key-up         | Move the line where the Cursor is located one line up                       |
-| alt+key-down       | Move the line where the Cursor is located one line down                     |
-| alt+shift+key-up   | Copy the line where the Cursor is located one line up                       |
-| alt+shift+key-down | Copy the line where the Cursor is located one line down                     |
-| ctrl+d             | Set Multi Cursor. On the selected word and the next occurrence of that word |
-| ctrl+#             | comment the line where the cursor is located                                |
+| alt+key-up         | Move the line where the cursor is located one line up                       |
+| alt+key-down       | Move the line where the cursor is located one line down                     |
+| alt+shift+key-up   | Copy the line where the cursor is located one line up                       |
+| alt+shift+key-down | Copy the line where the cursor is located one line down                     |
+| ctrl+d             | Set multi-cursor on the selected word and the next occurrence of that word  |
+| ctrl+#             | Comment the line where the cursor is located                                |
 
-#### Stackblitz and github
+#### StackBlitz and GitHub
 
-Very often you wanna show your projects to someone, or wanna test something in a project.
-With stackblitz, this is a no-brainer.
+Often you want to show your projects to someone or you want to test something in a project.
+
+With StackBlitz this is a no-brainer.
+
 Just visit
 
 ```bash
 https://stackblitz.com/github/userName/repoName
 ```
 
-to open your master Branch in the Browser
+to open your master branch in the browser
 
 or
 
@@ -40,13 +44,13 @@ or
 https://stackblitz.com/github/userName/repoName/tree/branch
 ```
 
-to open a specific Branch
+to open a specific branch.
 
-Stackblitz can run your Javascript Project, no matter if the framework.
+Stackblitz can run your JavaScript project no matter the framework.
 
-#### set up for Karma and Jasmine
+#### Set up for Karma and Jasmine
 
-To run your Unit Tests in Stackblitz you have to do some config in the `main.ts`.
+To run your unit tests in StackBlitz you have to add some config in the `main.ts`.
 
 ```ts
 // Import Jasmine from node_modules
@@ -97,14 +101,15 @@ function bootstrap() {
 }
 ```
 
-But for now we have no Jasmine Styling
-We have to add it in the `styles.scss`
+For now we have no Jasmine styling.
+
+We have to add it in the `styles.scss`:
 
 ```scss
 @import '~jasmine-core/lib/jasmine-core/jasmine.css';
 ```
 
-Maybe you already noticed this line in the `main.ts`
+Maybe, you already noticed this line in the `main.ts`
 
 ```ts
 // Spec files to include in the Stackblitz tests
@@ -113,7 +118,7 @@ import './tests.sb.ts';
 
 In this file we have to import all the testing files `(*.spec.ts)`.
 
-Here is an example.
+Here is an example:
 
 ```ts
 import './app/app.component.spec.ts';
