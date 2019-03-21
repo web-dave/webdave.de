@@ -127,4 +127,6 @@ That's it.
 #### credits
 
 Thx to
-<a href="https://twitter.com/gnomeontherun" rel="noopener" target="_blank">Jeremy Wilken</a> for the inspiration.
+* <a href="https://twitter.com/gnomeontherun" rel="noopener" target="_blank">Jeremy Wilken</a> for the inspiration.
+* <a href="https://twitter.com/bwilmsmann" rel="noopener" target="_blank">Björn Wilmsmann</a> for Spelling, style and grammar checks.
+* <a href="https://twitter.com/GregOnNet" rel="noopener" target="_blank">Gregor Woiwode</a> for Spelling, style and grammar checks.
