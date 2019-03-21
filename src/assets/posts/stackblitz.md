@@ -2,6 +2,7 @@
 
 Stackblitz is an awesome tool for prototyping and for sharing live examples. But it can do even more: With StackBlitz you can kick off a GitHub repo with little to no effort.
 
+
 And you can run unit tests, too.
 
 Here I want to show you how to run your Karma  /Jasmine tests within StackBlitz.
@@ -125,3 +126,12 @@ import './app/my-nav/my-nav.component.spec.ts';
 ```
 
 That's it.
+
+## Yes, it's that easy!
+
+#### credits
+
+Thx to
+* <a href="https://twitter.com/gnomeontherun" rel="noopener" target="_blank">Jeremy Wilken</a> for the inspiration.
+* <a href="https://twitter.com/bwilmsmann" rel="noopener" target="_blank">Björn Wilmsmann</a> for Spelling, style and grammar checks.
+* <a href="https://twitter.com/GregOnNet" rel="noopener" target="_blank">Gregor Woiwode</a> for Spelling, style and grammar checks.
