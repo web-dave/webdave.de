@@ -3,7 +3,7 @@
 StackBlitz is an awesome tool for sharing live examples and prototypes. But you can do even more. With StackBlitz, you can kick off a GitHub Repository with no effort.
 And you can run unit tests, too.
 
-Now I wanna show how you can run your Karma/Jasmine tests in StackBlitz.
+Now I want to show how you can run your Karma/Jasmine tests in StackBlitz.
 
 But first things first.
 
@@ -24,7 +24,7 @@ StackBlitz is an online editor based on Visual Studio Code. You can use the same
 
 #### StackBlitz and Github
 
-Very often you wanna show your projects to someone, or wanna test something in a project.
+Very often you want to show your projects to someone, or you want to test something in a project.
 With StackBlitz, this is a no-brainer.
 Just visit
 
