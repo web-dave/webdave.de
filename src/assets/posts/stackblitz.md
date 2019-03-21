@@ -45,7 +45,7 @@ StackBlitz can run your Javascript Project, no matter which framework framework 
 
 #### Set up for Karma and Jasmine
 
-To run your Unit Tests in StackBlitz you have to do some config in the `main.ts`.
+To run your Unit Tests in StackBlitz you have to add some configuration to the `main.ts`.
 
 ```ts
 // Import Jasmine from node_modules
