@@ -11,7 +11,7 @@ But first things first.
 
 StackBlitz is an online editor based on Visual Studio Code. You can use the same keyboard shortcuts which are available in your local installation.
 
-#### my favourite key bindings
+#### My favourite key bindings
 
 | keys               | Function                                                                    |
 | ------------------ | --------------------------------------------------------------------------- |
