@@ -26,21 +26,20 @@ StackBlitz is an online editor based on Visual Studio Code. You can use the same
 
 Very often you want to show your projects to someone, or you want to test something in a project.
 With StackBlitz, this is a no-brainer.
-Just visit
+
+Just visit...
 
 ```bash
 https://stackblitz.com/github/userName/repoName
 ```
 
-to open your master Branch in the Browser
-
-or
+...to open your master Branch in the Browser or...
 
 ```bash
 https://stackblitz.com/github/userName/repoName/tree/branch
 ```
 
-to open a specific Branch
+...to open a specific Branch.
 
 StackBlitz can run your Javascript Project, no matter if the framework.
 
