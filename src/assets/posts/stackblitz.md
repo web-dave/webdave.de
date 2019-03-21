@@ -44,7 +44,7 @@ to open a specific Branch
 
 StackBlitz can run your Javascript Project, no matter if the framework.
 
-#### set up for Karma and Jasmine
+#### Set up for Karma and Jasmine
 
 To run your Unit Tests in StackBlitz you have to do some config in the `main.ts`.
 
