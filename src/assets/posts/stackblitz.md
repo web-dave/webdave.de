@@ -102,10 +102,12 @@ function bootstrap() {
 }
 ```
 
+Stackblitz will ask you to install a missing Package `Jasmine-core` and it's peerdependency.
+
 But for now, we have no Jasmine Styling
 We have to add it in the `styles.scss`
 
-```scss
+```css
 @import '~jasmine-core/lib/jasmine-core/jasmine.css';
 ```
 
@@ -129,7 +131,7 @@ That's it.
 
 ## Yes, it's that easy!
 
-<img src="assets/images/stackblitz-s.png" class="alignnone size-thumbnail wp-image-446" width="200" />
+<img src="assets/images/stackblitz-2.png" class="alignnone size-thumbnail wp-image-446" width="200" />
 
 #### credits
 
