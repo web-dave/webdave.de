@@ -16,14 +16,14 @@ StackBlitz is an online live editor based on Visual Studio Code. You can use the
 
 #### My favourite key bindings (on Windows)
 
-| Keys                 | Function                                                                    |
-| -------------------- | --------------------------------------------------------------------------- |
-| `alt+key-up`         | Move the line where the Cursor is located one line up                       |
-| `alt+key-down`       | Move the line where the Cursor is located one line down                     |
-| `alt+shift+key-up`   | Copy the line where the Cursor is located one line up                       |
-| `alt+shift+key-down` | Copy the line where the Cursor is located one line down                     |
-| `ctrl+d`             | Set Multi Cursor. On the selected word and the next occurrence of that word |
-| `ctrl+#`             | comment the line where the cursor is located                                |
+| Keys                            | Function                                                                    |
+| ------------------------------- | --------------------------------------------------------------------------- |
+| <code>alt+key-up</code>         | Move the line where the Cursor is located one line up                       |
+| <code>alt+key-down</code>       | Move the line where the Cursor is located one line down                     |
+| <code>alt+shift+key-up</code>   | Copy the line where the Cursor is located one line up                       |
+| <code>alt+shift+key-down</code> | Copy the line where the Cursor is located one line down                     |
+| <code>ctrl+d</code>             | Set Multi Cursor. On the selected word and the next occurrence of that word |
+| <code>ctrl+#</code>             | comment the line where the cursor is located                                |
 
 #### StackBlitz and GitHub
 
@@ -51,7 +51,7 @@ Stackblitz can run your JavaScript project no matter the framework.
 
 #### Set up for Karma and Jasmine
 
-To run your unit tests in StackBlitz you have to add some config in the `main.ts`.
+To run your unit tests in StackBlitz you have to add some config in the <code>main.ts</code>.
 
 ```javascript
 // Import Jasmine from node_modules
@@ -102,23 +102,23 @@ function bootstrap() {
 }
 ```
 
-Stackblitz will ask you to install a missing Package `Jasmine-core` and it's peerdependency.
+Stackblitz will ask you to install a missing Package <code>Jasmine-core</code> and it's peerdependency.
 
 But for now, we have no Jasmine Styling
-We have to add it in the `styles.scss`
+We have to add it in the <code>styles.scss</code>
 
 ```css
 @import '~jasmine-core/lib/jasmine-core/jasmine.css';
 ```
 
-Maybe, you already noticed this line in the `main.ts`
+Maybe, you already noticed this line in the <code>main.ts</code>
 
 ```javascript
 // Spec files to include in the StackBlitz tests
 import './tests.sb.ts';
 ```
 
-In this file, we have to import all the testing files `(*.spec.ts)`.
+In this file, we have to import all the testing files <code>(\*.spec.ts)</code>.
 
 Here is an example:
 
