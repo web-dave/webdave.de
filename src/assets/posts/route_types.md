@@ -199,7 +199,7 @@ const i18nMatcher = (url: UrlSegment[]) => {
 };
 ```
 
-#### credits
+#### Credits
 
 Thx to
 
