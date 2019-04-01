@@ -139,7 +139,7 @@ Ok, this is not enough so I will explain how you can do this.
 
 A 'Standard' route config has a path to define how this rule will be applied.
 If you want to set your own rule, you can define a 'matcher'.
-A custom URL matcher can be provided when a combination of `path`and `pathMatch` isn't expressive enough.
+A custom URL matcher can be provided when a combination of `path` and `pathMatch` isn't expressive enough.
 
 Here is a example to match with any regex, (I use a 'numbers-only' regex here):
 
