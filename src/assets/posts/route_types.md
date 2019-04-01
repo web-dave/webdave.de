@@ -91,7 +91,7 @@ These are the most known route types. Nothing special.
 ];
 ```
 
-The regex for <code>start</code> looks like this:
+The regex for `start` looks like this:
 
 ```js
 const regex = '/^/start$/';
