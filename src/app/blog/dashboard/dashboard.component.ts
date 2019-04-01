@@ -21,7 +21,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.posts$ = this.blogService.getPostList().pipe(
       tap(p => {
-        console.log(p);
         return p.sort((a, b) =>
           a.timestamp > b.timestamp ? -1 : b.timestamp > a.timestamp ? 1 : 0
         );
