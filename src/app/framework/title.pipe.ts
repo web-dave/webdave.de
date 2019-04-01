@@ -1,15 +1,15 @@
-import { Pipe, PipeTransform } from "@angular/core";
+import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: "title"
+  name: 'title'
 })
 export class TitlePipe implements PipeTransform {
   transform(value: string): string {
     return value
-      .split("_")
-      .join(" ")
-      .replace(".jpg", "")
-      .replace(".svg", "")
-      .replace(".png", "");
+      .split('_')
+      .join(' ')
+      .replace('.jpg', '')
+      .replace('.svg', '')
+      .replace('.png', '');
   }
 }

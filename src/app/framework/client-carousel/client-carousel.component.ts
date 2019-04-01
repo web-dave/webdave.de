@@ -1,11 +1,11 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { Observable, Subscription, interval } from "rxjs";
-import { BlogsService } from "../shared/blogs.service";
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, Subscription, interval } from 'rxjs';
+import { BlogsService } from '../shared/blogs.service';
 
 @Component({
-  selector: "blog-client-carousel",
-  templateUrl: "./client-carousel.component.html",
-  styleUrls: ["./client-carousel.component.scss"]
+  selector: 'blog-client-carousel',
+  templateUrl: './client-carousel.component.html',
+  styleUrls: ['./client-carousel.component.scss']
 })
 export class ClientCarouselComponent implements OnInit, OnDestroy {
   clients: string[];

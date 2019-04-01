@@ -1,9 +1,9 @@
-import { TestBed, inject } from "@angular/core/testing";
+import { TestBed, inject } from '@angular/core/testing';
 
-import { BlogsService } from "./blogs.service";
-import { HttpClientModule } from "@angular/common/http";
+import { BlogsService } from './blogs.service';
+import { HttpClientModule } from '@angular/common/http';
 
-describe("BlogsService", () => {
+describe('BlogsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [BlogsService],
@@ -12,13 +12,13 @@ describe("BlogsService", () => {
   });
 
   it(
-    "should be created",
+    'should be created',
     inject([BlogsService], (service: BlogsService) => {
       expect(service).toBeTruthy();
     })
   );
   it(
-    "should get blogs array",
+    'should get blogs array',
     inject([BlogsService], (service: BlogsService) => {
       expect(service).toBeTruthy();
     })

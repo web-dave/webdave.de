@@ -1,17 +1,17 @@
-import { LayoutModule } from "@angular/cdk/layout";
-import { NoopAnimationsModule } from "@angular/platform-browser/animations";
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { LayoutModule } from '@angular/cdk/layout';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import {
   MatButtonModule,
   MatCardModule,
   MatGridListModule,
   MatIconModule,
   MatMenuModule,
-} from "@angular/material";
+} from '@angular/material';
 
-import { DashboardComponent } from "./dashboard.component";
+import { DashboardComponent } from './dashboard.component';
 
-describe("DashboardComponent", () => {
+describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
 
@@ -36,7 +36,7 @@ describe("DashboardComponent", () => {
     fixture.detectChanges();
   });
 
-  it("should compile", () => {
+  it('should compile', () => {
     expect(component).toBeTruthy();
   });
 });

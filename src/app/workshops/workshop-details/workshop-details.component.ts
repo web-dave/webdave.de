@@ -1,10 +1,10 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { IWorkshop } from "../../framework/shared/blogs.service";
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { IWorkshop } from '../../framework/shared/blogs.service';
 
 @Component({
-  selector: "blog-workshop-details",
-  templateUrl: "./workshop-details.component.html",
-  styleUrls: ["./workshop-details.component.scss"]
+  selector: 'blog-workshop-details',
+  templateUrl: './workshop-details.component.html',
+  styleUrls: ['./workshop-details.component.scss']
 })
 export class WorkshopDetailsComponent implements OnInit {
   @Input() workshop: IWorkshop;

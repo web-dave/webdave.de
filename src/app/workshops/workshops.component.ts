@@ -1,10 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { BlogsService } from "../framework/shared/blogs.service";
+import { Component, OnInit } from '@angular/core';
+import { BlogsService } from '../framework/shared/blogs.service';
 
 @Component({
-  selector: "blog-workshops",
-  templateUrl: "./workshops.component.html",
-  styleUrls: ["./workshops.component.scss"]
+  selector: 'blog-workshops',
+  templateUrl: './workshops.component.html',
+  styleUrls: ['./workshops.component.scss']
 })
 export class WorkshopsComponent implements OnInit {
   step = -1;
@@ -19,7 +19,7 @@ export class WorkshopsComponent implements OnInit {
     });
   }
   navigate(name: string) {
-    if (name === "previous") {
+    if (name === 'previous') {
       this.prevStep();
     } else {
       this.nextStep();

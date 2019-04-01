@@ -1,7 +1,7 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-  selector: "blog-dsvgo",
+  selector: 'blog-dsvgo',
   template: `
     <mat-card class="example-card">
       <mat-card-content>

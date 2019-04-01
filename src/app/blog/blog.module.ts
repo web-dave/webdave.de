@@ -1,10 +1,10 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import { BlogRoutingModule } from "./blog-routing.module";
-import { PostComponent } from "./post/post.component";
-import { MarkdownModule } from "ngx-markdown";
-import { DashboardComponent } from "./dashboard/dashboard.component";
+import { BlogRoutingModule } from './blog-routing.module';
+import { PostComponent } from './post/post.component';
+import { MarkdownModule } from 'ngx-markdown';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import {
   MatToolbarModule,
   MatButtonModule,
@@ -14,7 +14,7 @@ import {
   MatGridListModule,
   MatCardModule,
   MatMenuModule
-} from "@angular/material";
+} from '@angular/material';
 
 @NgModule({
   imports: [
