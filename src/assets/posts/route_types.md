@@ -1,6 +1,6 @@
 <strong>Route types</strong>
 
-Angular comes with a great router. Here i wanna show you the different rout types and how they work. I assume that you have some experience with the angular router.
+Angular comes with a great router. Here I wanna show you the different route types and how they work. I assume that you have some experience with the angular router.
 
 ### Standard route types
 
@@ -32,7 +32,7 @@ const regex = '^(?:([^/]+))$';
 
 #### Redirect
 
-The default route wich brings you to a default route if no route is given.<br>
+The default route which brings you to a default route if no route is given.<br>
 
 ```ts
 [
@@ -50,18 +50,18 @@ Options are:
 - <code>prefix</code>
 - <code>full</code>
 
-By default the router will look at what is left in the url, and check if it starts with the specified path
+By default, the router will look at what is left in the URL, and check if it starts with the specified path
 
 ```ts
 '/blog/11'  => 'blog/:id'
 ```
 
-You can change the matching strategy to make sure that the path covers the whole unconsumed url.<br>
+You can change the matching strategy to make sure that the path covers the whole unconsumed URL.<br>
 This is particularly important when redirecting empty-path routes.
 
 #### Empty Path
 
-These type of route do not 'consume' any url segments. It is perfect fit if you wanna use child-routing.
+These type of route do not 'consume' any URL segments. It is a perfect fit if you wanna use child-routing.
 
 ```js
 [
@@ -74,7 +74,7 @@ These type of route do not 'consume' any url segments. It is perfect fit if you 
 
 #### standard routes
 
-These is the most known rout types. Nothing special.
+These are the most known rout types. Nothing special.
 
 ```js
 [
@@ -93,7 +93,7 @@ const regex = '/^/start$/';
 
 #### Routes with params
 
-These is the most common way to transport data in the route and have a variable route. The string at the segment which is marked with <code>:id</code> will be stored in the Observable <code>ActivatedRoute.params</code>.
+These are the most common way to transport data in the route and have a variable route. The string at the segment which is marked with <code>:id</code> will be stored in the Observable <code>ActivatedRoute.params</code>.
 
 ```json
 {
@@ -122,10 +122,10 @@ Definetly a FAQ in my workshops is:
 <i>Q: Can I define a specific regex for a route?</i><br>
 <b>A: Yes!</b>
 
-Ok this is ot enough, so I will explain how you can do this.
+Ok, this is not enough so I will explain how you can do this.
 
 A 'Standard' route config has a path to define how this rule will be applied.
-If you wanna set a own rule, you can define a 'matcher'.
+If you wanna set an own rule, you can define a 'matcher'.
 A custom URL matcher can be provided when a combination of <code>path</code> and <code>pathMatch</code> isn't expressive enough.
 
 Here is a example to match with any regex, (I use a 'numbers-only' regex here):
@@ -145,9 +145,9 @@ const regexMatcher = (url: UrlSegment[]) => {
 ];
 ```
 
-The problem with this is: We dont have defined any routeParams yet.
+The problem with this is: We don't have defined any routeParams yet.
 So let's fix this.
-To do so, we have to define them in the returned object as a UrlSegment wich can be resolved by the router. Sounds complicated? It isn't.
+To do so, we have to define them in the returned object as a UrlSegment which can be resolved by the router. Sounds complicated? It isn't.
 
 ```js
 const numberRegex = '^[0-9]*$';
@@ -177,7 +177,7 @@ Now we can read the Observable <code>ActivatedRoute.params</code> as always.
 }
 ```
 
-This nex example is a great way to have internationalisation in the routes.
+This next example is a great way to have internationalisation in the routes.
 
 ```js
 const i18nRegex = '(needle|nadel)';
