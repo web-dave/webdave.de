@@ -1,6 +1,6 @@
 <strong>Route types</strong>
 
-Angular comes with a great router. Here i wanna show you the different rout types and how they work..
+Angular comes with a great router. Here i wanna show you the different rout types and how they work. I assume that you have some experience with the angular router.
 
 ### Standard route types
 
@@ -147,7 +147,7 @@ const regexMatcher = (url: UrlSegment[]) => {
 
 The problem with this is: We dont have defined any routeParams yet.
 So let's fix this.
-To do so, we have to define them in the returned object as a UrlSegment wich can be resolved by the router. Sounds complcated? It isn't.
+To do so, we have to define them in the returned object as a UrlSegment wich can be resolved by the router. Sounds complicated? It isn't.
 
 ```js
 const numberRegex = '^[0-9]*$';
