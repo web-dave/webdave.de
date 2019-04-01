@@ -124,9 +124,10 @@ const regex = '/^/blog/(?:([^/]+))$/';
 
 ### Custom Route Matcher
 
-Definetly a FAQ in my workshops is:
-<i>Q: Can I define a specific regex for a route?</i><br>
-<b>A: Yes!</b>
+Definitely a frequently asked question in my workshops is:
+
+- _Q: Can I define a specific regex for a route?_
+- **A: Yes!**
 
 Ok, this is not enough so I will explain how you can do this.
 
