@@ -214,5 +214,7 @@ const i18nMatcher = (url: UrlSegment[]) => {
 Thx to
 
 - <a href="https://twitter.com/brandontroberts"  target="_blank">Brandon Roberts</a> for the inspiration.
+- <a href="https://twitter.com/GregOnNet"  target="_blank">Gregor Woiwode</a> for Spelling, style and grammar checks.
+- <a href="https://twitter.com/FabianGosebrink" target="_blank">Fabian Gosebrink</a> for Spelling, style and grammar checks.
 
 Thanks, friends! It means a lot!
