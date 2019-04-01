@@ -26,10 +26,19 @@ The following snippet shows that `LumpenSammlerComponent` will be shown when the
 ];
 ```
 
-> ⚠️ Very important to know: The router goes through your router config array topdown.
-> And he checks every path of the config and tests it with a Regular Expression against the current route. That means the order of your rout config matters!
+> I would consider mention that 
 
-The Regular Expression expression for a wildcard looks like:
+<br>
+<br>
+The regex for a wildcard looks like:
+=======
+> ⚠️ Very important to know: The router goes through your router config array topdown.
+> And he checks every path of the config and tests it with a Regular Expression against the current route. 
+> That means the order of your route config matters!
+> On child-modules or lazy loaded modules the angular router is very smart. He merges the child routes _before_ the `**` route. 
+> So that it really comes last!
+
+The Regular Expression for a wildcard looks like:
 
 ```js
 const regex = '^(?:([^/]+))$';
@@ -99,7 +108,8 @@ const regex = '/^/start$/';
 
 #### Routes With Params
 
-This is the most common way to transport data in the route and have a variable route. The string at the segment which is marked with `:id` will be stored in the Observable `ActivatedRoute.params`.
+This is the most common way to transport data in the route and have a dynamic route. 
+The string at the segment which is marked with `:id` will be stored in the Observable `ActivatedRoute.params`.
 
 ```json
 {
@@ -132,8 +142,8 @@ Definitely a frequently asked question in my workshops is:
 Ok, this is not enough so I will explain how you can do this.
 
 A 'Standard' route config has a path to define how this rule will be applied.
-If you want to set an own rule, you can define a 'matcher'.
-A custom URL matcher can be provided when a combination of <code>path</code> and <code>pathMatch</code> isn't expressive enough.
+If you want to set your own rule, you can define a 'matcher'.
+A custom URL matcher can be provided when a combination of `path`and `pathMatch` isn't expressive enough.
 
 Here is a example to match with any regex, (I use a 'numbers-only' regex here):
 
@@ -178,10 +188,14 @@ const regexMatcher = (url: UrlSegment[]) => {
 
 Now we can read the Observable `ActivatedRoute.params` as always.
 
-```json
-{
-  "id": "5"
-}
+> Show how you can read it. Snippet.
+
+```js
+  this.ActivatedRoute.params
+    .subscribe(p => {
+      console.log(p)
+      this.id = p.id;
+    });
 ```
 
 This next example is a great way to have internationalisation in the routes.
