@@ -9,7 +9,7 @@ I assume that you have some experience with the Angular router.
 
 ### Standard Route Types
 
-You can define several routing rules which a kind of standard.
+This section introduces you to several routing rules you can specify.
 
 #### Wild Cards
 
