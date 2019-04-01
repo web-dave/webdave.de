@@ -1,8 +1,13 @@
 <strong>Route types</strong>
 
-Angular comes with a great router. Here I wanna show you the different route types and how they work. I assume that you have some experience with the angular router.
+Angular comes with a great router. Here I wanna show you the different route types and how they work.
 
-### Standard route types
+- Standard Route Types
+- Custom Route Matcher
+
+I assume that you have some experience with the Angular router.
+
+### Standard Route Types
 
 You can define several routing rules which a kind of standard.
 
@@ -116,7 +121,7 @@ The regex for a <code>blog/:id</code> looks like:
 const regex = '/^/blog/(?:([^/]+))$/';
 ```
 
-### Custome route matcher
+### Custom Route Matcher
 
 Definetly a FAQ in my workshops is:
 <i>Q: Can I define a specific regex for a route?</i><br>
