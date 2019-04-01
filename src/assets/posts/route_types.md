@@ -67,7 +67,7 @@ This is particularly important when redirecting empty-path routes.
 
 #### Empty Path
 
-These type of route do not 'consume' any URL segments. It is a perfect fit if you wanna use child-routing.
+This type of route do not "consume" any URL segments. It is a perfect fit if you wanna use child-routing.
 
 ```js
 [
