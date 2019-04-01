@@ -25,9 +25,9 @@ No matter where you navigate to, the router will find this and instantiate Lumpe
 ```
 
 > ⚠️ Very important to know: The router goes through your router config array topdown.
-> And he checks every path of the config and test it with a regex against the current route. That means: The order of your rout config matters!
+> And he checks every path of the config and test it with a Regular Expression against the current route. That means: The order of your rout config matters!
 
-The regex for a wildcard looks like:
+The Regular Expression expression for a wildcard looks like:
 
 ```js
 const regex = '^(?:([^/]+))$';
