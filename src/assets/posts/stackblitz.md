@@ -140,3 +140,5 @@ Thx to
 - <a href="https://twitter.com/gnomeontherun"  target="_blank">Jeremy Wilken</a> for the inspiration.
 - <a href="https://twitter.com/bwilmsmann"  target="_blank">Björn Wilmsmann</a> for Spelling, style and grammar checks.
 - <a href="https://twitter.com/GregOnNet"  target="_blank">Gregor Woiwode</a> for Spelling, style and grammar checks.
+
+Thanks, friends! It means a lot!
