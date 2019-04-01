@@ -1,11 +1,10 @@
 <strong>Route types</strong>
 
 Angular comes with a great router. Here I want to show you the different route types and how they work.
+I assume that you have some experience with the Angular router.
 
 - Standard Route Types
 - Custom Route Matcher
-
-I assume that you have some experience with the Angular router.
 
 ### Standard Route Types
 
@@ -25,8 +24,6 @@ The following snippet shows that `LumpenSammlerComponent` will be shown when the
   }
 ];
 ```
-
-The regex for a wildcard looks like:
 
 > ⚠️ Very important to know: The router goes through your router config array topdown.
 > And he checks every path of the config and tests it with a Regular Expression against the current route.

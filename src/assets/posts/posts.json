@@ -15,18 +15,25 @@
       "timestamp": 1554127391079
     },
     {
-      "url": "assets/posts/Dont_get_lost_in_structure.md",
-      "name": "Dont_get_lost_in_structure",
-      "title": "Don't get lost in structure",
-      "preview": "<strong>Don't get lost in structure</strong>\r\n\r\nMost of us started developing Angular apps with one of these many tutorials out in the internet.\r\n\r\nAll the authors - which I belong to as well - have d",
-      "timestamp": 1527199785000
+      "url": "assets/posts/stackblitz_de.md",
+      "name": "stackblitz_de",
+      "title": "Ich liebe StackBlitz",
+      "preview": "<strong>Ich liebe StackBlitz</strong>\r\n\r\nStackblitz ist das perfekte tool um schnell mal einen Prototypen zu bauen oder um funtionierende Code beispiele mit anderen zu teilen. Aber da geht noch mehr: ",
+      "timestamp": 1554131803215
     },
     {
       "url": "assets/posts/route_types.md",
       "name": "route_types",
       "title": "Route types",
-      "preview": "<strong>Route types</strong>\r\n\r\nAngular comes with a great router. Here I want to show you the different route types and how they work.\r\n\r\n- Standard Route Types\r\n- Custom Route Matcher\r\n\r\nI assume th",
-      "timestamp": 1554152387854
+      "preview": "<strong>Route types</strong>\r\n\r\nAngular comes with a great router. Here I want to show you the different route types and how they work.\r\nI assume that you have some experience with the Angular router.",
+      "timestamp": 1554153690442
+    },
+    {
+      "url": "assets/posts/Dont_get_lost_in_structure.md",
+      "name": "Dont_get_lost_in_structure",
+      "title": "Don't get lost in structure",
+      "preview": "<strong>Don't get lost in structure</strong>\r\n\r\nMost of us started developing Angular apps with one of these many tutorials out in the internet.\r\n\r\nAll the authors - which I belong to as well - have d",
+      "timestamp": 1527199785000
     },
     {
       "url": "assets/posts/translate.md",
