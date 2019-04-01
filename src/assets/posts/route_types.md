@@ -26,16 +26,12 @@ The following snippet shows that `LumpenSammlerComponent` will be shown when the
 ];
 ```
 
-> I would consider mention that 
-
-<br>
-<br>
 The regex for a wildcard looks like:
-=======
+
 > ⚠️ Very important to know: The router goes through your router config array topdown.
-> And he checks every path of the config and tests it with a Regular Expression against the current route. 
+> And he checks every path of the config and tests it with a Regular Expression against the current route.
 > That means the order of your route config matters!
-> On child-modules or lazy loaded modules the angular router is very smart. He merges the child routes _before_ the `**` route. 
+> On child-modules or lazy loaded modules the angular router is very smart. He merges the child routes _before_ the `**` route.
 > So that it really comes last!
 
 The Regular Expression for a wildcard looks like:
@@ -108,7 +104,7 @@ const regex = '/^/start$/';
 
 #### Routes With Params
 
-This is the most common way to transport data in the route and have a dynamic route. 
+This is the most common way to transport data in the route and have a dynamic route.
 The string at the segment which is marked with `:id` will be stored in the Observable `ActivatedRoute.params`.
 
 ```json
@@ -191,11 +187,10 @@ Now we can read the Observable `ActivatedRoute.params` as always.
 > Show how you can read it. Snippet.
 
 ```js
-  this.ActivatedRoute.params
-    .subscribe(p => {
-      console.log(p)
-      this.id = p.id;
-    });
+this.ActivatedRoute.params.subscribe(p => {
+  console.log(p);
+  this.id = p.id;
+});
 ```
 
 This next example is a great way to have internationalisation in the routes.
