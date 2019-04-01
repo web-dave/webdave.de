@@ -37,7 +37,7 @@ const regex = '^(?:([^/]+))$';
 
 #### Redirect
 
-The default route which brings you to a default route if no route is given.<br>
+The default route which brings you to a default route if no route is given.
 
 ```ts
 [
@@ -49,11 +49,11 @@ The default route which brings you to a default route if no route is given.<br>
 ];
 ```
 
-Important is the flag <code>pathMatch</code> which specifies the matching strategy.<br>
+Important is the flag `pathMatch` which specifies the matching strategy.
 Options are:
 
-- <code>prefix</code>
-- <code>full</code>
+- `prefix`
+- `full`
 
 By default, the router will look at what is left in the URL, and check if it starts with the specified path
 
