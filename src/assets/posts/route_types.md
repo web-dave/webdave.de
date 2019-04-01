@@ -97,7 +97,7 @@ The regex for `start` looks like this:
 const regex = '/^/start$/';
 ```
 
-#### Routes with params
+#### Routes With Params
 
 These are the most common way to transport data in the route and have a variable route. The string at the segment which is marked with <code>:id</code> will be stored in the Observable <code>ActivatedRoute.params</code>.
 
