@@ -27,7 +27,7 @@ The following snippet shows that `LumpenSammlerComponent` will be shown when the
 ```
 
 > ⚠️ Very important to know: The router goes through your router config array topdown.
-> And he checks every path of the config and test it with a Regular Expression against the current route. That means: The order of your rout config matters!
+> And he checks every path of the config and tests it with a Regular Expression against the current route. That means the order of your rout config matters!
 
 The Regular Expression expression for a wildcard looks like:
 
@@ -67,7 +67,7 @@ This is particularly important when redirecting empty-path routes.
 
 #### Empty Path
 
-This type of route do not "consume" any URL segments. It is a perfect fit if you wanna use child-routing.
+This type of route does not "consume" any URL segments. It is a perfect fit if you wanna use child-routing.
 
 ```js
 [
