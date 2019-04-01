@@ -99,7 +99,7 @@ const regex = '/^/start$/';
 
 #### Routes With Params
 
-These are the most common way to transport data in the route and have a variable route. The string at the segment which is marked with <code>:id</code> will be stored in the Observable <code>ActivatedRoute.params</code>.
+These are the most common way to transport data in the route and have a variable route. The string at the segment which is marked with `:id` will be stored in the Observable `ActivatedRoute.params`.
 
 ```json
 {
@@ -116,7 +116,7 @@ These are the most common way to transport data in the route and have a variable
 ];
 ```
 
-The regex for a <code>blog/:id</code> looks like:
+The regex for a `blog/:id` looks like:
 
 ```js
 const regex = '/^/blog/(?:([^/]+))$/';
