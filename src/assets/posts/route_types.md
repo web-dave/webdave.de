@@ -78,7 +78,7 @@ This type of route do not "consume" any URL segments. It is a perfect fit if you
 ];
 ```
 
-#### standard routes
+#### Standard Routes
 
 These are the most known rout types. Nothing special.
 
