@@ -61,7 +61,8 @@ By default, the router will look at what is left in the URL, and check if it sta
 '/blog/11'  => 'blog/:id'
 ```
 
-You can change the matching strategy to make sure that the path covers the whole unconsumed URL.<br>
+You can change the matching strategy to make sure that the path covers the whole unconsumed URL.
+
 This is particularly important when redirecting empty-path routes.
 
 #### Empty Path
