@@ -80,7 +80,7 @@ This type of route do not "consume" any URL segments. It is a perfect fit if you
 
 #### Standard Routes
 
-These are the most known rout types. Nothing special.
+These are the most known route types. Nothing special.
 
 ```js
 [
