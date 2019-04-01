@@ -13,7 +13,9 @@ This section introduces you to several routing rules you can specify.
 
 #### Wild Cards
 
-No matter where you navigate to, the router will find this and instantiate LumpenSammlerComponent.
+A wild card is specified with two asterisk signs `**`.
+This route will be activated if an URL is entered that does not match any other route registered.
+The following snippet shows that `LumpenSammlerComponent` will be shown when the wild card gets activated.
 
 ```js
 [
