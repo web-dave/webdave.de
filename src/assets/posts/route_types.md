@@ -44,11 +44,11 @@ The default route wich brings you to a default route if no route is given.<br>
 ];
 ```
 
-Important is the flag `pathMatch` which specifies the matching strategy.<br>
+Important is the flag <code>pathMatch</code> which specifies the matching strategy.<br>
 Options are:
 
-- `prefix`
-- `full`
+- <code>prefix</code>
+- <code>full</code>
 
 By default the router will look at what is left in the url, and check if it starts with the specified path
 
@@ -61,7 +61,7 @@ This is particularly important when redirecting empty-path routes.
 
 #### Empty Path
 
-These type of route do not 'consume' any url segments. It is perfect fit if you wanna use child-routing
+These type of route do not 'consume' any url segments. It is perfect fit if you wanna use child-routing.
 
 ```js
 [
@@ -85,7 +85,7 @@ These is the most known rout types. Nothing special.
 ];
 ```
 
-The regex for `start` looks like this:
+The regex for <code>start</code> looks like this:
 
 ```js
 const regex = '/^/start$/';
@@ -93,7 +93,7 @@ const regex = '/^/start$/';
 
 #### Routes with params
 
-These is the most common way to transport data in the route and have a variable route. The string at the segment which is marked with `:id` will be stored in the Observable `ActivatedRoute.params`.
+These is the most common way to transport data in the route and have a variable route. The string at the segment which is marked with <code>:id</code> will be stored in the Observable <code>ActivatedRoute.params</code>.
 
 ```json
 {
@@ -110,7 +110,7 @@ These is the most common way to transport data in the route and have a variable 
 ];
 ```
 
-The regex for a `blog/:id` looks like:
+The regex for a <code>blog/:id</code> looks like:
 
 ```js
 const regex = '/^/blog/(?:([^/]+))$/';
@@ -119,14 +119,14 @@ const regex = '/^/blog/(?:([^/]+))$/';
 ### Custome route matcher
 
 Definetly a FAQ in my workshops is:
-Q: Can I define a specific regex for a route?
-A: Yes!
+<i>Q: Can I define a specific regex for a route?</i><br>
+<b>A: Yes!</b>
 
 Ok this is ot enough, so I will explain how you can do this.
 
 A 'Standard' route config has a path to define how this rule will be applied.
 If you wanna set a own rule, you can define a 'matcher'.
-A custom URL matcher can be provided when a combination of `path` and `pathMatch` isn't expressive enough.
+A custom URL matcher can be provided when a combination of <code>path</code> and <code>pathMatch</code> isn't expressive enough.
 
 Here is a example to match with any regex, (I use a 'numbers-only' regex here):
 
@@ -169,7 +169,7 @@ const regexMatcher = (url: UrlSegment[]) => {
 ];
 ```
 
-Now we can read the Observable `ActivatedRoute.params` as always.
+Now we can read the Observable <code>ActivatedRoute.params</code> as always.
 
 ```json
 {
