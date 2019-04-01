@@ -1,6 +1,6 @@
 <strong>Route types</strong>
 
-Angular comes with a great router. Here I wanna show you the different route types and how they work.
+Angular comes with a great router. Here I want to show you the different route types and how they work.
 
 - Standard Route Types
 - Custom Route Matcher
@@ -67,7 +67,7 @@ This is particularly important when redirecting empty-path routes.
 
 #### Empty Path
 
-This type of route does not "consume" any URL segments. It is a perfect fit if you wanna use child-routing.
+This type of route does not "consume" any URL segments. It is a perfect fit if you want to use child-routing.
 
 ```js
 [
@@ -132,7 +132,7 @@ Definitely a frequently asked question in my workshops is:
 Ok, this is not enough so I will explain how you can do this.
 
 A 'Standard' route config has a path to define how this rule will be applied.
-If you wanna set an own rule, you can define a 'matcher'.
+If you want to set an own rule, you can define a 'matcher'.
 A custom URL matcher can be provided when a combination of <code>path</code> and <code>pathMatch</code> isn't expressive enough.
 
 Here is a example to match with any regex, (I use a 'numbers-only' regex here):
@@ -152,7 +152,7 @@ const regexMatcher = (url: UrlSegment[]) => {
 ];
 ```
 
-The problem with this is: We don't have defined any routeParams yet.
+The problem with this is that we don't have defined any `routeParams` yet.
 So let's fix this.
 To do so, we have to define them in the returned object as a UrlSegment which can be resolved by the router. Sounds complicated? It isn't.
 
@@ -176,7 +176,7 @@ const regexMatcher = (url: UrlSegment[]) => {
 ];
 ```
 
-Now we can read the Observable <code>ActivatedRoute.params</code> as always.
+Now we can read the Observable `ActivatedRoute.params` as always.
 
 ```json
 {
