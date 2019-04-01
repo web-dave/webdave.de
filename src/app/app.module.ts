@@ -1,22 +1,25 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import { MarkdownModule } from "ngx-markdown";
-import { AppRoutingModule } from "./app-routing.module";
+import { MarkdownModule } from 'ngx-markdown';
+import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent } from "./app.component";
-import { FrameworkModule } from "./framework/framework.module";
-import { HttpClientModule } from "@angular/common/http";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AppComponent } from './app.component';
+import { FrameworkModule } from './framework/framework.module';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatGridListModule,
   MatCardModule,
   MatMenuModule,
   MatIconModule,
-  MatButtonModule
-} from "@angular/material";
-import { LayoutModule } from "@angular/cdk/layout";
-import { ServiceWorkerModule } from '@angular/service-worker';
+  MatButtonModule,
+  MatSnackBarModule,
+  MatSnackBar,
+  MatSnackBarRef
+} from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
+import { ServiceWorkerModule, SwUpdate, SwPush } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -34,9 +37,26 @@ import { environment } from '../environments/environment';
     MatIconModule,
     MatButtonModule,
     LayoutModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    MatSnackBarModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+  publicKey =
+    'BMyiu23K_vAX2t3Ap01GxGm2in9K1QB0YjlYmuUMtgbpvDlOoCZ3xtDKiE3HYBsIhpQ0G7PLP7StUe0ogtGbo8o';
+  constructor(update: SwUpdate, snackbar: MatSnackBar) {
+    update.available.subscribe(u => {
+      console.log(u);
+      snackbar
+        .open('New Blockpost arrived!', 'I wanna read it!')
+        .onAction()
+        .subscribe(() => {
+          window.location.replace(window.location.origin + '/blog');
+        });
+    });
+  }
+}

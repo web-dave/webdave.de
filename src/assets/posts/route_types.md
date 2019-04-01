@@ -1,14 +1,21 @@
 <strong>Route types</strong>
 
-Angular comes with a great router. Here i wanna show you the different rout types and how they work. I assume that you have some experience with the angular router.
+Angular comes with a great router. Here I want to show you the different route types and how they work.
 
-### Standard route types
+- Standard Route Types
+- Custom Route Matcher
 
-You can define several routing rules which a kind of standard.
+I assume that you have some experience with the Angular router.
+
+### Standard Route Types
+
+This section introduces you to several routing rules you can specify.
 
 #### Wild Cards
 
-No matter where you navigate to, the router will find this and instantiate LumpenSammlerComponent.
+A wild card is specified with two asterisk signs `**`.
+This route will be activated if an URL is entered that does not match any other route registered.
+The following snippet shows that `LumpenSammlerComponent` will be shown when the wild card gets activated.
 
 ```js
 [
@@ -19,15 +26,19 @@ No matter where you navigate to, the router will find this and instantiate Lumpe
 ];
 ```
 
-<b>
-Very important to know: The router goes through your router config array topdown.
-And he checks every path of the config and test it with a regex against the current route. That means: The order of your rout config matters!</b>
-
-> I would consider mention that on child-modules or lazy loaded modules the angular router is so intelligent merge the child routes _before_ the '**' route. So that the **-route really comes last!
+> I would consider mention that 
 
 <br>
 <br>
 The regex for a wildcard looks like:
+=======
+> ⚠️ Very important to know: The router goes through your router config array topdown.
+> And he checks every path of the config and tests it with a Regular Expression against the current route. 
+> That means the order of your route config matters!
+> On child-modules or lazy loaded modules the angular router is very smart. He merges the child routes _before_ the `**` route. 
+> So that it really comes last!
+
+The Regular Expression for a wildcard looks like:
 
 ```js
 const regex = '^(?:([^/]+))$';
@@ -35,7 +46,7 @@ const regex = '^(?:([^/]+))$';
 
 #### Redirect
 
-The default route wich brings you to a default route if no route is given.<br>
+The default route which brings you to a default route if no route is given.
 
 ```ts
 [
@@ -47,24 +58,25 @@ The default route wich brings you to a default route if no route is given.<br>
 ];
 ```
 
-Important is the flag <code>pathMatch</code> which specifies the matching strategy.<br>
+Important is the flag `pathMatch` which specifies the matching strategy.
 Options are:
 
-- <code>prefix</code>
-- <code>full</code>
+- `prefix`
+- `full`
 
-By default the router will look at what is left in the url, and check if it starts with the specified path
+By default, the router will look at what is left in the URL, and check if it starts with the specified path
 
 ```ts
 '/blog/11'  => 'blog/:id'
 ```
 
-You can change the matching strategy to make sure that the path covers the whole unconsumed url.<br>
+You can change the matching strategy to make sure that the path covers the whole unconsumed URL.
+
 This is particularly important when redirecting empty-path routes.
 
 #### Empty Path
 
-These type of route do not 'consume' any url segments. It is a perfect fit if you want to use child-routing.
+This type of route does not "consume" any URL segments. It is a perfect fit if you want to use child-routing.
 
 ```js
 [
@@ -75,9 +87,9 @@ These type of route do not 'consume' any url segments. It is a perfect fit if yo
 ];
 ```
 
-#### standard routes
+#### Standard Routes
 
-This is the most known route type. Nothing special.
+These are the most known route types. Nothing special.
 
 ```js
 [
@@ -88,17 +100,16 @@ This is the most known route type. Nothing special.
 ];
 ```
 
-The regex for <code>start</code> looks like this:
+The regex for `start` looks like this:
 
 ```js
 const regex = '/^/start$/';
 ```
 
-#### Routes with params
+#### Routes With Params
 
-This is the most common way to transport data in the route and have a dynamic route. The string at the segment which is marked with <code>:id</code> will be stored in the Observable <code>ActivatedRoute.params</code>.
-
-> It will also be stored in the paramMap which can be read then.
+This is the most common way to transport data in the route and have a dynamic route. 
+The string at the segment which is marked with `:id` will be stored in the Observable `ActivatedRoute.params`.
 
 ```json
 {
@@ -115,23 +126,24 @@ This is the most common way to transport data in the route and have a dynamic ro
 ];
 ```
 
-The regex for a <code>blog/:id</code> looks like:
+The regex for a `blog/:id` looks like:
 
 ```js
 const regex = '/^/blog/(?:([^/]+))$/';
 ```
 
-### Custome route matcher
+### Custom Route Matcher
 
-Definitely a FAQ in my workshops is:
-<i>Q: Can I define a specific regex for a route?</i><br>
-<b>A: Yes!</b>
+Definitely a frequently asked question in my workshops is:
 
-Ok this is not enough, so I will explain how you can do this.
+- _Q: Can I define a specific regex for a route?_
+- **A: Yes!**
 
-A 'standard' route config has a path to define how this rule will be applied.
-If you want to set your own rule you can define a 'matcher'.
-A custom URL matcher can be provided when a combination of <code>path</code> and <code>pathMatch</code> isn't expressive enough.
+Ok, this is not enough so I will explain how you can do this.
+
+A 'Standard' route config has a path to define how this rule will be applied.
+If you want to set your own rule, you can define a 'matcher'.
+A custom URL matcher can be provided when a combination of `path`and `pathMatch` isn't expressive enough.
 
 Here is a example to match with any regex, (I use a 'numbers-only' regex here):
 
@@ -150,9 +162,9 @@ const regexMatcher = (url: UrlSegment[]) => {
 ];
 ```
 
-The problem with this is: We dont have defined any routeParams yet.
+The problem with this is that we don't have defined any `routeParams` yet.
 So let's fix this.
-To do so, we have to define them in the returned object as a UrlSegment wich can be resolved by the router. Sounds complicated? It isn't.
+To do so, we have to define them in the returned object as a UrlSegment which can be resolved by the router. Sounds complicated? It isn't.
 
 ```js
 const numberRegex = '^[0-9]*$';
@@ -174,14 +186,16 @@ const regexMatcher = (url: UrlSegment[]) => {
 ];
 ```
 
-Now we can read the Observable <code>ActivatedRoute.params</code> as always.
+Now we can read the Observable `ActivatedRoute.params` as always.
 
 > Show how you can read it. Snippet.
 
-```json
-{
-  "id": "5"
-}
+```js
+  this.ActivatedRoute.params
+    .subscribe(p => {
+      console.log(p)
+      this.id = p.id;
+    });
 ```
 
 This next example is a great way to have internationalisation in the routes.
@@ -200,7 +214,7 @@ const i18nMatcher = (url: UrlSegment[]) => {
 };
 ```
 
-#### credits
+#### Credits
 
 Thx to
 
