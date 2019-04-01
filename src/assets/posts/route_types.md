@@ -22,6 +22,9 @@ No matter where you navigate to, the router will find this and instantiate Lumpe
 <b>
 Very important to know: The router goes through your router config array topdown.
 And he checks every path of the config and test it with a regex against the current route. That means: The order of your rout config matters!</b>
+
+> I would consider mention that on child-modules or lazy loaded modules the angular router is so intelligent merge the child routes _before_ the '**' route. So that the **-route really comes last!
+
 <br>
 <br>
 The regex for a wildcard looks like:
@@ -61,7 +64,7 @@ This is particularly important when redirecting empty-path routes.
 
 #### Empty Path
 
-These type of route do not 'consume' any url segments. It is perfect fit if you wanna use child-routing.
+These type of route do not 'consume' any url segments. It is a perfect fit if you want to use child-routing.
 
 ```js
 [
@@ -74,7 +77,7 @@ These type of route do not 'consume' any url segments. It is perfect fit if you 
 
 #### standard routes
 
-These is the most known rout types. Nothing special.
+This is the most known route type. Nothing special.
 
 ```js
 [
@@ -93,7 +96,9 @@ const regex = '/^/start$/';
 
 #### Routes with params
 
-These is the most common way to transport data in the route and have a variable route. The string at the segment which is marked with <code>:id</code> will be stored in the Observable <code>ActivatedRoute.params</code>.
+This is the most common way to transport data in the route and have a dynamic route. The string at the segment which is marked with <code>:id</code> will be stored in the Observable <code>ActivatedRoute.params</code>.
+
+> It will also be stored in the paramMap which can be read then.
 
 ```json
 {
@@ -118,14 +123,14 @@ const regex = '/^/blog/(?:([^/]+))$/';
 
 ### Custome route matcher
 
-Definetly a FAQ in my workshops is:
+Definitely a FAQ in my workshops is:
 <i>Q: Can I define a specific regex for a route?</i><br>
 <b>A: Yes!</b>
 
-Ok this is ot enough, so I will explain how you can do this.
+Ok this is not enough, so I will explain how you can do this.
 
-A 'Standard' route config has a path to define how this rule will be applied.
-If you wanna set a own rule, you can define a 'matcher'.
+A 'standard' route config has a path to define how this rule will be applied.
+If you want to set your own rule you can define a 'matcher'.
 A custom URL matcher can be provided when a combination of <code>path</code> and <code>pathMatch</code> isn't expressive enough.
 
 Here is a example to match with any regex, (I use a 'numbers-only' regex here):
@@ -171,13 +176,15 @@ const regexMatcher = (url: UrlSegment[]) => {
 
 Now we can read the Observable <code>ActivatedRoute.params</code> as always.
 
+> Show how you can read it. Snippet.
+
 ```json
 {
   "id": "5"
 }
 ```
 
-This nex example is a great way to have internationalisation in the routes.
+This next example is a great way to have internationalisation in the routes.
 
 ```js
 const i18nRegex = '(needle|nadel)';
