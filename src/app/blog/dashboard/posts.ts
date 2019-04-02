@@ -1,0 +1,51 @@
+// tslint:disable:max-line-length
+export const postsArray = [
+  {
+    url: 'assets/posts/code_extentions.md',
+    name: 'code_extentions',
+    title: 'Useful @code extentions for Angular developers',
+    preview:
+      '<strong>Useful @code extentions for Angular developers</strong>\r\n\r\nMy IDE of choice is visual studio code.\r\nI love it because of it lightweight and fast boot up.\r\n\r\nBut its real power comes with the p',
+    timestamp: 1527199785000
+  },
+  {
+    url: 'assets/posts/stackblitz.md',
+    name: 'stackblitz',
+    title: 'I love StackBlitz',
+    preview:
+      '<strong>I love StackBlitz</strong>\r\n\r\nStackblitz is an awesome tool for prototyping and for sharing live examples. But it can do even more: With StackBlitz you can kick off a GitHub repo with little t',
+    timestamp: 1554127391079
+  },
+  {
+    url: 'assets/posts/stackblitz_de.md',
+    name: 'stackblitz_de',
+    title: 'Ich liebe StackBlitz',
+    preview:
+      '<strong>Ich liebe StackBlitz</strong>\r\n\r\nStackblitz ist das perfekte tool um schnell mal einen Prototypen zu bauen oder um funtionierende Code beispiele mit anderen zu teilen. Aber da geht noch mehr: ',
+    timestamp: 1554131803215
+  },
+  {
+    url: 'assets/posts/routetypes.md',
+    name: 'routetypes',
+    title: 'Route types',
+    preview:
+      '<strong>Route types</strong>\r\n\r\nAngular comes with a great router. Here I want to show you the different route types and how they work.\r\nI assume that you have some experience with the Angular router.',
+    timestamp: 1554224635038
+  },
+  {
+    url: 'assets/posts/translate.md',
+    name: 'translate',
+    title: 'Translate (i18n) your Angular Apps with @ngx-translate/core',
+    preview:
+      '<strong>Translate (i18n) your Angular Apps with @ngx-translate/core</strong>\r\n\r\nOur apps are used by different people, with differnet languages and different gender. So, to provide them the best exper',
+    timestamp: 1527199785000
+  },
+  {
+    url: 'assets/posts/Dont_get_lost_in_structure.md',
+    name: 'Dont_get_lost_in_structure',
+    title: "Don't get lost in structure",
+    preview:
+      "<strong>Don't get lost in structure</strong>\r\n\r\nMost of us started developing Angular apps with one of these many tutorials out in the internet.\r\n\r\nAll the authors - which I belong to as well - have d",
+    timestamp: 1527199785000
+  }
+];

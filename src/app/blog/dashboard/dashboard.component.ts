@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { BreakpointObserver } from '@angular/cdk/layout';
 import { BlogsService, Post } from '../../framework/shared/blogs.service';
 import { Observable } from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs/operators';
+import { postsArray } from './posts';
 
 @Component({
   selector: 'blog-dashboard',
@@ -11,20 +11,15 @@ import { tap } from 'rxjs/operators';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  posts$: Observable<Post[]>;
+  posts: Post[] = [];
   constructor(
-    private breakpointObserver: BreakpointObserver,
     private blogService: BlogsService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
   ngOnInit(): void {
-    this.posts$ = this.blogService.getPostList().pipe(
-      tap(p => {
-        return p.sort((a, b) =>
-          a.timestamp > b.timestamp ? -1 : b.timestamp > a.timestamp ? 1 : 0
-        );
-      })
+    this.posts = postsArray.sort((a, b) =>
+      a.timestamp > b.timestamp ? -1 : b.timestamp > a.timestamp ? 1 : 0
     );
   }
   showMore(name: string) {

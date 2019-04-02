@@ -1,11 +1,7 @@
 <div class="grid-container">
   <h1 class="mat-h1">Blog</h1>
   <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile
-      *ngFor="let post of (posts$ | async)"
-      [colspan]="2"
-      [rowspan]="1"
-    >
+    <mat-grid-tile *ngFor="let post of posts" [colspan]="2" [rowspan]="1">
       <mat-card class="dashboard-card" (click)="showMore(post.name)">
         <mat-card-header>
           <mat-card-title>

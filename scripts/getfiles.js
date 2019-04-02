@@ -53,9 +53,9 @@ posts
 
 writeJson = postsarr => {
   const arr = JSON.stringify(postsarr);
-  const jsonContent = `{"posts": ${arr}}`;
+  const jsonContent = `export const postsArray =  ${arr}`;
 
-  fs.writeFile(`${directory}posts.json`, jsonContent, function(err) {
+  fs.writeFile(`./src/app/blog/dashboard/posts.ts`, jsonContent, function(err) {
     if (err) {
       return console.log(err);
     }
