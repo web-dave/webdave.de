@@ -30,7 +30,7 @@ export const postsArray = [
     title: 'Route types',
     preview:
       '<strong>Route types</strong>\r\n\r\nAngular comes with a great router. Here I want to show you the different route types and how they work.\r\nI assume that you have some experience with the Angular router.',
-    timestamp: 1554224635038
+    timestamp: 1554229425903
   },
   {
     url: 'assets/posts/translate.md',

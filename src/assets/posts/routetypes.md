@@ -25,7 +25,7 @@ The following snippet shows that `LumpenSammlerComponent` will be shown when the
 ];
 ```
 
-> Very important to know: The router goes through your router config array topdown.
+> ⚠️Very important to know: The router goes through your router config array topdown.
 > And he checks every path of the config and tests it with a Regular Expression against the current route.
 > That means the order of your route config matters!
 > On child-modules or lazy loaded modules the angular router is very smart. He merges the child routes _before_ the `**` route.
