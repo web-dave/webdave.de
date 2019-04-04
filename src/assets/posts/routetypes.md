@@ -204,12 +204,16 @@ const i18nMatcher = (url: UrlSegment[]) => {
 };
 ```
 
+I've created a Blitz <a href="https://stackblitz.com/edit/custom-router-matcher" target="_blank">here</a>. BTW: Checkout my posts about <a href="https://www.webdave.de/blog/stackblitz">unittesting in Stackblitz</a>.
+
+Way more details about the Angular Router can be found in the <a href="https://angular.io/api/router/">official documentation</a>
+
 #### Credits
 
 Thx to
 
-- <a href="https://twitter.com/brandontroberts"  target="_blank">Brandon Roberts</a> for the inspiration.
-- <a href="https://twitter.com/GregOnNet"  target="_blank">Gregor Woiwode</a> for Spelling, style and grammar checks.
+- <a href="https://twitter.com/brandontroberts" target="_blank">Brandon Roberts</a> for the inspiration.
+- <a href="https://twitter.com/GregOnNet" target="_blank">Gregor Woiwode</a> for Spelling, style and grammar checks.
 - <a href="https://twitter.com/FabianGosebrink" target="_blank">Fabian Gosebrink</a> for Spelling, style and grammar checks.
 
 Thanks, friends! It means a lot!
