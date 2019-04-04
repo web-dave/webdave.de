@@ -46,9 +46,13 @@ import { environment } from '../environments/environment';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  // publicKey =
-  //   'BMyiu23K_vAX2t3Ap01GxGm2in9K1QB0YjlYmuUMtgbpvDlOoCZ3xtDKiE3HYBsIhpQ0G7PLP7StUe0ogtGbo8o';
-  constructor(update: SwUpdate, snackbar: MatSnackBar) {
+  publicKey =
+    'BMyiu23K_vAX2t3Ap01GxGm2in9K1QB0YjlYmuUMtgbpvDlOoCZ3xtDKiE3HYBsIhpQ0G7PLP7StUe0ogtGbo8o';
+  constructor(
+    update: SwUpdate,
+    private snackbar: MatSnackBar,
+    private push: SwPush
+  ) {
     update.available.subscribe(u => {
       console.log(u);
       snackbar
@@ -58,5 +62,15 @@ export class AppModule {
           window.location.replace(window.location.origin + '/blog');
         });
     });
+    if (!push.isEnabled) {
+      push.requestSubscription({ serverPublicKey: this.publicKey }).then(() => {
+        this.subPush();
+      });
+    } else {
+      this.subPush();
+    }
+  }
+  subPush() {
+    this.push.messages.subscribe((m: any) => this.snackbar.open(m.hi, 'X'));
   }
 }
