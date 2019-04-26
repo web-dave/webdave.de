@@ -1,0 +1,48 @@
+non browerslist
+PS C:\workspace\webdave.de> ng build --prod
+
+Date: 2019-04-26T21:39:03.167Z
+Hash: ff1aaa769d1c524fecfd
+Time: 263730ms
+chunk {0} runtime.6516d87590e156bf2504.js (runtime) 2.26 kB [entry] [rendered]
+chunk {1} common.98e2e3017147056f9275.js (common) 623 bytes  [rendered]
+chunk {2} 2.6ab3651295c56468fb1d.js () 12.7 kB  [rendered]
+chunk {3} main.f9854d2eeb7b6c2c40e9.js (main) 720 kB [initial] [rendered]
+chunk {4} polyfills.ef621577f43dbf808193.js (polyfills) 63.4 kB [initial] [rendered]
+chunk {5} polyfills-es5.a843bf4f8a526044af86.js (polyfills-es5) 68 kB [initial] [rendered]
+chunk {6} styles.3c8d0b9dbbfa97c7cb7c.css (styles) 117 kB [initial] [rendered]
+chunk {7} 7.285acac20cd792acb608.js () 150 kB  [rendered]
+chunk {8} 8.9c0dddb671f234f0e2e7.js () 10.9 kB  [rendered]
+chunk {9} 9.c7db1ad19a75cb8e5e8f.js () 8.61 kB  [rendered]
+chunk {scripts} scripts.7cce4a7e05aa8b266630.js (scripts) 37.2 kB [entry] [rendered]
+
+browserslist
+
+Date: 2019-04-26T21:46:04.006Z
+Hash: 9a20ff19f4722fd259d9
+Time: 271081ms
+chunk {0} runtime-es5.abaf24229690376cb285.js (runtime) 2.27 kB [entry] [rendered]
+chunk {1} common-es5.98e2e3017147056f9275.js (common) 623 bytes  [rendered]
+chunk {2} 2-es5.6ab3651295c56468fb1d.js () 12.7 kB  [rendered]
+chunk {3} main-es5.662f358f68eea6dff353.js (main) 720 kB [initial] [rendered]
+chunk {4} polyfills-es5.403c49ada7389dd7ebe8.js (polyfills) 131 kB [initial] [rendered]
+chunk {5} styles.a65ca64728754e86bfaf.css (styles) 117 kB [initial] [rendered]
+chunk {6} 6-es5.9728e7ba51a619c764bb.js () 150 kB  [rendered]
+chunk {7} 7-es5.1786ee5fcecae607ebf8.js () 10.9 kB  [rendered]
+chunk {8} 8-es5.f49507ce0f896fe18167.js () 8.61 kB  [rendered]
+chunk {scripts} scripts.7cce4a7e05aa8b266630.js (scripts) 37.2 kB [entry] [rendered]
+
+Date: 2019-04-26T21:49:53.828Z
+Hash: 22eab0b3ba681cc5fb8e
+Time: 229046ms
+chunk {0} runtime-es2015.f31e37c7ddaf49b17bc1.js (runtime) 2.27 kB [entry] [rendered]
+chunk {1} common-es2015.4e708c1504c403472adf.js (common) 525 bytes  [rendered]
+chunk {2} 2-es2015.7d7c4fafcc9d09cdb4e7.js () 11.3 kB  [rendered]
+chunk {3} main-es2015.baf263089d5e61c72fad.js (main) 628 kB [initial] [rendered]
+chunk {4} polyfills-es2015.cc874f075a980225210d.js (polyfills) 57.5 kB [initial] [rendered]
+chunk {5} styles.a65ca64728754e86bfaf.css (styles) 117 kB [initial] [rendered]
+chunk {6} 6-es2015.0fcd3e56d1dcbb3ae0f0.js () 142 kB  [rendered]
+chunk {7} 7-es2015.e0cca1e217c915a860c1.js () 10.8 kB  [rendered]
+chunk {8} 8-es2015.19c1da309cd1f902cdff.js () 8.36 kB  [rendered]
+chunk {scripts} scripts.7cce4a7e05aa8b266630.js (scripts) 37.2 kB [entry] [rendered]
+PS C:\workspace\webdave.de>
