@@ -20,16 +20,16 @@ export class CropperComponent {
   public data2: any;
   public cropperSettings2: CropperSettings;
 
-  @ViewChild('cropper1', undefined)
+  @ViewChild('cropper1', { static: false })
   public cropper1: ImageCropperComponent;
 
-  @ViewChild('cropper2', undefined)
+  @ViewChild('cropper2', { static: false })
   public cropper2: ImageCropperComponent;
 
-  @ViewChild('cropper3', undefined)
+  @ViewChild('cropper3', { static: false })
   public cropper3: ImageCropperComponent;
 
-  @ViewChild('cropper4', undefined)
+  @ViewChild('cropper4', { static: false })
   public cropper4: ImageCropperComponent;
 
   public onChange: ($event: any) => void;

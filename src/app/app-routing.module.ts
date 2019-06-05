@@ -24,15 +24,17 @@ const routes: Routes = [
   },
   {
     path: 'blog',
-    loadChildren: './blog/blog.module#BlogModule'
+    loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
   },
   {
     path: 'workshops',
-    loadChildren: './workshops/workshops.module#WorkshopsModule'
+    loadChildren: () =>
+      import('./workshops/workshops.module').then(m => m.WorkshopsModule)
   },
   {
     path: 'ngx-img-cropper',
-    loadChildren: './cropper/cropper.module#CropperModule'
+    loadChildren: () =>
+      import('./cropper/cropper.module').then(m => m.CropperModule)
   },
   {
     path: '**',
