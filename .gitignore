@@ -2,6 +2,8 @@
 
 # compiled output
 /dist
+/dist-8
+/dist-pur
 /dist-server
 /tmp
 /out-tsc
