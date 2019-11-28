@@ -8,7 +8,8 @@ It's the possibility to use Angular Components standalone.
 
 #### But:
 
-    What I mostly see is that people use this feature to ship complete features (modules) within it. Which is very cool!
+    What I mostly see is that people use this feature to ship complete features (modules) within it.
+    Which is very cool!
 
 From a architecture perspective this means, we finally can build microfrontends. Something you may know from the Backend. There you call this pattern Microservices.
 
@@ -139,7 +140,8 @@ We start from empty Angular Project we create.
 ng new ce-moin
 ```
 
-    Please keep in mind: Angular Elements are available since Angular version 6. So, you need @angular/cli 6+ for this.
+    Please keep in mind: Angular Elements are available since Angular version 6.
+    So, you need @angular/cli 6+ for this.
 
 next we want to use Schematics to add all required resources and tooling to our small project.
 
