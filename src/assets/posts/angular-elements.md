@@ -133,7 +133,7 @@ A: _CustomElements with Angular Power_
 
 ## How do you build it?
 
-We start from ampty Angular Project we've just created.
+We start from empty Angular Project we create.
 
 ```bash
 ng new ce-moin
