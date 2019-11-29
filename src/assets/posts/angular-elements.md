@@ -34,18 +34,18 @@ WebComponents are an umbrella combining three techniques:
 
 ### How does a CustomElement look like?
 
-Its a `ES6 class` which extends `HTMLElement` and so it inherits the entire `DOM API`.
-That means any properties/methods that you add to the class become part of the element's DOM interface and it creates a public JavaScript API for your tag.
+Its an `ES6 class` which extends `HTMLElement` and so it inherits the entire `DOM API`.
+That means any properties/methods that you add to the class become part of the element's DOM interface and it creates a public JavaScript API for your HTML tag.
 
 ```typescript
 class MoinComponent extends HTMLElement {}
 ```
 
-You must define it to introduce it to the Browser, therefore you have to call `customElements.define()` which takes two parameters. The first Parameter is the Tag-Name, the second Parameter is the Class you want to register for this TagName.
-There are some very Important rules you have to follow when it come to creating CustomElements.
+You must define it to introduce it to the Browser, therefore you have to call `customElements.define()` which takes two parameters. The first Parameter is the TagName, the second parameter is the class you want to register for this TagName.
+There are some very important rules you have to follow when it comes to creating CustomElements.
 
 1. The TagName must be lowercase and MUST contain a dash `-` (kebab-case). So the HTML parser can distinguish CustomElements from regular elements. It also ensures forward compatibility when new tags are added to HTML (HTML tags are without dashes).
-2. TagNames must be Unique and can only defined once.
+2. TagNames must be unique and can only defined once.
 3. CustomElements are NEVER self-closing
 
 ```typescript
@@ -56,7 +56,7 @@ customElements.define('moin-moin', MoinComponent);
 
 ### CustomElements API
 
-In the Class you can use getter and setter to reflect values to HTML Attributes
+In the class you can use getter and setter to reflect values to HTML Attributes
 
 #### `this` inside a class definition refers to the DOM element itself
 
@@ -70,7 +70,7 @@ In the Class you can use getter and setter to reflect values to HTML Attributes
  }
 ```
 
-You can also Observe HTML Attributes changes.
+You can also observe HTML attributes changes.
 
 ```typescript
  static get observedAttributes() {
@@ -103,7 +103,7 @@ this.dispatchEvent(
 
 ### Reactions
 
-A CustomElement can define special Methods which are called at special times during its "life".
+A CustomElement can define special methods which are called at special times during its "life".
 These are called reactions.
 
 - `constructor(){...}` CustomElement is created
@@ -155,7 +155,7 @@ ng g ngx-build-plus:wc-polyfill
 
 _by Manfred Steyer_
 
-    Extend the Angular CLI's default build behavior to build a single bundle (and many more, but we only use this single Bundle thing)
+    Extend the Angular CLI's default build behavior to build a single bundle (and many more, but we only use this single bundle thing)
 
 Now we want to turn our `AppComponent` into a CustomElement.
 
@@ -178,9 +178,9 @@ constructor(private injector: Injector) {
     Creates a custom element class based on an Angular component.(doku)
 
 But we want to use the AppComponent standalone. So we have to remove it from AppModule.bootstrap Array. We also have to define it as a entryComponent.
-Normally we tell Angular which Component is our root Component.
-We don't have such a root Component (no bootstrap array).
-So we need to tell Angular to use the AppModule for bootstrapping, for this we use the ngDoBootstrap method.
+Normally we tell Angular which Component is our root component.
+We don't have such a root component (no bootstrap array).
+So we need to tell Angular to use the AppModule for bootstrapping. For this we use the ngDoBootstrap method.
 
 ```typescript
 import { NgModule, Injector, DoBootstrap } from '@angular/core';
@@ -204,7 +204,7 @@ export class AppModule implements DoBootstrap {
 
 ### That's it!
 
-so let's build it. Thanks to `ngx-build-plus` we have this nice feature to build all we need in one bundle.
+So let's build it. Thanks to `ngx-build-plus` we have this nice feature to build all we need in one bundle.
 
 ```bash
 ng build --prod --single-bundle
@@ -277,7 +277,7 @@ Eventbinding works the Angular way.
 
 ##### Attribute binding
 
-Attributebinding works nearly the Angular way.
+Attribute binding works nearly the Angular way.
 
 ```html
 <moin-moin [attr.name]="user.name"></moin-moin>
