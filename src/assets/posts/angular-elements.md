@@ -2,29 +2,29 @@
 
 Since Angular Version 6 was released, there is a new cool features available: `Angular-Elements`.
 
-## What is an Angular-Elements?
+## What are Angular-Elements?
 
-It's the possibility to use Angular Components standalone.
+It's the possibility to produce standalone Angular Components.
 
 #### But:
 
     What I mostly see is that people use this feature to ship complete features (modules) within it.
     Which is very cool!
 
-From a architecture perspective this means, we finally can build microfrontends. Something you may know from the Backend. There you call this pattern Microservices.
+From an architecture perspective this means, we can finally build micro frontends. Something you may know from the Backend. There you call this pattern Microservices.
 
 Here I want to show you how to build and use them.
 
 ### What is a Angular-Element?
 
-It's a wrapper to convert a Angular Component into a customElement.
+It's a wrapper to convert an Angular Component into a customElement.
 
 Custom elements are part of something you might know as WebComponent.
 WebComponents are HTML tags you can define.
 
 I don't want to go into WebComponents here, but let me show you some interesting facts about them.
 
-WebComponents are a ambrella arround three technics:
+WebComponents are an umbrella combining three techniques:
 
 - Template `<template></template>`
 - Shadow DOM `<#shadow-root></shadow-root>`
@@ -41,10 +41,10 @@ That means any properties/methods that you add to the class become part of the e
 class MoinComponent extends HTMLElement {}
 ```
 
-You musst define it to indroduce it to the Browser, therefore you have to call `customElements.define()` which takes two parameters. The first Parameter is the Tag-Name, the second Parameter is the Class you want to register for this TagName.
+You must define it to introduce it to the Browser, therefore you have to call `customElements.define()` which takes two parameters. The first Parameter is the Tag-Name, the second Parameter is the Class you want to register for this TagName.
 There are some very Important rules you have to follow when it come to creating CustomElements.
 
-1. The TagName musst be lowercase and MUST contain a dash `-` (cebab-case). So the HTML parser can distinguish CustomElements from regular elements. It also ensures forward compatibility when new tags are added to HTML (HTML tags are without dashes).
+1. The TagName must be lowercase and MUST contain a dash `-` (kebab-case). So the HTML parser can distinguish CustomElements from regular elements. It also ensures forward compatibility when new tags are added to HTML (HTML tags are without dashes).
 2. TagNames must be Unique and can only defined once.
 3. CustomElements are NEVER self-closing
 
@@ -285,10 +285,11 @@ Attributebinding works nearly the Angular way.
 
 #### Conclusion
 
-Angular Elements are great. It's a powerfull feature to implement a microfrontend architecture.
+Angular Elements are great. It's a powerful feature to implement a micro frontend architecture.
 
 #### Special Thanks
 
 I would like to give special thanks to the awesome people that reviewed this post and gave me pointers:
 
 - <a href="https://twitter.com/ManfredSteyer"  target="_blank">Manfred Steyer</a>
+- <a href="https://twitter.com/GregOnNet"  target="_blank">Gregor Woiwode</a>
