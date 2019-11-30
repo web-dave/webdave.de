@@ -1,50 +1,49 @@
 # Angular Elements
 
-Since Angular Version 6 was released, there is a new cool features available: `Angular-Elements`.
+Since Angular version 6 was released, there is a new cool features available, called: `Angular Elements`.
 
-## What are Angular-Elements?
+## What are Angular Elements? 
 
-It's the possibility to produce standalone Angular Components.
+It's the possibility to produce standalone Web Components written in Angular.
 
 #### But:
 
-    What I mostly see is that people use this feature to ship complete features (modules) within it.
+    What I often see is that people use this feature to ship complete features (modules).
     Which is very cool!
 
-From an architecture perspective this means, we can finally build micro frontends. Something you may know from the Backend. There you call this pattern Microservices.
+From an architecture perspective, this means we can finally build micro apps. The pattern is also know as [Micro Frontends](https://micro-frontends.org/). This is something you may be familiar with in the backend, here you call this pattern Microservices.
 
-Here I want to show you how to build and use them.
+In this blog I want to show you how to build and use these Angular Elements.
 
-### What is a Angular-Element?
+### What is an Angular Element?
 
-It's a wrapper to convert an Angular Component into a customElement.
+A Angular Element is a wrapper to convert an Angular Component into a Custom Element.
 
-Custom elements are part of something you might know as WebComponent.
-WebComponents are HTML tags you can define.
+Custom elements are part of something that you might know as Web Component.
 
-I don't want to go into WebComponents here, but let me show you some interesting facts about them.
+Custom Element are HTML tags you can define and use.
 
 WebComponents are an umbrella combining three techniques:
 
 - Template `<template></template>`
 - Shadow DOM `<#shadow-root></shadow-root>`
-- CustomElement `<foo-bar></foo-bar>`
+- Custom Element `<foo-bar></foo-bar>`
 
-#### People mostly mean CustomElements when they talk about WebComponents
+#### Most People mean Custom Elements when they talk about Web Components
 
-### How does a CustomElement look like?
+### How does a Custom Element look like?
 
-Its a `ES6 class` which extends `HTMLElement` and so it inherits the entire `DOM API`.
-That means any properties/methods that you add to the class become part of the element's DOM interface and it creates a public JavaScript API for your tag.
+Custom Elements can be defined as a `ES6 class` which extends `HTMLElement` and so it inherits the entire `DOM API`.
+That means any properties/methods that you add to the class become part of the element's DOM interface and it creates a public JavaScript API for your custom html tag.
 
 ```typescript
 class MoinComponent extends HTMLElement {}
 ```
 
-You must define it to introduce it to the Browser, therefore you have to call `customElements.define()` which takes two parameters. The first Parameter is the Tag-Name, the second Parameter is the Class you want to register for this TagName.
+You must define it to be able to register to the Browser, therefore you have to call `customElements.define()` which takes two parameters. The first Parameter is the Tag-Name, the second Parameter is the Class you want to register for this TagName.
 There are some very Important rules you have to follow when it come to creating CustomElements.
 
-1. The TagName must be lowercase and MUST contain a dash `-` (kebab-case). So the HTML parser can distinguish CustomElements from regular elements. It also ensures forward compatibility when new tags are added to HTML (HTML tags are without dashes).
+1. The TagName must be lowercase and MUST contain a dash `-` (kebab-case). So the HTML parser can distinguish CustomElements from a regular HTML element. It also ensures forward compatibility when new tags are added to the HTML (HTML tags are without dashes).
 2. TagNames must be Unique and can only defined once.
 3. CustomElements are NEVER self-closing
 
@@ -52,11 +51,11 @@ There are some very Important rules you have to follow when it come to creating 
 customElements.define('moin-moin', MoinComponent);
 ```
 
-#### Custom Elements are unknown until they are defined and the Browser will ignore them!
+#### Custom Elements are unknown until they are defined. The Browser will ignore any unknown custom element!
 
 ### CustomElements API
 
-In the Class you can use getter and setter to reflect values to HTML Attributes
+In the Class you can use `getter` and `setter` to reflect values to HTML Attributes
 
 #### `this` inside a class definition refers to the DOM element itself
 
@@ -70,7 +69,7 @@ In the Class you can use getter and setter to reflect values to HTML Attributes
  }
 ```
 
-You can also Observe HTML Attributes changes.
+You can also observe HTML Attributes changes.
 
 ```typescript
  static get observedAttributes() {
@@ -78,7 +77,7 @@ You can also Observe HTML Attributes changes.
  }
 ```
 
-And you can use the attributeChangedCallback, which is called whenever an attribute from the `observedAttributes` array has changed.
+And you can use the `attributeChangedCallback`, which is called whenever an attribute from the `observedAttributes` array has changed.
 
 ```typescript
  attributeChangedCallback(attr, oldValue, newValue) {
@@ -91,7 +90,7 @@ And you can use the attributeChangedCallback, which is called whenever an attrib
 
 ### Events
 
-You can create CustomEvents like in every Javascript environment. So nothing special.
+You can create and use a custom event, by using the `CustomEvents` constructor, like any other Javascript event. So nothing special!
 
 ```typescript
 this.dispatchEvent(
@@ -103,7 +102,7 @@ this.dispatchEvent(
 
 ### Reactions
 
-A CustomElement can define special Methods which are called at special times during its "life".
+A CustomElement can define special Methods which are called at special times during its "lifecycle".
 These are called reactions.
 
 - `constructor(){...}` CustomElement is created
@@ -113,7 +112,7 @@ These are called reactions.
 
 Q: _But, Why are you telling me this?_
 
-A: _Angular has been designed very similar to CustomElements_
+A: _Angular were designed in a very similar way as CustomElements_
 
 Here is a list of equalities
 | CustomElements | Angular Components |
@@ -128,13 +127,13 @@ Here is a list of equalities
 | template | ng-template |
 | ShadowDom | ViewEncapsulation |
 
-Q: _Why should I go with Angular Elements?_
+Q: _Why should I use Angular Elements?_
 
 A: _CustomElements with Angular Power_
 
 ## How do you build it?
 
-We start from empty Angular Project we create.
+We start with an empty Angular Project we create.
 
 ```bash
 ng new ce-moin
@@ -143,7 +142,7 @@ ng new ce-moin
     Please keep in mind: Angular Elements are available since Angular version 6.
     So, you need @angular/cli 6+ for this.
 
-next we want to use Schematics to add all required resources and tooling to our small project.
+next, we want to use the Angular Schematics to add all required resources and tooling to our small project.
 
 ```bash
 ng add @angular/elements
@@ -177,10 +176,10 @@ constructor(private injector: Injector) {
 
     Creates a custom element class based on an Angular component.(doku)
 
-But we want to use the AppComponent standalone. So we have to remove it from AppModule.bootstrap Array. We also have to define it as a entryComponent.
+But we want to use the `AppComponent` as a standalone component. So we have to remove it from `AppModule.bootstrap` Array. We also have to define it as a `entryComponent`.
 Normally we tell Angular which Component is our root Component.
 We don't have such a root Component (no bootstrap array).
-So we need to tell Angular to use the AppModule for bootstrapping, for this we use the ngDoBootstrap method.
+So we need to tell Angular to use the `AppModule` for bootstrapping, for this we use the `ngDoBootstrap` method.
 
 ```typescript
 import { NgModule, Injector, DoBootstrap } from '@angular/core';
@@ -220,8 +219,8 @@ We'll find all needed files in the dist folder.
 
 #### Create
 
-In a non Angular App you need to add all the needed scripts
-and styles in to your `index.html`
+In a non Angular application you need to add all the needed dependencies
+and styles in to the `index.html`
 
 ```html
     <link rel="stylesheet" href="styles.css"></head>
@@ -233,13 +232,13 @@ and styles in to your `index.html`
     <script src="main-es5.js" nomodule defer></script>
 ```
 
-And define the tag of your CustomElement.
+And define the custom HTML tag of your CustomElement.
 
 ```html
 <moin-moin></moin-moin>
 ```
 
-Or create it dynamic via javascript
+Or create it programmatically by using javascript
 
 ```javascript
 const script = document.createElement('script');
@@ -251,7 +250,7 @@ document.body.appendChild(document.createElement('moin-moin'));
 
 #### Interact
 
-And you can use vanilla JavaScript to interact with this element. In my example the CustomElement has an Input name and an Output.
+And you can use Vanilla JavaScript to interact with this element. In my example the CustomElement has an Input property called `name` and an Output event called `namechange`.
 
 ```javascript
 moin.addEventListener('namechange', e => console.log(e));
@@ -269,7 +268,7 @@ Works exactly as in a non Angular App.
 
 ##### Event binding
 
-Eventbinding works the Angular way.
+Event binding works the Angular way.
 
 ```html
 <moin-moin (namechange)="foo($event)"></moin-moin>
@@ -277,7 +276,7 @@ Eventbinding works the Angular way.
 
 ##### Attribute binding
 
-Attributebinding works nearly the Angular way.
+Attribute binding works nearly the Angular way.
 
 ```html
 <moin-moin [attr.name]="user.name"></moin-moin>
@@ -285,7 +284,7 @@ Attributebinding works nearly the Angular way.
 
 #### Conclusion
 
-Angular Elements are great. It's a powerful feature to implement a micro frontend architecture.
+Angular Elements are great. It's a powerful feature to implement a Micro Frontend architecture.
 
 #### Special Thanks
 
