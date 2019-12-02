@@ -118,17 +118,48 @@ A: _Angular components were designed in a very similar way to CustomElements_
 
 Here is a list of equalities
 
-| CustomElements           | Angular Components |
-| ------------------------ | ------------------ |
-| Attributes               | @Input()           |
-| Properties               | @Input()           |
-| Events                   | @Output()          |
-| connectedCallback        | OnInit             |
-| disconnectedCallback     | OnDestroy          |
-| attributeChangedCallback | OnChanges          |
-| slot                     | ng-content         |
-| template                 | ng-template        |
-| ShadowDom                | ViewEncapsulation  |
+<table>
+  <tr>
+    <th>CustomElements</th>
+    <th>Angular Components</th>
+  </tr>
+  <tr>
+    <td>Attributes</td>
+    <td>@Input()</td>
+  </tr>
+  <tr>
+    <td>Properties</td>
+    <td>@Input()</td>
+  </tr>
+  <tr>
+    <td>Events</td>
+    <td>@Output()</td>
+  </tr>
+  <tr>
+    <td>connectedCallback</td>
+    <td>OnInit</td>
+  </tr>
+  <tr>
+    <td>disconnectedCallback</td>
+    <td>OnDestroy</td>
+  </tr>
+  <tr>
+    <td>attributeChangedCallback</td>
+    <td>OnChanges</td>
+  </tr>
+  <tr>
+    <td>slot</td>
+    <td>ng-content</td>
+  </tr>
+  <tr>
+    <td>template</td>
+    <td>ng-template</td>
+  </tr>
+  <tr>
+    <td>ShadowDom</td>
+    <td>ViewEncapsulation</td>
+  </tr>
+</table>
 
 Q: _Why should I use Angular Elements?_
 
