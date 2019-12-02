@@ -8,44 +8,47 @@ It's the possibility to produce standalone Web Components written in Angular.
 
 #### But:
 
-    What I often see is that people use this feature to ship complete features (modules).
+
+    What I mostly see is that people use this feature to ship complete features (modules).
     Which is very cool!
 
-From an architecture perspective, this means we can finally build micro apps. The pattern is also know as [Micro Frontends](https://micro-frontends.org/). This is something you may be familiar with in the backend, here you call this pattern Microservices.
+From an architecture perspective, this means we can finally build single purpose micro applications. This pattern is known as Micro Frontends. This is something you may be familiar with on the backend side, as the Microservice pattern.
 
-In this blog I want to show you how to build and use these Angular Elements.
+Here I want to show you how to build and use Angular Elements.
 
 ### What is an Angular Element?
 
-A Angular Element is a wrapper to convert an Angular Component into a Custom Element.
+An Angular Element is an API to convert an Angular Component into a Custom Element.
 
-Custom elements are part of something that you might know as Web Component.
+Custom Elements are part of the W3C Web Componens specifications.
 
-Custom Element are HTML tags you can define and use.
+Custom Elements are custom HTML tags you can define and use.
 
-WebComponents are an umbrella combining three techniques:
+I don't want to go into [WebComponents](https://github.com/w3c/webcomponents) here, but let me show you some interesting facts about them.
+
+Web Components are an umbrella term combining three concepts:
 
 - Template `<template></template>`
 - Shadow DOM `<#shadow-root></shadow-root>`
 - Custom Element `<foo-bar></foo-bar>`
 
-#### Most People mean Custom Elements when they talk about Web Components
+#### People mostly mean Custom Elements when they talk about Web Components
 
 ### How does a Custom Element look like?
 
-Custom Elements can be defined as a `ES6 class` which extends `HTMLElement` and so it inherits the entire `DOM API`.
-That means any properties/methods that you add to the class become part of the element's DOM interface and it creates a public JavaScript API for your custom html tag.
+Custom Elements are defined as an `ES6 class` which extends `HTMLElement` and so it inherits the entire `DOM API`.
+That means any properties/methods that you add to the class become part of the element's DOM interface and it creates a public JavaScript API for your custom tag.
 
 ```typescript
 class MoinComponent extends HTMLElement {}
 ```
 
-You must define it to be able to register to the Browser, therefore you have to call `customElements.define()` which takes two parameters. The first Parameter is the Tag-Name, the second Parameter is the Class you want to register for this TagName.
-There are some very Important rules you have to follow when it come to creating CustomElements.
+You must define it to be able to register it with the Browser, therefore you have to call `customElements.define()` which takes two parameters. The first parameter is the TagName, the second parameter is the Class you want to register for this TagName.
+There are some very important rules you have to follow when it comes to creating CustomElements.
 
-1. The TagName must be lowercase and MUST contain a dash `-` (kebab-case). So the HTML parser can distinguish CustomElements from a regular HTML element. It also ensures forward compatibility when new tags are added to the HTML (HTML tags are without dashes).
-2. TagNames must be Unique and can only defined once.
-3. CustomElements are NEVER self-closing
+1. The TagName must be lowercase and MUST contain a dash `-` (kebab-case). So the HTML parser can distinguish CustomElements from regular HTML elements (e.g. `<p>`, `<h1>`...). It also ensures forward compatibility when new tags are added to the HTML specifications (HTML tags are named without using dashes).
+2. TagNames must be unique and can only be defined once.
+3. CustomElements are NEVER self-closing.
 
 ```typescript
 customElements.define('moin-moin', MoinComponent);
@@ -73,7 +76,7 @@ You can also observe HTML Attributes changes.
 
 ```typescript
  static get observedAttributes() {
-   return ["name"];
+   return ['name'];
  }
 ```
 
@@ -81,7 +84,7 @@ And you can use the `attributeChangedCallback`, which is called whenever an attr
 
 ```typescript
  attributeChangedCallback(attr, oldValue, newValue) {
-   if (attr === "name") {
+   if (attr === 'name') {
      // ...
    }
  }
@@ -90,7 +93,7 @@ And you can use the `attributeChangedCallback`, which is called whenever an attr
 
 ### Events
 
-You can create and use a custom event, by using the `CustomEvents` constructor, like any other Javascript event. So nothing special!
+You can create and use a custom event, using the `CustomEvent` constructor, like any other JavaScript event. So nothing special!
 
 ```typescript
 this.dispatchEvent(
@@ -112,11 +115,12 @@ These are called reactions.
 
 Q: _But, Why are you telling me this?_
 
-A: _Angular were designed in a very similar way as CustomElements_
+A: _Angular components were designed in a very similar way to CustomElements_
 
 Here is a list of equalities
+
 | CustomElements | Angular Components |
-|---|---|
+| --- | --- |
 | Attributes | @Input() |
 | Properties | @Input() |
 | Events | @Output() |
@@ -150,7 +154,7 @@ ng add ngx-build-plus
 ng g ngx-build-plus:wc-polyfill
 ```
 
-#### ngx-build-plus
+#### [ngx-build-plus](https://github.com/manfredsteyer/ngx-build-plus)
 
 _by Manfred Steyer_
 
@@ -164,22 +168,27 @@ Now we want to turn our `AppComponent` into a CustomElement.
 import { createCustomElement } from "@angular/elements";
 ...
 constructor(private injector: Injector) {
+   // wrap the Angular Component as a Custom Element
+   const wrappedEl = createCustomElement(AppComponent, { injector });
+   
+   // register it so the browser knows about it
    customElements.define(
        "moin-moin",
-       createCustomElement(AppComponent, { injector })
+       wrappedEl
     );
  }
 
 ```
 
-##### createCustomElement:
+##### [createCustomElement](https://angular.io/api/elements/createCustomElement):
 
-    Creates a custom element class based on an Angular component.(doku)
+    Creates a custom element class based on an Angular component.
 
-But we want to use the `AppComponent` as a standalone component. So we have to remove it from `AppModule.bootstrap` Array. We also have to define it as a `entryComponent`.
-Normally we tell Angular which Component is our root Component.
-We don't have such a root Component (no bootstrap array).
-So we need to tell Angular to use the `AppModule` for bootstrapping, for this we use the `ngDoBootstrap` method.
+Normally we tell Angular which Component is our root Component (`bootstrap`).
+But since our `AppComponent` is now used as a standalone Custom Element, Angular doesn't need to bootstrap it any more. As such we remove it from the `AppModule.bootstrap` array. 
+We also have to define it as a `entryComponent`.
+
+However, we need to tell Angular to use the AppModule for bootstrapping, for this, we use the `ngDoBootstrap` lifecycle hook.
 
 ```typescript
 import { NgModule, Injector, DoBootstrap } from '@angular/core';
@@ -192,7 +201,7 @@ import { NgModule, Injector, DoBootstrap } from '@angular/core';
 export class AppModule implements DoBootstrap {
   constructor(private injector: Injector) {
    customElements.define(
-       "moin-moin",
+       'moin-moin',
        createCustomElement(AppComponent, { injector })
     );
   }
@@ -203,15 +212,23 @@ export class AppModule implements DoBootstrap {
 
 ### That's it!
 
-so let's build it. Thanks to `ngx-build-plus` we have this nice feature to build all we need in one bundle.
+So let's build it. Thanks to `ngx-build-plus` we have this nice feature to build all we need in one bundle.
 
 ```bash
-ng build --prod --single-bundle
+ng build --prod --single-bundle --outputHashing=none
 ```
 
-`--single-bundle`: Puts everything reachable from the main entry point into one bundle. Polyfills, scripts, and styles stay in their own bundles as the consuming application might have its own versions of these. - Manfred Steyer -
+* `--single-bundle`: Puts everything reachable from the main entry point into one bundle. Polyfills, scripts, and styles stay in their own bundles as the consuming application might have its own versions of these. - Manfred Steyer -
+* `--outputHashing=none`: Output file names get no hashes, this makes it easier to include them in the next steps. You likely don't want that for production.
 
-We'll find all needed files in the dist folder.
+At the time of writing there is one issue after using the `ngx-build-plus` schematic. If you get this error:
+```bash
+Schema validation failed with the following errors:
+  Data path ".budgets[1].type" should be equal to one of the allowed values.
+```
+then as a workaround delete the second entry in the `budgets` array in `angular.json` under `projects/ce-moin/architect/build/configurations/production/budgets` (type `anyComponentStyle`).
+
+We'll find all needed files in the `dist` folder.
 
 ## How can we you use it?
 
@@ -219,11 +236,10 @@ We'll find all needed files in the dist folder.
 
 #### Create
 
-In a non Angular application you need to add all the needed dependencies
-and styles in to the `index.html`
+In a non Angular application you need to add all the needed dependencies and styles in to the `index.html`
 
 ```html
-    <link rel="stylesheet" href="styles.css"></head>
+    <link rel="stylesheet" href="styles.css" />
 
     <script src="polyfills-es5.js" nomodule defer></script>
     <script src="polyfills-es2015.js" type="module"></script>
@@ -253,8 +269,8 @@ document.body.appendChild(document.createElement('moin-moin'));
 And you can use Vanilla JavaScript to interact with this element. In my example the CustomElement has an Input property called `name` and an Output event called `namechange`.
 
 ```javascript
-moin.addEventListener('namechange', e => console.log(e));
 const moin = document.querySelector('moin-moin');
+moin.addEventListener('namechange', e => console.log(e));
 moin.name = 'Paul';
 ```
 
@@ -262,7 +278,7 @@ moin.name = 'Paul';
 
 #### Create
 
-Works exactly as in a non Angular App.
+Works exactly as in a non-Angular App.
 
 #### Interact
 
@@ -292,3 +308,6 @@ I would like to give special thanks to the awesome people that reviewed this pos
 
 - <a href="https://twitter.com/ManfredSteyer"  target="_blank">Manfred Steyer</a>
 - <a href="https://twitter.com/GregOnNet"  target="_blank">Gregor Woiwode</a>
+- <a href="https://twitter.com/megadesty"  target="_blank">Michael Raue</a>
+- <a href="https://twitter.com/manekinekko"  target="_blank">Wassim CHEGHAM</a>
+- <a href="https://twitter.com/jefiozieo"  target="_blank">Jeffrey Bosch</a>
