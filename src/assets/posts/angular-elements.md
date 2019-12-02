@@ -19,7 +19,7 @@ Here I want to show you how to build and use Angular Elements.
 
 An Angular Element is an API to convert an Angular Component into a Custom Element.
 
-Custom Elements are part of the W3C Web Componens specifications.
+Custom Elements are part of the W3C Web Components specifications.
 
 Custom Elements are custom HTML tags you can define and use.
 
@@ -42,7 +42,7 @@ That means any properties/methods that you add to the class become part of the e
 class MoinComponent extends HTMLElement {}
 ```
 
-You must define it to be able to register it with the Browser, therefore you have to call `customElements.define()` which takes two parameters. The first parameter is the TagName, the second parameter is the Class you want to register for this TagName.
+You must define it to be able to register it within the Browser, therefore you have to call `customElements.define()` which takes two parameters. The first parameter is the TagName, the second parameter is the Class you want to register for this TagName.
 There are some very important rules you have to follow when it comes to creating CustomElements.
 
 1. The TagName must be lowercase and MUST contain a dash `-` (kebab-case). So the HTML parser can distinguish CustomElements from regular HTML elements (e.g. `<p>`, `<h1>`...). It also ensures forward compatibility when new tags are added to the HTML specifications (HTML tags are named without using dashes).
