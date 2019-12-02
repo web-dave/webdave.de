@@ -1,53 +1,51 @@
 # Angular Elements
 
-Since Angular Version 6 was released, there is a new cool features available: `Angular-Elements`.
+Since Angular version 6 was released, there is a new cool feature available: `Angular Elements`.
 
-## What are Angular-Elements?
+## What are Angular Elements?
 
-It's the possibility to produce standalone Angular Components.
+It's the possibility to produce standalone Web Components written in Angular.
 
 #### But:
 
-    What I mostly see is that people use this feature to ship complete features (modules) within it.
+    What I mostly see is that people use this feature to ship complete features (modules).
     Which is very cool!
 
-From an architecture perspective this means, we can finally build micro frontends. Something you may know from the backend. There you call this pattern Microservices.
+From an architecture perspective, this means we can finally build single purpose micro applications. This pattern is known as Micro Frontends. This is something you may be familiar with on the backend side, as the Microservice pattern.
 
-Here I want to show you how to build and use them.
+Here I want to show you how to build and use Angular Elements.
 
-### What is an Angular-Element?
+### What is an Angular Element?
 
-It's a wrapper to convert an Angular Component into a Custom Element.
+An Angular Element is an API to convert an Angular Component into a Custom Element.
 
-Custom Elements are part of something you might know as WebComponent.
+Custom Elements are part of the W3C Web Componens specifications.
 
-WebComponents are HTML tags you can define.
+Custom Elements are custom HTML tags you can define and use.
 
 I don't want to go into [WebComponents](https://github.com/w3c/webcomponents) here, but let me show you some interesting facts about them.
 
-WebComponents are an umbrella combining three techniques:
+Web Components are an umbrella term combining three concepts:
 
 - Template `<template></template>`
-- Shadow DOM `<shadow-root></shadow-root>`
-- CustomElement `<foo-bar></foo-bar>`
+- Shadow DOM `<#shadow-root></shadow-root>`
+- Custom Element `<foo-bar></foo-bar>`
 
-#### People mostly mean CustomElements when they talk about WebComponents
+#### People mostly mean Custom Elements when they talk about Web Components
 
-### How does a CustomElement look like?
+### How does a Custom Element look like?
 
-It's an `ES6 class` which extends `HTMLElement` and so it inherits the entire `DOM API`.
-That means any properties/methods that you add to the class become part of the element's DOM interface and it creates a public JavaScript API for your tag.
+Custom Elements are defined as an `ES6 class` which extends `HTMLElement` and so it inherits the entire `DOM API`.
+That means any properties/methods that you add to the class become part of the element's DOM interface and it creates a public JavaScript API for your custom tag.
 
 ```typescript
 class MoinComponent extends HTMLElement {}
 ```
 
-
-You must define it to introduce it to the Browser, therefore you have to call `customElements.define()` which takes two parameters. The first parameter is the TagName, the second parameter is the Class you want to register for this TagName.
-
+You must define it to be able to register it with the Browser, therefore you have to call `customElements.define()` which takes two parameters. The first parameter is the TagName, the second parameter is the Class you want to register for this TagName.
 There are some very important rules you have to follow when it comes to creating CustomElements.
 
-1. The TagName must be lowercase and MUST contain a dash `-` (kebab-case). So the HTML parser can distinguish CustomElements from regular HTML elements. It also ensures forward compatibility when new tags are added to HTML (HTML tags are without dashes).
+1. The TagName must be lowercase and MUST contain a dash `-` (kebab-case). So the HTML parser can distinguish CustomElements from regular HTML elements (e.g. `<p>`, `<h1>`...). It also ensures forward compatibility when new tags are added to the HTML specifications (HTML tags are named without using dashes).
 2. TagNames must be unique and can only be defined once.
 3. CustomElements are NEVER self-closing.
 
@@ -55,11 +53,11 @@ There are some very important rules you have to follow when it comes to creating
 customElements.define('moin-moin', MoinComponent);
 ```
 
-#### Custom Elements are unknown and ignored by the Browser until they are defined!
+#### Custom Elements are unknown until they are defined. The Browser will ignore any unknown custom element!
 
 ### CustomElements API
 
-In the Class you can use getter and setter to reflect values to HTML Attributes
+In the Class you can use `getter` and `setter` to reflect values to HTML Attributes
 
 #### `this` inside a class definition refers to the DOM element itself
 
@@ -73,7 +71,7 @@ In the Class you can use getter and setter to reflect values to HTML Attributes
  }
 ```
 
-You can also observe HTML Attribute changes.
+You can also observe HTML Attributes changes.
 
 ```typescript
  static get observedAttributes() {
@@ -94,7 +92,7 @@ And you can use the `attributeChangedCallback`, which is called whenever an attr
 
 ### Events
 
-You can create CustomEvents like in every Javascript environment. So nothing special.
+You can create and use a custom event, using the `CustomEvent` constructor, like any other JavaScript event. So nothing special!
 
 ```typescript
 this.dispatchEvent(
@@ -106,7 +104,7 @@ this.dispatchEvent(
 
 ### Reactions
 
-A CustomElement can define special Methods which are called at special times during its "life".
+A CustomElement can define special Methods which are called at special times during its "lifecycle".
 These are called reactions.
 
 - `constructor(){...}` CustomElement is created
@@ -116,7 +114,7 @@ These are called reactions.
 
 Q: _But, Why are you telling me this?_
 
-A: _Angular has been designed very similar to CustomElements_
+A: _Angular components were designed in a very similar way to CustomElements_
 
 Here is a list of equalities
 
@@ -132,13 +130,13 @@ Here is a list of equalities
 | template | ng-template |
 | ShadowDom | ViewEncapsulation |
 
-Q: _Why should I go with Angular Elements?_
+Q: _Why should I use Angular Elements?_
 
 A: _CustomElements with Angular Power_
 
 ## How do you build it?
 
-We start from empty Angular Project we create.
+We start with an empty Angular Project we create.
 
 ```bash
 ng new ce-moin
@@ -147,7 +145,7 @@ ng new ce-moin
     Please keep in mind: Angular Elements are available since Angular version 6.
     So, you need @angular/cli 6+ for this.
 
-next we want to use Schematics to add all required resources and tooling to our small project.
+next, we want to use the CLI Schematics add-ons to add all required resources and tooling to our project.
 
 ```bash
 ng add @angular/elements
@@ -185,9 +183,11 @@ constructor(private injector: Injector) {
 
     Creates a custom element class based on an Angular component.
 
-Normally we tell Angular which Component is our root Component (`bootstrap`). But since our `AppComponent` is now used as a standalone Custom Element, Angular doesn't need to bootstrap it any more. As such we remove it from the `AppModule.bootstrap` array. We also have to define it as a `entryComponent`.
+Normally we tell Angular which Component is our root Component (`bootstrap`).
+But since our `AppComponent` is now used as a standalone Custom Element, Angular doesn't need to bootstrap it any more. As such we remove it from the `AppModule.bootstrap` array. 
+We also have to define it as a `entryComponent`.
 
-However, we need to tell Angular to use the AppModule for bootstrapping. For this we use the `ngDoBootstrap` method.
+However, we need to tell Angular to use the AppModule for bootstrapping, for this, we use the `ngDoBootstrap` lifecycle hook.
 
 ```typescript
 import { NgModule, Injector, DoBootstrap } from '@angular/core';
@@ -235,8 +235,8 @@ We'll find all needed files in the `dist` folder.
 
 #### Create
 
-In a non Angular App you need to add all the needed scripts
-and styles in to your `index.html`
+In a non-Angular application you need to add all the required dependencies
+and styles in to the `index.html`
 
 ```html
     <link rel="stylesheet" href="styles.css" />
@@ -248,13 +248,13 @@ and styles in to your `index.html`
     <script src="main-es5.js" nomodule defer></script>
 ```
 
-And define the tag of your CustomElement.
+And define the custom HTML tag of your CustomElement.
 
 ```html
 <moin-moin></moin-moin>
 ```
 
-Or create it dynamic via javascript
+Or create it programmatically using JavaScript
 
 ```javascript
 const script = document.createElement('script');
@@ -266,7 +266,7 @@ document.body.appendChild(document.createElement('moin-moin'));
 
 #### Interact
 
-And you can use vanilla JavaScript to interact with this element. In my example the CustomElement has an Input name and an Output.
+And you can use Vanilla JavaScript to interact with this element. In my example, the CustomElement has an Input property called `name` and an Output event called `namechange`.
 
 ```javascript
 const moin = document.querySelector('moin-moin');
@@ -278,13 +278,13 @@ moin.name = 'Paul';
 
 #### Create
 
-Works exactly as in a non Angular App.
+Works exactly as in a non-Angular App.
 
 #### Interact
 
 ##### Event binding
 
-Eventbinding works the Angular way.
+Event binding works the Angular way.
 
 ```html
 <moin-moin (namechange)="foo($event)"></moin-moin>
@@ -292,7 +292,7 @@ Eventbinding works the Angular way.
 
 ##### Attribute binding
 
-Attributebinding works nearly the Angular way.
+Attribute binding works nearly the Angular way.
 
 ```html
 <moin-moin [attr.name]="user.name"></moin-moin>
@@ -300,7 +300,7 @@ Attributebinding works nearly the Angular way.
 
 #### Conclusion
 
-Angular Elements are great. It's a powerful feature to implement a micro frontend architecture.
+Angular Elements are great! It's a powerful feature to implement a Micro Frontend architecture.
 
 #### Special Thanks
 
@@ -309,3 +309,4 @@ I would like to give special thanks to the awesome people that reviewed this pos
 - <a href="https://twitter.com/ManfredSteyer"  target="_blank">Manfred Steyer</a>
 - <a href="https://twitter.com/GregOnNet"  target="_blank">Gregor Woiwode</a>
 - <a href="https://twitter.com/megadesty"  target="_blank">Michael Raue</a>
+- <a href="https://twitter.com/manekinekko"  target="_blank">Wassim CHEGHAM</a>
