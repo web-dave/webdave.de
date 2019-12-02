@@ -2,12 +2,11 @@
 
 Since Angular version 6 was released, there is a new cool features available, called: `Angular Elements`.
 
-## What are Angular Elements? 
+## What are Angular Elements?
 
 It's the possibility to produce standalone Web Components written in Angular.
 
 #### But:
-
 
     What I mostly see is that people use this feature to ship complete features (modules).
     Which is very cool!
@@ -119,17 +118,17 @@ A: _Angular components were designed in a very similar way to CustomElements_
 
 Here is a list of equalities
 
-| CustomElements | Angular Components |
-| --- | --- |
-| Attributes | @Input() |
-| Properties | @Input() |
-| Events | @Output() |
-| connectedCallback | OnInit |
-| disconnectedCallback | OnDestroy |
-| attributeChangedCallback | OnChanges |
-| slot | ng-content |
-| template | ng-template |
-| ShadowDom | ViewEncapsulation |
+| CustomElements           | Angular Components |
+| ------------------------ | ------------------ |
+| Attributes               | @Input()           |
+| Properties               | @Input()           |
+| Events                   | @Output()          |
+| connectedCallback        | OnInit             |
+| disconnectedCallback     | OnDestroy          |
+| attributeChangedCallback | OnChanges          |
+| slot                     | ng-content         |
+| template                 | ng-template        |
+| ShadowDom                | ViewEncapsulation  |
 
 Q: _Why should I use Angular Elements?_
 
@@ -170,7 +169,7 @@ import { createCustomElement } from "@angular/elements";
 constructor(private injector: Injector) {
    // wrap the Angular Component as a Custom Element
    const wrappedEl = createCustomElement(AppComponent, { injector });
-   
+
    // register it so the browser knows about it
    customElements.define(
        "moin-moin",
@@ -185,7 +184,7 @@ constructor(private injector: Injector) {
     Creates a custom element class based on an Angular component.
 
 Normally we tell Angular which Component is our root Component (`bootstrap`).
-But since our `AppComponent` is now used as a standalone Custom Element, Angular doesn't need to bootstrap it any more. As such we remove it from the `AppModule.bootstrap` array. 
+But since our `AppComponent` is now used as a standalone Custom Element, Angular doesn't need to bootstrap it any more. As such we remove it from the `AppModule.bootstrap` array.
 We also have to define it as a `entryComponent`.
 
 However, we need to tell Angular to use the AppModule for bootstrapping, for this, we use the `ngDoBootstrap` lifecycle hook.
@@ -218,14 +217,16 @@ So let's build it. Thanks to `ngx-build-plus` we have this nice feature to build
 ng build --prod --single-bundle --outputHashing=none
 ```
 
-* `--single-bundle`: Puts everything reachable from the main entry point into one bundle. Polyfills, scripts, and styles stay in their own bundles as the consuming application might have its own versions of these. - Manfred Steyer -
-* `--outputHashing=none`: Output file names get no hashes, this makes it easier to include them in the next steps. You likely don't want that for production.
+- `--single-bundle`: Puts everything reachable from the main entry point into one bundle. Polyfills, scripts, and styles stay in their own bundles as the consuming application might have its own versions of these. - Manfred Steyer -
+- `--outputHashing=none`: Output file names get no hashes, this makes it easier to include them in the next steps. You likely don't want that for production.
 
 At the time of writing there is one issue after using the `ngx-build-plus` schematic. If you get this error:
+
 ```bash
 Schema validation failed with the following errors:
   Data path ".budgets[1].type" should be equal to one of the allowed values.
 ```
+
 then as a workaround delete the second entry in the `budgets` array in `angular.json` under `projects/ce-moin/architect/build/configurations/production/budgets` (type `anyComponentStyle`).
 
 We'll find all needed files in the `dist` folder.
@@ -239,13 +240,13 @@ We'll find all needed files in the `dist` folder.
 In a non Angular application you need to add all the needed dependencies and styles in to the `index.html`
 
 ```html
-    <link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles.css" />
 
-    <script src="polyfills-es5.js" nomodule defer></script>
-    <script src="polyfills-es2015.js" type="module"></script>
-    <script src="scripts.js" defer></script>
-    <script src="main-es2015.js" type="module"></script>
-    <script src="main-es5.js" nomodule defer></script>
+<script src="polyfills-es5.js" nomodule defer></script>
+<script src="polyfills-es2015.js" type="module"></script>
+<script src="scripts.js" defer></script>
+<script src="main-es2015.js" type="module"></script>
+<script src="main-es5.js" nomodule defer></script>
 ```
 
 And define the custom HTML tag of your CustomElement.
@@ -311,3 +312,5 @@ I would like to give special thanks to the awesome people that reviewed this pos
 - <a href="https://twitter.com/megadesty"  target="_blank">Michael Raue</a>
 - <a href="https://twitter.com/manekinekko"  target="_blank">Wassim CHEGHAM</a>
 - <a href="https://twitter.com/jefiozieo"  target="_blank">Jeffrey Bosch</a>
+- <a href="https://twitter.com/robertSPD"  target="_blank">Robert Willemelis</a>
+- <a href="https://twitter.com/juristr"  target="_blank">Juri Strumpflohner</a>
