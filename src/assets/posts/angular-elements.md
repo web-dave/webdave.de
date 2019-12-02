@@ -165,9 +165,13 @@ Now we want to turn our `AppComponent` into a CustomElement.
 import { createCustomElement } from "@angular/elements";
 ...
 constructor(private injector: Injector) {
+   // wrap the Angular Component as a Custom Element
+   const wrappedEl = createCustomElement(AppComponent, { injector });
+   
+   // register it so the browser knows about it
    customElements.define(
        "moin-moin",
-       createCustomElement(AppComponent, { injector })
+       wrappedEl
     );
  }
 
@@ -203,7 +207,7 @@ export class AppModule implements DoBootstrap {
 
 ### That's it!
 
-so let's build it. Thanks to `ngx-build-plus` we have this nice feature to build all we need in one bundle.
+So let's build it. Thanks to `ngx-build-plus` we have this nice feature to build all we need in one bundle.
 
 ```bash
 ng build --prod --single-bundle
@@ -253,8 +257,8 @@ document.body.appendChild(document.createElement('moin-moin'));
 And you can use vanilla JavaScript to interact with this element. In my example the CustomElement has an Input name and an Output.
 
 ```javascript
-moin.addEventListener('namechange', e => console.log(e));
 const moin = document.querySelector('moin-moin');
+moin.addEventListener('namechange', e => console.log(e));
 moin.name = 'Paul';
 ```
 
