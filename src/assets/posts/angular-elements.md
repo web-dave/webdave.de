@@ -311,7 +311,7 @@ I would like to give special thanks to the awesome people that reviewed this pos
 - <a href="https://twitter.com/GregOnNet"  target="_blank">Gregor Woiwode</a>
 - <a href="https://twitter.com/megadesty"  target="_blank">Michael Raue</a>
 - <a href="https://twitter.com/manekinekko"  target="_blank">Wassim CHEGHAM</a>
-- <a href="https://twitter.com/jefiozieo"  target="_blank">Jeffrey Bosch</a>
+- <a href="https://twitter.com/jefiozie"  target="_blank">Jeffrey Bosch</a>
 - <a href="https://twitter.com/robertSPD"  target="_blank">Robert Willemelis</a>
 - <a href="https://twitter.com/juristr"  target="_blank">Juri Strumpflohner</a>
 - <a href="https://twitter.com/robwormald"  target="_blank">Rob Wormald</a>
