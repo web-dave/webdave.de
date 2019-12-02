@@ -11,15 +11,15 @@ It's the possibility to produce standalone Angular Components.
     What I mostly see is that people use this feature to ship complete features (modules) within it.
     Which is very cool!
 
-From an architecture perspective this means, we can finally build micro frontends. Something you may know from the Backend. There you call this pattern Microservices.
+From an architecture perspective this means, we can finally build micro frontends. Something you may know from the backend. There you call this pattern Microservices.
 
 Here I want to show you how to build and use them.
 
 ### What is a Angular-Element?
 
-It's a wrapper to convert an Angular Component into a customElement.
+It's a wrapper to convert an Angular Component into a Custom Element.
 
-Custom elements are part of something you might know as WebComponent.
+Custom Elements are part of something you might know as WebComponent.
 WebComponents are HTML tags you can define.
 
 I don't want to go into WebComponents here, but let me show you some interesting facts about them.
@@ -34,15 +34,15 @@ WebComponents are an umbrella combining three techniques:
 
 ### How does a CustomElement look like?
 
-Its a `ES6 class` which extends `HTMLElement` and so it inherits the entire `DOM API`.
+It's an `ES6 class` which extends `HTMLElement` and so it inherits the entire `DOM API`.
 That means any properties/methods that you add to the class become part of the element's DOM interface and it creates a public JavaScript API for your tag.
 
 ```typescript
 class MoinComponent extends HTMLElement {}
 ```
 
-You must define it to introduce it to the Browser, therefore you have to call `customElements.define()` which takes two parameters. The first Parameter is the Tag-Name, the second Parameter is the Class you want to register for this TagName.
-There are some very Important rules you have to follow when it come to creating CustomElements.
+You must define it to introduce it to the Browser, therefore you have to call `customElements.define()` which takes two parameters. The first parameter is the TagName, the second parameter is the Class you want to register for this TagName.
+There are some very important rules you have to follow when it comes to creating CustomElements.
 
 1. The TagName must be lowercase and MUST contain a dash `-` (kebab-case). So the HTML parser can distinguish CustomElements from regular elements. It also ensures forward compatibility when new tags are added to HTML (HTML tags are without dashes).
 2. TagNames must be Unique and can only defined once.
@@ -180,7 +180,7 @@ constructor(private injector: Injector) {
 But we want to use the AppComponent standalone. So we have to remove it from AppModule.bootstrap Array. We also have to define it as a entryComponent.
 Normally we tell Angular which Component is our root Component.
 We don't have such a root Component (no bootstrap array).
-So we need to tell Angular to use the AppModule for bootstrapping, for this we use the ngDoBootstrap method.
+so we need to tell Angular to use the AppModule for bootstrapping, for this we use the ngDoBootstrap method.
 
 ```typescript
 import { NgModule, Injector, DoBootstrap } from '@angular/core';
