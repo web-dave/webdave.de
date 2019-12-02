@@ -15,19 +15,20 @@ From an architecture perspective this means, we can finally build micro frontend
 
 Here I want to show you how to build and use them.
 
-### What is a Angular-Element?
+### What is an Angular-Element?
 
 It's a wrapper to convert an Angular Component into a Custom Element.
 
 Custom Elements are part of something you might know as WebComponent.
+
 WebComponents are HTML tags you can define.
 
-I don't want to go into WebComponents here, but let me show you some interesting facts about them.
+I don't want to go into [WebComponents](https://github.com/w3c/webcomponents) here, but let me show you some interesting facts about them.
 
 WebComponents are an umbrella combining three techniques:
 
 - Template `<template></template>`
-- Shadow DOM `<#shadow-root></shadow-root>`
+- Shadow DOM `<shadow-root></shadow-root>`
 - CustomElement `<foo-bar></foo-bar>`
 
 #### People mostly mean CustomElements when they talk about WebComponents
@@ -41,18 +42,20 @@ That means any properties/methods that you add to the class become part of the e
 class MoinComponent extends HTMLElement {}
 ```
 
+
 You must define it to introduce it to the Browser, therefore you have to call `customElements.define()` which takes two parameters. The first parameter is the TagName, the second parameter is the Class you want to register for this TagName.
+
 There are some very important rules you have to follow when it comes to creating CustomElements.
 
-1. The TagName must be lowercase and MUST contain a dash `-` (kebab-case). So the HTML parser can distinguish CustomElements from regular elements. It also ensures forward compatibility when new tags are added to HTML (HTML tags are without dashes).
-2. TagNames must be Unique and can only defined once.
-3. CustomElements are NEVER self-closing
+1. The TagName must be lowercase and MUST contain a dash `-` (kebab-case). So the HTML parser can distinguish CustomElements from regular HTML elements. It also ensures forward compatibility when new tags are added to HTML (HTML tags are without dashes).
+2. TagNames must be unique and can only be defined once.
+3. CustomElements are NEVER self-closing.
 
 ```typescript
 customElements.define('moin-moin', MoinComponent);
 ```
 
-#### Custom Elements are unknown until they are defined and the Browser will ignore them!
+#### Custom Elements are unknown and ignored by the Browser until they are defined!
 
 ### CustomElements API
 
@@ -70,19 +73,19 @@ In the Class you can use getter and setter to reflect values to HTML Attributes
  }
 ```
 
-You can also Observe HTML Attributes changes.
+You can also observe HTML Attribute changes.
 
 ```typescript
  static get observedAttributes() {
-   return ["name"];
+   return ['name'];
  }
 ```
 
-And you can use the attributeChangedCallback, which is called whenever an attribute from the `observedAttributes` array has changed.
+And you can use the `attributeChangedCallback`, which is called whenever an attribute from the `observedAttributes` array has changed.
 
 ```typescript
  attributeChangedCallback(attr, oldValue, newValue) {
-   if (attr === "name") {
+   if (attr === 'name') {
      // ...
    }
  }
@@ -116,8 +119,9 @@ Q: _But, Why are you telling me this?_
 A: _Angular has been designed very similar to CustomElements_
 
 Here is a list of equalities
+
 | CustomElements | Angular Components |
-|---|---|
+| --- | --- |
 | Attributes | @Input() |
 | Properties | @Input() |
 | Events | @Output() |
@@ -151,7 +155,7 @@ ng add ngx-build-plus
 ng g ngx-build-plus:wc-polyfill
 ```
 
-#### ngx-build-plus
+#### [ngx-build-plus](https://github.com/manfredsteyer/ngx-build-plus)
 
 _by Manfred Steyer_
 
@@ -177,9 +181,9 @@ constructor(private injector: Injector) {
 
 ```
 
-##### createCustomElement:
+##### [createCustomElement](https://angular.io/api/elements/createCustomElement):
 
-    Creates a custom element class based on an Angular component.(doku)
+    Creates a custom element class based on an Angular component.
 
 Normally we tell Angular which Component is our root Component (`bootstrap`). But since our `AppComponent` is now used as a standalone Custom Element, Angular doesn't need to bootstrap it any more. As such we remove it from the `AppModule.bootstrap` array. We also have to define it as a `entryComponent`.
 
@@ -196,7 +200,7 @@ import { NgModule, Injector, DoBootstrap } from '@angular/core';
 export class AppModule implements DoBootstrap {
   constructor(private injector: Injector) {
    customElements.define(
-       "moin-moin",
+       'moin-moin',
        createCustomElement(AppComponent, { injector })
     );
   }
@@ -210,12 +214,20 @@ export class AppModule implements DoBootstrap {
 So let's build it. Thanks to `ngx-build-plus` we have this nice feature to build all we need in one bundle.
 
 ```bash
-ng build --prod --single-bundle
+ng build --prod --single-bundle --outputHashing=none
 ```
 
-`--single-bundle`: Puts everything reachable from the main entry point into one bundle. Polyfills, scripts, and styles stay in their own bundles as the consuming application might have its own versions of these. - Manfred Steyer -
+* `--single-bundle`: Puts everything reachable from the main entry point into one bundle. Polyfills, scripts, and styles stay in their own bundles as the consuming application might have its own versions of these. - Manfred Steyer -
+* `--outputHashing=none`: Output file names get no hashes, this makes it easier to include them in the next steps. You likely don't want that for production.
 
-We'll find all needed files in the dist folder.
+At the time of writing there is one issue after using the `ngx-build-plus` schematic. If you get this error:
+```bash
+Schema validation failed with the following errors:
+  Data path ".budgets[1].type" should be equal to one of the allowed values.
+```
+then as a workaround delete the second entry in the `budgets` array in `angular.json` under `projects/ce-moin/architect/build/configurations/production/budgets` (type `anyComponentStyle`).
+
+We'll find all needed files in the `dist` folder.
 
 ## How can we you use it?
 
@@ -227,7 +239,7 @@ In a non Angular App you need to add all the needed scripts
 and styles in to your `index.html`
 
 ```html
-    <link rel="stylesheet" href="styles.css"></head>
+    <link rel="stylesheet" href="styles.css" />
 
     <script src="polyfills-es5.js" nomodule defer></script>
     <script src="polyfills-es2015.js" type="module"></script>
@@ -296,3 +308,4 @@ I would like to give special thanks to the awesome people that reviewed this pos
 
 - <a href="https://twitter.com/ManfredSteyer"  target="_blank">Manfred Steyer</a>
 - <a href="https://twitter.com/GregOnNet"  target="_blank">Gregor Woiwode</a>
+- <a href="https://twitter.com/megadesty"  target="_blank">Michael Raue</a>
