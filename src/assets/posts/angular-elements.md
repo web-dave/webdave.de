@@ -1,12 +1,13 @@
 # Angular Elements
 
-Since Angular version 6 was released, there is a new cool feature available: `Angular Elements`.
+Since Angular version 6 was released, there is a new cool features available, called: `Angular Elements`.
 
-## What are Angular Elements?
+## What are Angular Elements? 
 
 It's the possibility to produce standalone Web Components written in Angular.
 
 #### But:
+
 
     What I mostly see is that people use this feature to ship complete features (modules).
     Which is very cool!
@@ -145,7 +146,7 @@ ng new ce-moin
     Please keep in mind: Angular Elements are available since Angular version 6.
     So, you need @angular/cli 6+ for this.
 
-next, we want to use the CLI Schematics add-ons to add all required resources and tooling to our project.
+next, we want to use the Angular Schematics to add all required resources and tooling to our small project.
 
 ```bash
 ng add @angular/elements
@@ -235,8 +236,7 @@ We'll find all needed files in the `dist` folder.
 
 #### Create
 
-In a non-Angular application you need to add all the required dependencies
-and styles in to the `index.html`
+In a non Angular application you need to add all the needed dependencies and styles in to the `index.html`
 
 ```html
     <link rel="stylesheet" href="styles.css" />
@@ -254,7 +254,7 @@ And define the custom HTML tag of your CustomElement.
 <moin-moin></moin-moin>
 ```
 
-Or create it programmatically using JavaScript
+Or create it programmatically by using javascript
 
 ```javascript
 const script = document.createElement('script');
@@ -266,7 +266,7 @@ document.body.appendChild(document.createElement('moin-moin'));
 
 #### Interact
 
-And you can use Vanilla JavaScript to interact with this element. In my example, the CustomElement has an Input property called `name` and an Output event called `namechange`.
+And you can use Vanilla JavaScript to interact with this element. In my example the CustomElement has an Input property called `name` and an Output event called `namechange`.
 
 ```javascript
 const moin = document.querySelector('moin-moin');
@@ -300,7 +300,7 @@ Attribute binding works nearly the Angular way.
 
 #### Conclusion
 
-Angular Elements are great! It's a powerful feature to implement a Micro Frontend architecture.
+Angular Elements are great. It's a powerful feature to implement a Micro Frontend architecture.
 
 #### Special Thanks
 
@@ -310,3 +310,4 @@ I would like to give special thanks to the awesome people that reviewed this pos
 - <a href="https://twitter.com/GregOnNet"  target="_blank">Gregor Woiwode</a>
 - <a href="https://twitter.com/megadesty"  target="_blank">Michael Raue</a>
 - <a href="https://twitter.com/manekinekko"  target="_blank">Wassim CHEGHAM</a>
+- <a href="https://twitter.com/jefiozieo"  target="_blank">Jeffrey Bosch</a>
