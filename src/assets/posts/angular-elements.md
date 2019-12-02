@@ -177,10 +177,9 @@ constructor(private injector: Injector) {
 
     Creates a custom element class based on an Angular component.(doku)
 
-But we want to use the AppComponent standalone. So we have to remove it from AppModule.bootstrap Array. We also have to define it as a entryComponent.
-Normally we tell Angular which Component is our root Component.
-We don't have such a root Component (no bootstrap array).
-so we need to tell Angular to use the AppModule for bootstrapping, for this we use the ngDoBootstrap method.
+Normally we tell Angular which Component is our root Component (`bootstrap`). But since our `AppComponent` is now used as a standalone Custom Element, Angular doesn't need to bootstrap it any more. As such we remove it from the `AppModule.bootstrap` array. We also have to define it as a `entryComponent`.
+
+However, we need to tell Angular to use the AppModule for bootstrapping. For this we use the `ngDoBootstrap` method.
 
 ```typescript
 import { NgModule, Injector, DoBootstrap } from '@angular/core';
