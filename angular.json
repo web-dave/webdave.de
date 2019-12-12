@@ -131,6 +131,44 @@
           }
         }
       }
+    },
+    "ngx-markdown": {
+      "root": "projects/ngx-markdown",
+      "sourceRoot": "projects/ngx-markdown/src",
+      "projectType": "library",
+      "prefix": "markdown",
+      "schematics": {
+        "@schematics/angular:component": {
+          "export": true
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-markdown/tsconfig.lib.json",
+            "project": "projects/ngx-markdown/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-markdown/src/test.ts",
+            "tsConfig": "projects/ngx-markdown/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-markdown/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-markdown/tsconfig.lib.json",
+              "projects/ngx-markdown/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "defaultProject": "webdave-de"

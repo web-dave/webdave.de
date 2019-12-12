@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { MarkdownModule } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -21,6 +20,7 @@ import {
 import { LayoutModule } from '@angular/cdk/layout';
 import { ServiceWorkerModule, SwUpdate, SwPush } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { MarkdownModule } from '../../projects/ngx-markdown/src/public-api';
 
 @NgModule({
   declarations: [AppComponent],
