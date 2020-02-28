@@ -8,6 +8,14 @@ export const postsArray = [
     timestamp: 1527199785000
   },
   {
+    url: 'assets/posts/routetypes.md',
+    name: 'routetypes',
+    title: 'Route types',
+    preview:
+      '<strong>Route types</strong>\r\n\r\nAngular comes with a great router. Here I want to show you the different route types and how they work.\r\nI assume that you have some experience with the Angular router.',
+    timestamp: 1558613892827
+  },
+  {
     url: 'assets/posts/stackblitz.md',
     name: 'stackblitz',
     title: 'I love StackBlitz',
@@ -24,20 +32,12 @@ export const postsArray = [
     timestamp: 1554131803215
   },
   {
-    url: 'assets/posts/routetypes.md',
-    name: 'routetypes',
-    title: 'Route types',
+    url: 'assets/posts/translate.md',
+    name: 'translate',
+    title: 'Translate (i18n) your Angular Apps with @ngx-translate/core',
     preview:
-      '<strong>Route types</strong>\r\n\r\nAngular comes with a great router. Here I want to show you the different route types and how they work.\r\nI assume that you have some experience with the Angular router.',
-    timestamp: 1558613892827
-  },
-  {
-    url: 'assets/posts/angular-elements.md',
-    name: 'angular-elements',
-    title: '',
-    preview:
-      "# Angular Elements\r\n\r\nSince Angular version 6 was released, there is a new cool features available, called: `Angular Elements`.\r\n\r\n## What are Angular Elements?\r\n\r\nIt's the possibility to produce stan",
-    timestamp: 1575283725938
+      '<strong>Translate (i18n) your Angular Apps with @ngx-translate/core</strong>\r\n\r\nOur apps are used by different people, with differnet languages and different gender. So, to provide them the best exper',
+    timestamp: 1527199785000
   },
   {
     url: 'assets/posts/Dont_get_lost_in_structure.md',
@@ -48,11 +48,19 @@ export const postsArray = [
     timestamp: 1527199785000
   },
   {
-    url: 'assets/posts/translate.md',
-    name: 'translate',
-    title: 'Translate (i18n) your Angular Apps with @ngx-translate/core',
+    url: 'assets/posts/angular-elements.md',
+    name: 'angular-elements',
+    title: '',
     preview:
-      '<strong>Translate (i18n) your Angular Apps with @ngx-translate/core</strong>\r\n\r\nOur apps are used by different people, with differnet languages and different gender. So, to provide them the best exper',
-    timestamp: 1527199785000
+      "# Angular Elements\r\n\r\nSince Angular version 6 was released, there is a new cool features available, called: `Angular Elements`.\r\n\r\n## What are Angular Elements?\r\n\r\nIt's the possibility to produce stan",
+    timestamp: 1581603150411
+  },
+  {
+    url: 'assets/posts/cypress.md',
+    name: 'cypress',
+    title: '',
+    preview:
+      '# e2e Testing with Cypress.io\r\n\r\nUsually my topic is Angular and the entire ecosystem.\r\nBut testing is also a matter close to my heart.\r\n\r\nWhen it comes to testing, you have to differentiate between t',
+    timestamp: 1582894889017
   }
 ];

@@ -27,9 +27,9 @@ describe('MarkdowService', () => {
   });
 
   beforeEach(() => {
-    domSanitizer = TestBed.get(DomSanitizer as Type<DomSanitizer>);
-    http = TestBed.get(HttpTestingController as Type<HttpTestingController>);
-    markdownService = TestBed.get(MarkdownService);
+    domSanitizer = TestBed.inject(DomSanitizer as Type<DomSanitizer>);
+    http = TestBed.inject(HttpTestingController as Type<HttpTestingController>);
+    markdownService = TestBed.inject(MarkdownService);
   });
 
   describe('constructor', () => {
