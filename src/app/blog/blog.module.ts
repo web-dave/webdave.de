@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { BlogRoutingModule } from './blog-routing.module';
 import { PostComponent } from './post/post.component';
-import { MarkdownModule } from 'ngx-markdown';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {
   MatToolbarModule,
@@ -15,6 +14,7 @@ import {
   MatCardModule,
   MatMenuModule
 } from '@angular/material';
+import { MarkdownModule } from '../../../projects/ngx-markdown/src/public-api';
 
 @NgModule({
   imports: [
