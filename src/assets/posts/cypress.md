@@ -1,41 +1,41 @@
-# e2e Testing with Cypress.io
+# E2E Testing with Cypress.io
 
-Usually my topic is Angular and the entire ecosystem.
+Usually, my topic is Angular and the entire ecosystem.
 But testing is also a matter close to my heart.
 
 When it comes to testing, you have to differentiate between two types.
 
-1. Unit tests (code based)
-2. e2e tests (user flow)
+1. Unit tests (codebased)
+2. End-to-End (E2E) tests (user flow)
 
-In this article I cover e2e testing.
+In this article, I cover E2E testing.
 My goal is to get as many developers as possible interested in tests.
 
-## What is e2e testing?
+## What is E2E testing?
 
-It is the type of test that is run on the finished application.
-This is used to test complete user storie or user journey.
+It is the type of test that runs on the finished application.
+This is used to test a complete user story or user journey.
 So not just individual components (that would be unit tests) but the behavior of the application.
 
-You can use various tools for this, I became aware of Cypress some time ago and think it's great.
+You can use various tools for this, I became aware of [Cypress](https://www.cypress.io/) some time ago and think it's great.
 
-## What is cypress?
+## What is Cypress?
 
-Cypress is an e2e testing tool.
-This tool comes with its own Electron App in which the app to be tested is executed.
+Cypress is an E2E testing tool.
+This tool comes with its own Electron app in which the application to be tested is executed.
 
 <img src="assets/images/cypress_1.png" width="400" class="" />
 
 The advantage: Cypress behaves like an interceptor or proxy.
 All communication that comes from the app to be tested can be monitored, manipulated and mocked by Cypress.
 
-What all e2e tools have in common is that they were not built for a specific Javascript framework, you can use it to test any WebApp.
+What all E2E tools have in common is that they were not built for a specific Javascript framework, you can use it to test any web application.
 
 ## How can I use Cypress for my Angular app?
 
-I'm starting here with a freshly started Angular Project (ng new cypress-test)
+I'm starting here with a freshly started Angular Project (`ng new cypress-test`)
 
-The great advantage of Angular is that, thanks to the CLI, the switch from Protractor (as the standard e2e testing tool) to Cypress can be carried out fully automatically.
+The great advantage of Angular is that thanks to the CLI, the switch from Protractor (as the standard e2e testing tool) to Cypress can be carried out fully automatically.
 Prerequisite is a project that was built with the CLI version 6+.
 
 All we have to do is tell the CLI to install Cypress.
@@ -44,7 +44,7 @@ All we have to do is tell the CLI to install Cypress.
 ng add @ briebug / cypress-schematic
 ```
 
-This prompts the CLI to install Cypress (npm install cypress) and to configure the project for Cypress.
+This prompts the CLI to install Cypress (`npm install cypress`) and to configure the project for Cypress.
 
 The CLI then asks if Protractor should be removed
 
@@ -52,9 +52,9 @@ The CLI then asks if Protractor should be removed
 Would you like to remove Protractor from the project?
 ```
 
-Sure, it doesn't make sense for us to have two e2e tools in one project.
+Sure, it doesn't make sense for us to have two E2E tools in one project.
 
-Then all projector files are deleted and cypress files are created.
+Then all projector files are deleted and Cypress files are created.
 
 ```bash
 DELETE e2e
@@ -72,11 +72,11 @@ UPDATE package.json (1401 bytes)
 UPDATE angular.json (4333 bytes)
 ```
 
-### This is where the magic happen
+### This is where the magic happens
 
-Task e2e is configured in angular.json. This is rewritten by the `@briebug/cypress-schematic` to use the Cypress functionality.
+The task `e2e` is configured in `angular.json`. This is rewritten by the `@briebug/cypress-schematic` to use the Cypress functionality.
 
-The angular.json turns from:
+The `angular.json` turns from:
 
 ```json
 "e2e": {
@@ -111,9 +111,9 @@ to this:
 }
 ```
 
-Preparation done! Thanks to the awesome work of teh CLI Team <3
+Preparation is done! Thanks to the awesome work of the CLI Team <3
 
-## Our first Test
+## Our first test
 
 The tests are started as usual (if you have already worked with Protractor)
 
@@ -130,7 +130,7 @@ The first time you run it, a folder structure and some config files are created.
 - plugins: Here plugins (if you need them) can be integrated.
 - support: Here you can write your own commands or overwrite existing ones.
 
-Then the Cypres UI is started.
+Then the Cypress UI is started.
 
 <img src="assets/images/cypress_3.png" width="400" class="" />
 
@@ -140,8 +140,8 @@ So far, we only have one file, but you can guess how easy it is to organize your
 
 ## The Cypress UI
 
-We click on Run all specs and the Cypress Client is started.
-The client is an electron app that loads our website and runs the tests.
+We click on `Run all specs` and the Cypress client is started.
+The client is an Electron app that loads our website and runs the tests.
 
 The client can be divided into 3 areas.
 
@@ -156,7 +156,7 @@ If you clicked the selector button (2), you will get information about the eleme
 
 <img src="assets/images/cypress_5.png" width="400" class="" />
 
-Initially there are no sensible tests, just a "must failing" test.
+Initially, there are no sensible tests, just a "must failing" test.
 
 ```JavaScript
 it("loads examples", () => {
@@ -171,9 +171,9 @@ But we can already see something important here.
 
 All tests must be nested in an `it()`. the `it()` has no real meaning, it's about writing tests that are readable by the developer.
 
-### We can also organize the tests further.
+### We can further organize the tests
 
-For example, we can define test suits and then write the tests in them.
+For example, we can define test suits and write tests in them.
 A test suit is defined using `describe()`
 
 ```JavaScript
@@ -205,15 +205,15 @@ describe("Hooks", () => {
 });
 ```
 
-The `it()` as well as the `describe()` have 2 parameters, the first is a string and is output as a title in the test result. So the test result is clearly legible and meaningful afterwards.
+The `it()` as well as the `describe()` have 2 parameters, the first is a string and is output as a title in the test result. So the test result is legible and meaningful afterward.
 
 <img src="assets/images/cypress_6.png" class="" />
 
 The second parameter is our test.
 
-Remember, e2e tests are like a user test. Everything the user does can be done in the test.
+Remember, E2E tests are like a user test. Everything the user does can be done in the test.
 
-In the tests you have access to the global cypress object (cy)
+In the tests, you have access to the global cypress object (cy)
 
 I have access to many methods via cy, let's take a look at some of them.
 The first method is one of the most important.
@@ -221,7 +221,7 @@ The first method is one of the most important.
 `.visit (url)`
 So I can call a certain url in the browser (in the Cypress client).
 
-in our example we want to call the standard URL of our Angular Project.
+In our example, we want to call the standard URL of our Angular Project.
 
 ```JavaScript
 cy.visit("http://localhost:4200");
@@ -233,14 +233,14 @@ cy.visit("http://localhost:4200");
 
 ### You should test:
 
-- Everything in the user stories. (the expectations are just too perfect as a test title (first parameter of an it).
+- Everything in the user stories. (the expectations are just too perfect as a test title (first parameter of an `it`).
 - Everything that seems critical.
-- Everything that required a little more brain power when developing or that seemed uncanny.
+- Everything that required a little more brainpower when developing or that seemed uncanny.
 - Everything that was broken before. There is nothing more annoying than finding a mistake again later.
 
 ### What I want to test here:
 
-1. When visiting the page, the user should be greeted with the name of the project, in the form of: ProjektName app is running
+1. When visiting the page, the user should be greeted with the name of the project, in the form: ProjektName app is running
 2. When you click on one of the next steps, the display (looks like a console) should show a certain output.
 
 ## Cypress methods
@@ -257,21 +257,21 @@ This allows me to select elements to run stocks or tests on. The selector is the
 
 ### .contains(content)
 
-This can be used to check whether a text / content was found, but it can also be used to filter. (I'll show that right away)
+This can be used to check whether a text or content was found, but it can also be used to filter. (I'll show that right away)
 
 ### .should(chainer, value)
 
-With this method tests can be carried out. The chainer is the expectation that is checked against the value. (We'll see that too soon), the chainer are also typed so your IDE can help with intellisense.
+With this method, tests can be carried out. The chainer is the expectation that is checked against the value. (We'll see that too soon), the chainer are also typed so your IDE can help with IntelliSense.
 
-## Our first test (really real test):
+## Our first test (really real test)
 
-In app.component.html you will find the following.
+In `app.component.html` you will find the following.
 
 ```html
 <span>{{ title }} app is running!</span>
 ```
 
-We want to check whether cypress-test app is running! is issued in a span.
+We want to check whether `cypress-test app is running!` is issued in a span.
 
 ```JavaScript
 it(`When visiting the page, the user should be greeted with the name of the project, in the form of: ProjektName app is running`, () => {
@@ -300,7 +300,7 @@ If there was no span with the text searched for, there would be a timeout and an
 
 ## Interact with elements
 
-Any element found via `.get()` can receive actions. These are the usual actions that a user can perform f.e. Click, type text.
+Any element found via `.get()` can receive actions. These are the usual actions that a user can perform, for example, click or type a text.
 Here is a list of actions (I find their names very self-explanatory):
 
 - .click()
@@ -312,7 +312,7 @@ Here is a list of actions (I find their names very self-explanatory):
 - .select()
 - .trigger()
 
-## second test
+## Second test
 
 So now we want to write the second test.
 
@@ -324,7 +324,7 @@ it(`When user click on one of the next steps, the display (looks like a console)
 });
 ```
 
-now we want to test all "next steps" buttons.
+and as a next step we want to test all "Next steps" buttons.
 I built a small object with everything “Next Steps” and the associated messages.
 
 ```JavaScript
@@ -377,9 +377,9 @@ it(`When user click on one of the next steps, the display (looks like a console)
 
 ## Alias
 
-With Cypress we have the possibility to store elements as alias in order to be able to access them multiple times. With the method `.as('myAlias')` we create the alias and can then use the method `.get('@myAlias')` access. the preceding `@` gives Cypress the crucial hint that this is an alias.
+With Cypress we have the possibility to store elements as alias in order to be able to access them multiple times. With the method `.as('myAlias')` we create the alias and can then use the method `.get('@myAlias')` access. The preceding `@` gives Cypress the crucial hint that this is an alias.
 
-You would do that in a beforeEach ().
+You would do that in a `beforeEach()` block.
 
 ```JavaScript
 describe('Cypress Test', () => {
@@ -401,7 +401,7 @@ We can now use these aliases in our last test written.
 cy.get('@terminal').should('contain', commands[step]);
 ```
 
-## Reallife
+## Real life
 
 Our app is very limited, but in a real project, we have forms that we would fill and send.
 
@@ -420,21 +420,21 @@ it('create User', () => {
   });
 ```
 
-## http calls
+## HTTP calls
 
 We can also check whether sending the data works.
-For this we need to activate this feature which comes with many other features with the Server Module.
-This module offers the possibility to intercept, manipulate or answer http communication.
+For this we need to activate this feature which comes with many other features from the Server Module.
+This module offers the possibility to intercept, manipulate or answer HTTP communication.
 _That means we don't need to address a backend._
 
-The server module must be started first, this also happens in `beforEach()`.
+The server module must be started first, this also happens in `beforeEach()`.
 
 ```JavaScript
 cy.server()
 ```
 
-Optional I can transfer various configurations to the server, you can find this information in the documentation.
-Now if we want to mock an end point, it's very easy.
+Optionally, I can transfer various configurations to the server, you can find this information in the documentation.
+Now if we want to mock an endpoint, it's very easy.
 
 A route is defined like this:
 
@@ -458,9 +458,9 @@ Cypress offers the possibility to use mocked data in the form of files as a resp
 
 The folder `cypress\fixtures` is intended for this.
 We can store files here, which I can then use as a response.
-Here you'll find an example.json.
+Here you'll find an `example.json`.
 If we want to use this as a response, we have to write a (strange looking) cypress syntax in the mock instead of the object `{name: 'Hannes'}`,
-namely the keyword fixture: followed by the name of the file.
+namely the keyword `fixture:` followed by the name of the file.
 
 ```JavaScript
 cy.route('http://my.api.com', 'fixture:example.json');
@@ -475,7 +475,7 @@ cy.route('POST', 'http://my.api.com/users', 'fixture:example.json').as(
 );
 ```
 
-_This Endppoint will be available as a alias `@new-user`_ and we can test the request as followed:
+_This endpoint will be available as a alias `@new-user`_ and we can test the request as followed:
 
 ```JavaScript
 cy.get('@new-user')
@@ -486,7 +486,7 @@ cy.get('@new-user')
   });
 ```
 
-You see, cypress brings a lot of possibilities and is also fun.
+You see, Cypress brings a lot of possibilities and is also fun.
 
 Based on the participants of my workshops, I see that getting started in Cypress is very easy and that you can achieve good test coverage after a short time.
 
