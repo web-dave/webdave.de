@@ -23,6 +23,7 @@ You can use various tools for this, I became aware of Cypress some time ago and 
 
 Cypress is an e2e testing tool.
 This tool comes with its own Electron App in which the app to be tested is executed.
+This tool is an Electron App that comes with bundled Electron browser where your web app can be loaded and tested, or Cypress can load the web app in a browser already installed on your machine: Chrome, Edge, Firefox.
 
 <img src="assets/images/cypress_1.png" width="400" class="" />
 
@@ -41,7 +42,7 @@ Prerequisite is a project that was built with the CLI version 6+.
 All we have to do is tell the CLI to install Cypress.
 
 ```bash
-ng add @ briebug / cypress-schematic
+ng add @briebug/cypress-schematic
 ```
 
 This prompts the CLI to install Cypress (npm install cypress) and to configure the project for Cypress.
@@ -136,14 +137,14 @@ Then the Cypres UI is started.
 
 With the `Run all specs` button you can run all existing test files and the tests written in them. In the `INTEGRATION TESTS` list all test files are listed and I would have the option to run individual test files here.
 
-So far, we only have one file, but you can guess how easy it is to organize your tests: Simply store it in different files.
+So far, we only have one file, but you can guess how easy it is to organize your tests: Simply write tests for different features in different files.
 
 ## The Cypress UI
 
 We click on Run all specs and the Cypress Client is started.
-The client is an electron app that loads our website and runs the tests.
+The client is an Electron (or external) browser that loads our website and runs the tests.
 
-The client can be divided into 3 areas.
+The client GUI can be divided into 3 areas.
 
 <img src="assets/images/cypress_4.png" width="400" class="" />
 
@@ -169,7 +170,7 @@ Must failing because the expected text 'Replace me with something relevant' is n
 
 But we can already see something important here.
 
-All tests must be nested in an `it()`. the `it()` has no real meaning, it's about writing tests that are readable by the developer.
+Each `it()` is a separate test with its own Cypress commands inside the callback function.
 
 ### We can also organize the tests further.
 
@@ -181,7 +182,7 @@ describe('Next Steps', () => {...})
 ```
 
 Within a `describe()` I can define any number of `it()` or further `describe()` to organize my tests.
-In addition, `describe()` gives you the option of working with preflies or rollbacks.
+In addition, `describe()` gives you the option of working with preflies or rollbacks. Cypress uses the standard Mocha's BDD callback names: `it`, `describe`, `beforeEach`, `afterEach` etc.
 
 For example:
 
@@ -233,7 +234,7 @@ cy.visit("http://localhost:4200");
 
 ### You should test:
 
-- Everything in the user stories. (the expectations are just too perfect as a test title (first parameter of an it).
+- Everything in the user stories. (the expectations are just too perfect as a test title = first parameter of an it).
 - Everything that seems critical.
 - Everything that required a little more brain power when developing or that seemed uncanny.
 - Everything that was broken before. There is nothing more annoying than finding a mistake again later.
@@ -247,21 +248,21 @@ cy.visit("http://localhost:4200");
 
 The global Cypress object gives access to methods that I can use for testing:
 
-### .visit(url)
+### [.visit(url)](https://on.cypress.io/visit)
 
 As already mentioned, I can open certain URLs in the browser
 
-### .get(selector)
+### [.get(selector)](https://on.cypress.io/get)
 
 This allows me to select elements to run stocks or tests on. The selector is the standard CSS selector.
 
-### .contains(content)
+### [.contains(content)](https://on.cypress.io/contains)
 
 This can be used to check whether a text / content was found, but it can also be used to filter. (I'll show that right away)
 
-### .should(chainer, value)
+### [.should(chainer, ...arguments)](https://on.cypress.io/should)
 
-With this method tests can be carried out. The chainer is the expectation that is checked against the value. (We'll see that too soon), the chainer are also typed so your IDE can help with intellisense.
+With this method tests can be carried out. The chainer is the expectation that is checked against the arguments. (We'll see that too soon), the chainer are also typed so your IDE can help with intellisense.
 
 ## Our first test (really real test):
 
@@ -276,7 +277,7 @@ We want to check whether cypress-test app is running! is issued in a span.
 ```JavaScript
 it(`When visiting the page, the user should be greeted with the name of the project, in the form of: ProjektName app is running`, () => {
   cy.visit('http://localhost:4200');
-  cy.get('span').contains('cypress-test app is running!');
+  cy.contains('span', 'cypress-test app is running!');
 });
 ```
 
@@ -302,6 +303,12 @@ If there was no span with the text searched for, there would be a timeout and an
 
 Any element found via `.get()` can receive actions. These are the usual actions that a user can perform f.e. Click, type text.
 Here is a list of actions (I find their names very self-explanatory):
+
+```js
+// example clicking on an element
+cy.get('jQuery CSS selector')
+  .click()
+```
 
 - .click()
 - .dblclick()
@@ -344,8 +351,7 @@ I would now like to iterate over this object and run a test in each iteration.
 it(`When user click on one of the next steps...`, () => {
   cy.visit('http://localhost:4200');
   for (const step in commands) {
-    cy.get('span')
-      .contains(step)
+    cy.contains('span', step)
       .click();
   }
 });
@@ -449,6 +455,7 @@ You see, this API is very flexible.
 Here is an example:
 
 ```JavaScript
+// stub application's call and respond with the given object
 cy.route('http://my.api.com', { name: 'Hannes' });
 ```
 
@@ -478,7 +485,10 @@ cy.route('POST', 'http://my.api.com/users', 'fixture:example.json').as(
 _This Endppoint will be available as a alias `@new-user`_ and we can test the request as followed:
 
 ```JavaScript
-cy.get('@new-user')
+// the test will wait until the application
+// makes the POST call to http://my.api.com/users endpoint
+// and then we will assert what the application sends
+cy.wait('@new-user')
   .its('request.body')
   .should('deep.equal', {
     name: 'Hannes',
