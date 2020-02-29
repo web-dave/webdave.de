@@ -491,3 +491,7 @@ You see, cypress brings a lot of possibilities and is also fun.
 Based on the participants of my workshops, I see that getting started in Cypress is very easy and that you can achieve good test coverage after a short time.
 
 Way more details about Cypress can be found in the <a href="https://docs.cypress.io/">official documentation</a>
+
+Found a typo?
+Or wanna add something?
+<a href="https://github.com/web-dave/webdave.de/blob/master/src/assets/posts/cypress.md">PR are welcome</a>.
