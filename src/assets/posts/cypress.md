@@ -306,8 +306,7 @@ Here is a list of actions (I find their names very self-explanatory):
 
 ```js
 // example clicking on an element
-cy.get('jQuery CSS selector')
-  .click()
+cy.get('jQuery CSS selector').click();
 ```
 
 - .click()
@@ -505,3 +504,10 @@ Way more details about Cypress can be found in the <a href="https://docs.cypress
 Found a typo?
 Or wanna add something?
 <a href="https://github.com/web-dave/webdave.de/blob/master/src/assets/posts/cypress.md">PR are welcome</a>.
+
+#### Special Thanks
+
+I would like to give special thanks to the awesome people that reviewed this post and gave me pointers:
+
+- <a href="https://twitter.com/mokkapps"  target="_blank">Michael Hoffmann</a>
+- <a href="https://twitter.com/bahmutov"  target="_blank">Gleb Bahmutov</a>
