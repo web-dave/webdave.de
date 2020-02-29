@@ -511,5 +511,5 @@ I would like to give special thanks to the awesome people that reviewed this pos
 
 - <a href="https://twitter.com/mokkapps"  target="_blank">Michael Hoffmann</a>
 - <a href="https://twitter.com/bahmutov"  target="_blank">Gleb Bahmutov</a>
-- <a href="https://twitter.com/tobmaster">Tobias Struckmeier</a>
-- <a href="https://twitter.com/SchmagaHimself">Sebastian Kleinschmager</a>
+- <a href="https://twitter.com/tobmaster"  target="_blank">Tobias Struckmeier</a>
+- <a href="https://twitter.com/SchmagaHimself"  target="_blank">Sebastian Kleinschmager</a>
