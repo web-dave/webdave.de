@@ -4,22 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { FrameworkModule } from './framework/framework.module';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  MatGridListModule,
-  MatCardModule,
-  MatMenuModule,
-  MatIconModule,
-  MatButtonModule,
-  MatSnackBarModule,
-  MatSnackBar,
-  MatSnackBarRef
-} from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
-import { ServiceWorkerModule, SwUpdate, SwPush } from '@angular/service-worker';
+import { ServiceWorkerModule, SwUpdate } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+
 import { MarkdownModule } from '../../projects/ngx-markdown/src/public-api';
 
 @NgModule({
@@ -27,34 +16,20 @@ import { MarkdownModule } from '../../projects/ngx-markdown/src/public-api';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FrameworkModule,
     HttpClientModule,
     MarkdownModule.forRoot(),
-    BrowserAnimationsModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
     LayoutModule,
-    MatSnackBarModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production
-    })
+      enabled: environment.production,
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
-  constructor(update: SwUpdate, snackbar: MatSnackBar) {
-    update.available.subscribe(u => {
+  constructor(update: SwUpdate) {
+    update.available.subscribe((u) => {
       console.log(u);
-      snackbar
-        .open('New Blockpost arrived!', 'I wanna read it!')
-        .onAction()
-        .subscribe(() => {
-          window.location.replace(window.location.origin + '/blog');
-        });
     });
   }
 }
