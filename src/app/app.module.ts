@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LayoutModule } from '@angular/cdk/layout';
 import { ServiceWorkerModule, SwUpdate } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
@@ -18,7 +17,6 @@ import { MarkdownModule } from '../../projects/ngx-markdown/src/public-api';
     AppRoutingModule,
     HttpClientModule,
     MarkdownModule.forRoot(),
-    LayoutModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
