@@ -1,0 +1,27 @@
+ul {
+  display: flex;
+  padding: 1rem;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 90%;
+}
+li {
+  flex-shrink: 0;
+  list-style: none;
+}
+a {
+  width: 6rem;
+  margin-left: 2rem;
+  color: #efefef;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+a:visited {
+  color: #efefef;
+}
+
+.active {
+  background-color: #7b1fa2;
+}

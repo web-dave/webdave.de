@@ -1,0 +1,15 @@
+<h2>Blogs</h2>
+<main>
+  <div
+    class="blog"
+    *ngFor="let blog of bloglist | async"
+    [routerLink]="[blog.name]"
+  >
+    <head>
+      {{
+        blog.name
+      }}
+    </head>
+    <markdown [data]="blog.preview + '...'"></markdown>
+  </div>
+</main>

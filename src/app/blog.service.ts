@@ -3,12 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class BlogsService {
-  repo = 'https://raw.githubusercontent.com/web-dave/blog/master/';
+export class BlogService {
+  private repo = 'https://raw.githubusercontent.com/web-dave/blog/master/';
   constructor(private http: HttpClient) {}
 
   getPostList(): Observable<Post[]> {
     return this.http.get<Post[]>(this.repo + 'posts.json');
+  }
+  getPostUrl(name: string): string {
+    return this.repo + name + '.md';
   }
 }
 

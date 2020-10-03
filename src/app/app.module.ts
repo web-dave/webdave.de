@@ -9,9 +9,12 @@ import { ServiceWorkerModule, SwUpdate } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
 import { MarkdownModule } from '../../projects/ngx-markdown/src/public-api';
+import { NavigationComponent } from './navigation/navigation.component';
+import { BlogComponent } from './blog/blog.component';
+import { BlogListComponent } from './blog-list/blog-list.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NavigationComponent, BlogComponent, BlogListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
