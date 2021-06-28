@@ -33,7 +33,7 @@
     "core-js": "^2.6.4",
     "marked": "^0.6.1",
     "ngx-img-cropper": "^9.0.0",
-    "prismjs": "~1.15.0",
+    "prismjs": "~1.24.0",
     "rxjs": "6.5.3",
     "rxjs-compat": "^6.4.0",
     "zone.js": "0.10.2"
