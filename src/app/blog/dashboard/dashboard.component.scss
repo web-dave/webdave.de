@@ -8,6 +8,10 @@
   left: 15px;
   right: 15px;
   bottom: 15px;
+  
+  &:hover {
+    curser: pointer;
+  }
 }
 
 .more-button {
