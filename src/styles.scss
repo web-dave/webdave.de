@@ -1,1 +1,177 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #272727;
+  padding: 10px;
+  .menu {
+    width: 70%;
+    box-sizing: border-box;
+    height: 1.75em;
+    background-color: #bbb;
+    margin: 0 auto;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    span {
+      position: relative;
+      padding-top: 0.2em;
+      margin-right: 1.5em;
+      text-align: left;
+      font-size: 1.25em;
+      font-family: monospace;
+      white-space: normal;
+      overflow: hidden;
+      float: right;
+    }
+    .buttons {
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+      border: 1px solid #000;
+      position: relative;
+      top: 6px;
+      left: 6px;
+      background-color: #ff3b47;
+      border-color: #9d252b;
+      display: inline-block;
+      &.minimize {
+        left: 11px;
+        background-color: #ffc100;
+        border-color: #9d802c;
+      }
+
+      &.zoom {
+        left: 16px;
+        background-color: #00d742;
+        border-color: #049931;
+      }
+    }
+  }
+  .screen {
+    background-color: #151515;
+    box-sizing: border-box;
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    p {
+      position: relative;
+      left: 0;
+      margin-left: 10%;
+      text-align: left;
+      font-size: 1.25em;
+      font-family: monospace;
+      white-space: normal;
+      overflow: hidden;
+      width: auto;
+
+      &.headline {
+        color: #9cd9f0;
+      }
+
+      &.line {
+        color: #cdee69;
+      }
+      &.line1 {
+        color: #9cd9f0;
+      }
+
+      &.line2 {
+        color: #cdee69;
+      }
+
+      &.line3 {
+        color: #e09690;
+      }
+      &.option {
+        color: #e09690;
+      }
+
+      &.line4 {
+        color: #fff;
+      }
+      span {
+        color: #fff;
+        font-weight: bold;
+
+        &.cursor {
+          -webkit-animation: blink 1s 2s 2 forwards;
+          -moz-animation: blink 1s 2s 2 forwards;
+          -o-animation: blink 1s 2s 2 forwards;
+          animation: blink 1s 2s 2 forwards;
+        }
+      }
+    }
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
